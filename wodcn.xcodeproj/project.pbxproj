@@ -102,6 +102,13 @@
 			name = WOD;
 			sourceTree = "<group>";
 		};
+		C517FD4E1CDB323E006768D1 /* image */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = image;
+			sourceTree = "<group>";
+		};
 		C5D99A7A1CC7335100A450C2 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +149,7 @@
 		C5D99A861CC7335100A450C2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C517FD4E1CDB323E006768D1 /* image */,
 				C5D99A871CC7335100A450C2 /* main.m */,
 				C510F55A1CD84D9A00C060AF /* WODGroup.json */,
 			);
