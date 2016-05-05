@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C510F5561CD83ABB00C060AF /* WODListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C510F5551CD83ABB00C060AF /* WODListTableViewController.m */; };
+		C510F55B1CD84D9A00C060AF /* WODGroup.json in Resources */ = {isa = PBXBuildFile; fileRef = C510F55A1CD84D9A00C060AF /* WODGroup.json */; };
+		C510F55E1CD853EC00C060AF /* WODModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C510F55D1CD853EC00C060AF /* WODModel.m */; };
+		C510F5611CD99F0600C060AF /* WODDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C510F5601CD99F0600C060AF /* WODDetailViewController.m */; };
 		C5D99A881CC7335100A450C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D99A871CC7335100A450C2 /* main.m */; };
 		C5D99A8B1CC7335100A450C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D99A8A1CC7335100A450C2 /* AppDelegate.m */; };
 		C5D99A8E1CC7335100A450C2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D99A8D1CC7335100A450C2 /* ViewController.m */; };
@@ -35,6 +39,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C510F5541CD83ABB00C060AF /* WODListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WODListTableViewController.h; sourceTree = "<group>"; };
+		C510F5551CD83ABB00C060AF /* WODListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WODListTableViewController.m; sourceTree = "<group>"; };
+		C510F55A1CD84D9A00C060AF /* WODGroup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = WODGroup.json; sourceTree = "<group>"; };
+		C510F55C1CD853EC00C060AF /* WODModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WODModel.h; sourceTree = "<group>"; };
+		C510F55D1CD853EC00C060AF /* WODModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WODModel.m; sourceTree = "<group>"; };
+		C510F55F1CD99F0600C060AF /* WODDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WODDetailViewController.h; sourceTree = "<group>"; };
+		C510F5601CD99F0600C060AF /* WODDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WODDetailViewController.m; sourceTree = "<group>"; };
 		C5D99A831CC7335100A450C2 /* wodcn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wodcn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5D99A871CC7335100A450C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C5D99A891CC7335100A450C2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,6 +89,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C510F5531CD83A3E00C060AF /* WOD */ = {
+			isa = PBXGroup;
+			children = (
+				C510F5541CD83ABB00C060AF /* WODListTableViewController.h */,
+				C510F5551CD83ABB00C060AF /* WODListTableViewController.m */,
+				C510F55C1CD853EC00C060AF /* WODModel.h */,
+				C510F55D1CD853EC00C060AF /* WODModel.m */,
+				C510F55F1CD99F0600C060AF /* WODDetailViewController.h */,
+				C510F5601CD99F0600C060AF /* WODDetailViewController.m */,
+			);
+			name = WOD;
+			sourceTree = "<group>";
+		};
 		C5D99A7A1CC7335100A450C2 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +125,7 @@
 		C5D99A851CC7335100A450C2 /* wodcn */ = {
 			isa = PBXGroup;
 			children = (
+				C510F5531CD83A3E00C060AF /* WOD */,
 				C5D99A891CC7335100A450C2 /* AppDelegate.h */,
 				C5D99A8A1CC7335100A450C2 /* AppDelegate.m */,
 				C5D99A8C1CC7335100A450C2 /* ViewController.h */,
@@ -118,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				C5D99A871CC7335100A450C2 /* main.m */,
+				C510F55A1CD84D9A00C060AF /* WODGroup.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -243,6 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C510F55B1CD84D9A00C060AF /* WODGroup.json in Resources */,
 				C5D99A961CC7335100A450C2 /* LaunchScreen.storyboard in Resources */,
 				C5D99A931CC7335100A450C2 /* Assets.xcassets in Resources */,
 				C5D99A911CC7335100A450C2 /* Main.storyboard in Resources */,
@@ -270,9 +297,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C510F5611CD99F0600C060AF /* WODDetailViewController.m in Sources */,
+				C510F5561CD83ABB00C060AF /* WODListTableViewController.m in Sources */,
 				C5D99A8E1CC7335100A450C2 /* ViewController.m in Sources */,
 				C5D99A8B1CC7335100A450C2 /* AppDelegate.m in Sources */,
 				C5D99A881CC7335100A450C2 /* main.m in Sources */,
+				C510F55E1CD853EC00C060AF /* WODModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +528,7 @@
 				C5D99AB21CC7335200A450C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C5D99AB31CC7335200A450C2 /* Build configuration list for PBXNativeTarget "wodcnTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +537,7 @@
 				C5D99AB51CC7335200A450C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C5D99AB61CC7335200A450C2 /* Build configuration list for PBXNativeTarget "wodcnUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +546,7 @@
 				C5D99AB81CC7335200A450C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
