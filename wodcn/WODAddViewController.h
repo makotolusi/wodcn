@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "WODKeyBoardToolBar.h"
+#import "WODTypePicker.h"
 @interface WODAddViewController : UIViewController
-@property (strong, nonatomic) UIPickerView *wodType;
+@property (strong, nonatomic) WODTypePicker *wodType;
 @property (weak, nonatomic) IBOutlet UILabel *wodTypeLabel;
-
+@property (weak, nonatomic) IBOutlet UITextView *wodTextArea;
 @end

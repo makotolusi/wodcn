@@ -11,6 +11,8 @@
 		C510F55B1CD84D9A00C060AF /* WODGroup.json in Resources */ = {isa = PBXBuildFile; fileRef = C510F55A1CD84D9A00C060AF /* WODGroup.json */; };
 		C510F55E1CD853EC00C060AF /* WODModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C510F55D1CD853EC00C060AF /* WODModel.m */; };
 		C510F5611CD99F0600C060AF /* WODDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C510F5601CD99F0600C060AF /* WODDetailViewController.m */; };
+		C518B38A1CEB292F0098B477 /* WODTypePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = C518B3891CEB292F0098B477 /* WODTypePicker.m */; };
+		C57C8C301CE580980033666D /* WODKeyBoardToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C57C8C2F1CE580980033666D /* WODKeyBoardToolBar.m */; };
 		C5BF27E31CE46FF50023C178 /* WODAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BF27E21CE46FF50023C178 /* WODAddViewController.m */; };
 		C5D99A881CC7335100A450C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D99A871CC7335100A450C2 /* main.m */; };
 		C5D99A8B1CC7335100A450C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D99A8A1CC7335100A450C2 /* AppDelegate.m */; };
@@ -47,6 +49,10 @@
 		C510F55D1CD853EC00C060AF /* WODModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WODModel.m; sourceTree = "<group>"; };
 		C510F55F1CD99F0600C060AF /* WODDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WODDetailViewController.h; sourceTree = "<group>"; };
 		C510F5601CD99F0600C060AF /* WODDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WODDetailViewController.m; sourceTree = "<group>"; };
+		C518B3881CEB292F0098B477 /* WODTypePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WODTypePicker.h; sourceTree = "<group>"; };
+		C518B3891CEB292F0098B477 /* WODTypePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WODTypePicker.m; sourceTree = "<group>"; };
+		C57C8C2E1CE580980033666D /* WODKeyBoardToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WODKeyBoardToolBar.h; sourceTree = "<group>"; };
+		C57C8C2F1CE580980033666D /* WODKeyBoardToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WODKeyBoardToolBar.m; sourceTree = "<group>"; };
 		C5BF27E11CE46FF50023C178 /* WODAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WODAddViewController.h; sourceTree = "<group>"; };
 		C5BF27E21CE46FF50023C178 /* WODAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WODAddViewController.m; sourceTree = "<group>"; };
 		C5BF27E41CE47F030023C178 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -115,6 +121,17 @@
 			name = image;
 			sourceTree = "<group>";
 		};
+		C57C8C2D1CE57F110033666D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C57C8C2E1CE580980033666D /* WODKeyBoardToolBar.h */,
+				C57C8C2F1CE580980033666D /* WODKeyBoardToolBar.m */,
+				C518B3881CEB292F0098B477 /* WODTypePicker.h */,
+				C518B3891CEB292F0098B477 /* WODTypePicker.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
 		C5D99A7A1CC7335100A450C2 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +155,7 @@
 		C5D99A851CC7335100A450C2 /* wodcn */ = {
 			isa = PBXGroup;
 			children = (
+				C57C8C2D1CE57F110033666D /* Common */,
 				C510F5531CD83A3E00C060AF /* WOD */,
 				C5D99A891CC7335100A450C2 /* AppDelegate.h */,
 				C5D99A8A1CC7335100A450C2 /* AppDelegate.m */,
@@ -317,8 +335,10 @@
 				C5D99A8E1CC7335100A450C2 /* ViewController.m in Sources */,
 				C5D99A8B1CC7335100A450C2 /* AppDelegate.m in Sources */,
 				C5D99A881CC7335100A450C2 /* main.m in Sources */,
+				C57C8C301CE580980033666D /* WODKeyBoardToolBar.m in Sources */,
 				C5BF27E31CE46FF50023C178 /* WODAddViewController.m in Sources */,
 				C510F55E1CD853EC00C060AF /* WODModel.m in Sources */,
+				C518B38A1CEB292F0098B477 /* WODTypePicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
