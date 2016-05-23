@@ -8,12 +8,14 @@
 
 #import "WODAddViewController.h"
 #import "WODKeyBoardToolBar.h"
-
-@interface WODAddViewController ()<WODKeyBoardToolBarDelegate,UITextFieldDelegate>
+#import "WODTagsView.h"
+#import "CoreDataManager.h"
+@interface WODAddViewController ()<WODKeyBoardToolBarDelegate,UITextViewDelegate,WODTagsViewDelegate>
 {
     
     WODKeyBoardToolBar* wodKeyboardtoolbar;
     WODKeyBoardToolBar* wodpickerdone;
+    NSString* placeholderString;
 }
 @end
 
@@ -21,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    placeholderString=@"<请输入WOD信息> \n例如 \n25 Push-up \n25 sit-up \n400m Run";
     wodKeyboardtoolbar=[[WODKeyBoardToolBar alloc] init];
     wodKeyboardtoolbar.wodToolbarDelegate=self;
     
@@ -39,7 +42,9 @@
     //定义一个toolBar
     wodKeyboardtoolbar.frame=CGRectMake(0, 0, SCREEN_WIDTH, 30);
     [self.wodTextArea setInputAccessoryView:wodKeyboardtoolbar];
-    
+    self.wodTextArea.delegate=self;
+    self.wodTextArea.text =placeholderString;
+    self.wodTextArea.textColor=[UIColor lightGrayColor];
     
 }
 
@@ -87,6 +92,40 @@
     [UIView commitAnimations];
 }
 
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    if ([text isEqualToString:@"#"]) {
+         NSLog(@"oye ------- %@",text);
+//        WODTagTableController *tags = [[WODTagTableController alloc]init];
+        WODTagsView *view=[[WODTagsView alloc] initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height-[[UIApplication sharedApplication] statusBarFrame].size.height+5, SCREEN_WIDTH, 300)];
+        view.wodTagDelegate=self;
+        [self.view addSubview:view];
+        return NO;
+    }
+    return YES;
+}
 
+-(void)didSelectTag:(NSString*)text{
+    NSMutableString *str=[[NSMutableString alloc] initWithString:self.wodTextArea.text];
+    [str insertString:text atIndex:self.wodTextArea.selectedRange.location];
+    self.wodTextArea.text=str;
+}
 
+-(void)textViewDidBeginEditing:(UITextView*)textView{
+    if([self.wodTextArea.text isEqualToString:placeholderString]){
+        self.wodTextArea.text=@"";
+        self.wodTextArea.textColor=[UIColor blackColor];
+    }
+}
+
+-(void)textViewDidEndEditing:(UITextView*)textView{
+    if(self.wodTextArea.text.length<1){
+        self.wodTextArea.text=placeholderString;
+        self.wodTextArea.textColor=[UIColor lightGrayColor];
+    }
+}
+
+- (IBAction)saveEvent:(id)sender {
+    CoreDataManager *cd=[[CoreDataManager alloc] init];
+    [cd query:20 andOffset:0];
+}
 @end

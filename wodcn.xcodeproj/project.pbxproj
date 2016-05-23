@@ -12,7 +12,18 @@
 		C510F55E1CD853EC00C060AF /* WODModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C510F55D1CD853EC00C060AF /* WODModel.m */; };
 		C510F5611CD99F0600C060AF /* WODDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C510F5601CD99F0600C060AF /* WODDetailViewController.m */; };
 		C518B38A1CEB292F0098B477 /* WODTypePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = C518B3891CEB292F0098B477 /* WODTypePicker.m */; };
+		C569B61F1CEEB09200E177FF /* SkillListController.m in Sources */ = {isa = PBXBuildFile; fileRef = C569B61E1CEEB09200E177FF /* SkillListController.m */; };
+		C569B6221CEEB3B900E177FF /* Skill.json in Resources */ = {isa = PBXBuildFile; fileRef = C569B6211CEEB3B900E177FF /* Skill.json */; };
+		C569B6241CEEFA3600E177FF /* head.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C569B6231CEEFA3600E177FF /* head.jpg */; };
+		C569B6271CEEFFDB00E177FF /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C569B6261CEEFFDB00E177FF /* ProfileViewController.m */; };
 		C57C8C301CE580980033666D /* WODKeyBoardToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C57C8C2F1CE580980033666D /* WODKeyBoardToolBar.m */; };
+		C583930B1CEC1156008A9BAC /* WODTagsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C583930A1CEC1156008A9BAC /* WODTagsView.m */; };
+		C583930D1CEC5893008A9BAC /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C583930C1CEC5893008A9BAC /* libsqlite3.tbd */; };
+		C583930F1CEC5B38008A9BAC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C583930E1CEC5B38008A9BAC /* CoreData.framework */; };
+		C58393121CEC5C9D008A9BAC /* WodCN.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C58393101CEC5C9D008A9BAC /* WodCN.xcdatamodeld */; };
+		C58393601CEC6476008A9BAC /* WOD+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C583935D1CEC6476008A9BAC /* WOD+CoreDataProperties.m */; };
+		C58393611CEC6476008A9BAC /* WOD.m in Sources */ = {isa = PBXBuildFile; fileRef = C583935F1CEC6476008A9BAC /* WOD.m */; };
+		C58393641CEC6929008A9BAC /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C58393631CEC6929008A9BAC /* CoreDataManager.m */; };
 		C5BF27E31CE46FF50023C178 /* WODAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BF27E21CE46FF50023C178 /* WODAddViewController.m */; };
 		C5D99A881CC7335100A450C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D99A871CC7335100A450C2 /* main.m */; };
 		C5D99A8B1CC7335100A450C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D99A8A1CC7335100A450C2 /* AppDelegate.m */; };
@@ -22,6 +33,7 @@
 		C5D99A961CC7335100A450C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5D99A941CC7335100A450C2 /* LaunchScreen.storyboard */; };
 		C5D99AA11CC7335200A450C2 /* wodcnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D99AA01CC7335200A450C2 /* wodcnTests.m */; };
 		C5D99AAC1CC7335200A450C2 /* wodcnUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D99AAB1CC7335200A450C2 /* wodcnUITests.m */; };
+		C5DEF7DC1CF309D400BCC091 /* WODTop.json in Resources */ = {isa = PBXBuildFile; fileRef = C5DEF7DB1CF309D400BCC091 /* WODTop.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,15 +63,32 @@
 		C510F5601CD99F0600C060AF /* WODDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WODDetailViewController.m; sourceTree = "<group>"; };
 		C518B3881CEB292F0098B477 /* WODTypePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WODTypePicker.h; sourceTree = "<group>"; };
 		C518B3891CEB292F0098B477 /* WODTypePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WODTypePicker.m; sourceTree = "<group>"; };
+		C569B61D1CEEB09200E177FF /* SkillListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillListController.h; sourceTree = "<group>"; };
+		C569B61E1CEEB09200E177FF /* SkillListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillListController.m; sourceTree = "<group>"; };
+		C569B6211CEEB3B900E177FF /* Skill.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Skill.json; sourceTree = "<group>"; };
+		C569B6231CEEFA3600E177FF /* head.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = head.jpg; sourceTree = "<group>"; };
+		C569B6251CEEFFDB00E177FF /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		C569B6261CEEFFDB00E177FF /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		C57C8C2E1CE580980033666D /* WODKeyBoardToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WODKeyBoardToolBar.h; sourceTree = "<group>"; };
 		C57C8C2F1CE580980033666D /* WODKeyBoardToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WODKeyBoardToolBar.m; sourceTree = "<group>"; };
+		C58393091CEC1156008A9BAC /* WODTagsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WODTagsView.h; sourceTree = "<group>"; };
+		C583930A1CEC1156008A9BAC /* WODTagsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WODTagsView.m; sourceTree = "<group>"; };
+		C583930C1CEC5893008A9BAC /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		C583930E1CEC5B38008A9BAC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C58393111CEC5C9D008A9BAC /* WodCN.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WodCN.xcdatamodel; sourceTree = "<group>"; };
+		C583935C1CEC6476008A9BAC /* WOD+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WOD+CoreDataProperties.h"; sourceTree = "<group>"; };
+		C583935D1CEC6476008A9BAC /* WOD+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WOD+CoreDataProperties.m"; sourceTree = "<group>"; };
+		C583935E1CEC6476008A9BAC /* WOD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOD.h; sourceTree = "<group>"; };
+		C583935F1CEC6476008A9BAC /* WOD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOD.m; sourceTree = "<group>"; };
+		C58393621CEC6929008A9BAC /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		C58393631CEC6929008A9BAC /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		C5BF27E11CE46FF50023C178 /* WODAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WODAddViewController.h; sourceTree = "<group>"; };
 		C5BF27E21CE46FF50023C178 /* WODAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WODAddViewController.m; sourceTree = "<group>"; };
 		C5BF27E41CE47F030023C178 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		C5D99A831CC7335100A450C2 /* wodcn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wodcn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5D99A871CC7335100A450C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C5D99A891CC7335100A450C2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		C5D99A8A1CC7335100A450C2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C5D99A8A1CC7335100A450C2 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C5D99A8C1CC7335100A450C2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C5D99A8D1CC7335100A450C2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C5D99A901CC7335100A450C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,6 +101,7 @@
 		C5D99AA71CC7335200A450C2 /* wodcnUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wodcnUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5D99AAB1CC7335200A450C2 /* wodcnUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wodcnUITests.m; sourceTree = "<group>"; };
 		C5D99AAD1CC7335200A450C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5DEF7DB1CF309D400BCC091 /* WODTop.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = WODTop.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +109,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C583930F1CEC5B38008A9BAC /* CoreData.framework in Frameworks */,
+				C583930D1CEC5893008A9BAC /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +142,8 @@
 				C510F5601CD99F0600C060AF /* WODDetailViewController.m */,
 				C5BF27E11CE46FF50023C178 /* WODAddViewController.h */,
 				C5BF27E21CE46FF50023C178 /* WODAddViewController.m */,
+				C58393091CEC1156008A9BAC /* WODTagsView.h */,
+				C583930A1CEC1156008A9BAC /* WODTagsView.m */,
 			);
 			name = WOD;
 			sourceTree = "<group>";
@@ -117,8 +151,36 @@
 		C517FD4E1CDB323E006768D1 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				C569B6231CEEFA3600E177FF /* head.jpg */,
 			);
 			name = image;
+			sourceTree = "<group>";
+		};
+		C569B61C1CEEACEB00E177FF /* Skill */ = {
+			isa = PBXGroup;
+			children = (
+				C569B61D1CEEB09200E177FF /* SkillListController.h */,
+				C569B61E1CEEB09200E177FF /* SkillListController.m */,
+			);
+			name = Skill;
+			sourceTree = "<group>";
+		};
+		C569B6201CEEB37700E177FF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C569B6211CEEB3B900E177FF /* Skill.json */,
+				C5DEF7DB1CF309D400BCC091 /* WODTop.json */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		C569B6281CEEFFE400E177FF /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C569B6251CEEFFDB00E177FF /* ProfileViewController.h */,
+				C569B6261CEEFFDB00E177FF /* ProfileViewController.m */,
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 		C57C8C2D1CE57F110033666D /* Common */ = {
@@ -128,13 +190,28 @@
 				C57C8C2F1CE580980033666D /* WODKeyBoardToolBar.m */,
 				C518B3881CEB292F0098B477 /* WODTypePicker.h */,
 				C518B3891CEB292F0098B477 /* WODTypePicker.m */,
+				C58393621CEC6929008A9BAC /* CoreDataManager.h */,
+				C58393631CEC6929008A9BAC /* CoreDataManager.m */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		C583935B1CEC6435008A9BAC /* model */ = {
+			isa = PBXGroup;
+			children = (
+				C583935C1CEC6476008A9BAC /* WOD+CoreDataProperties.h */,
+				C583935D1CEC6476008A9BAC /* WOD+CoreDataProperties.m */,
+				C583935E1CEC6476008A9BAC /* WOD.h */,
+				C583935F1CEC6476008A9BAC /* WOD.m */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 		C5D99A7A1CC7335100A450C2 = {
 			isa = PBXGroup;
 			children = (
+				C583930E1CEC5B38008A9BAC /* CoreData.framework */,
+				C583930C1CEC5893008A9BAC /* libsqlite3.tbd */,
 				C5D99A851CC7335100A450C2 /* wodcn */,
 				C5D99A9F1CC7335200A450C2 /* wodcnTests */,
 				C5D99AAA1CC7335200A450C2 /* wodcnUITests */,
@@ -155,6 +232,9 @@
 		C5D99A851CC7335100A450C2 /* wodcn */ = {
 			isa = PBXGroup;
 			children = (
+				C569B6281CEEFFE400E177FF /* Profile */,
+				C569B61C1CEEACEB00E177FF /* Skill */,
+				C583935B1CEC6435008A9BAC /* model */,
 				C57C8C2D1CE57F110033666D /* Common */,
 				C510F5531CD83A3E00C060AF /* WOD */,
 				C5D99A891CC7335100A450C2 /* AppDelegate.h */,
@@ -167,6 +247,7 @@
 				C5D99A971CC7335100A450C2 /* Info.plist */,
 				C5BF27E41CE47F030023C178 /* PrefixHeader.pch */,
 				C5D99A861CC7335100A450C2 /* Supporting Files */,
+				C58393101CEC5C9D008A9BAC /* WodCN.xcdatamodeld */,
 			);
 			path = wodcn;
 			sourceTree = "<group>";
@@ -174,6 +255,7 @@
 		C5D99A861CC7335100A450C2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C569B6201CEEB37700E177FF /* Data */,
 				C517FD4E1CDB323E006768D1 /* image */,
 				C5D99A871CC7335100A450C2 /* main.m */,
 				C510F55A1CD84D9A00C060AF /* WODGroup.json */,
@@ -303,9 +385,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C510F55B1CD84D9A00C060AF /* WODGroup.json in Resources */,
+				C5DEF7DC1CF309D400BCC091 /* WODTop.json in Resources */,
+				C569B6241CEEFA3600E177FF /* head.jpg in Resources */,
 				C5D99A961CC7335100A450C2 /* LaunchScreen.storyboard in Resources */,
 				C5D99A931CC7335100A450C2 /* Assets.xcassets in Resources */,
 				C5D99A911CC7335100A450C2 /* Main.storyboard in Resources */,
+				C569B6221CEEB3B900E177FF /* Skill.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,8 +417,15 @@
 			files = (
 				C510F5611CD99F0600C060AF /* WODDetailViewController.m in Sources */,
 				C510F5561CD83ABB00C060AF /* WODListTableViewController.m in Sources */,
+				C569B6271CEEFFDB00E177FF /* ProfileViewController.m in Sources */,
+				C583930B1CEC1156008A9BAC /* WODTagsView.m in Sources */,
+				C58393601CEC6476008A9BAC /* WOD+CoreDataProperties.m in Sources */,
+				C58393611CEC6476008A9BAC /* WOD.m in Sources */,
 				C5D99A8E1CC7335100A450C2 /* ViewController.m in Sources */,
+				C58393121CEC5C9D008A9BAC /* WodCN.xcdatamodeld in Sources */,
+				C569B61F1CEEB09200E177FF /* SkillListController.m in Sources */,
 				C5D99A8B1CC7335100A450C2 /* AppDelegate.m in Sources */,
+				C58393641CEC6929008A9BAC /* CoreDataManager.m in Sources */,
 				C5D99A881CC7335100A450C2 /* main.m in Sources */,
 				C57C8C301CE580980033666D /* WODKeyBoardToolBar.m in Sources */,
 				C5BF27E31CE46FF50023C178 /* WODAddViewController.m in Sources */,
@@ -587,6 +679,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C58393101CEC5C9D008A9BAC /* WodCN.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C58393111CEC5C9D008A9BAC /* WodCN.xcdatamodel */,
+			);
+			currentVersion = C58393111CEC5C9D008A9BAC /* WodCN.xcdatamodel */;
+			path = WodCN.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C5D99A7B1CC7335100A450C2 /* Project object */;
 }

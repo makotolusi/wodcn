@@ -26,8 +26,6 @@
     for (NSString *groupName in wods) {
         [wodGroup addObject:groupName];
     }
-    NSLog(@"");
-    
 }
 
 - (void)didReceiveMemoryWarning {

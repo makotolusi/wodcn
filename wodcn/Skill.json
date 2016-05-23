@@ -1,0 +1,44 @@
+{
+    "skill": [
+              {
+              "name": "Bench Press",
+              "type": "weight"
+              },
+              {
+              "name": "Dead Lift",
+              "type": "weight"
+              },
+              {
+              "name": "Front Squat",
+              "type": "weight"
+              },
+              {
+              "name": "Clean",
+              "type": "weight"
+              },
+              {
+              "name": "Over Squart",
+              "type": "weight"
+              },
+              {
+              "name": "Snatch",
+              "type": "weight"
+              },
+              {
+              "name": "Truster",
+              "type": "weight"
+              },
+              {
+              "name": "Sumo Deadlift High Pull",
+              "type": "weight"
+              },
+              {
+              "name": "Back Squart",
+              "type": "weight"
+              },
+              {
+              "name": "Jerk",
+              "type": "weight"
+              }
+              ]
+}

@@ -1,0 +1,56 @@
+{
+    "skill": [
+              {
+              "name": "Bench Press",
+              "type": "weight",
+              "score": "120kg"
+              },
+              {
+              "name": "Dead Lift",
+              "type": "weight",
+              "score": "150kg"
+              },
+              {
+              "name": "Front Squat",
+              "type": "weight",
+              "score": "150kg"
+              },
+              {
+              "name": "Clean",
+              "type": "weight",
+              "score": "150kg"
+              },
+              {
+              "name": "Over Squart",
+              "type": "weight",
+              "score": "150kg"
+              }
+              ],
+    "wod": [
+            {
+            "name": "Open 16.1",
+            "type": "weight",
+            "score": "12min"
+            },
+            {
+            "name": "Open 16.2",
+            "type": "weight",
+            "score": "12min"
+            },
+            {
+            "name": "Open 16.3",
+            "type": "weight",
+            "score": "12min"
+            },
+            {
+            "name": "Open 16.4",
+            "type": "weight",
+            "score": "12min"
+            },
+            {
+            "name": "Open 16.5",
+            "type": "weight",
+            "score": "12min"
+            }
+            ],
+}
