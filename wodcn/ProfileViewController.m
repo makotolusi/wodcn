@@ -19,8 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.headView.layer.masksToBounds=YES;
-//    self.headView.layer.cornerRadius=8.0;
+    self.headView.layer.masksToBounds=YES;
+    self.headView.layer.cornerRadius=50;
     self.wodTopList.delegate=self;
     self.wodTopList.dataSource=self;
     wodTopSection=[[NSMutableArray alloc] init];
@@ -51,7 +51,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *identifier = @"wodCellIdentifier";
+    static NSString *identifier = @"wodTopCellIdentifier";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
@@ -61,7 +61,7 @@
     NSDictionary* obj=[wodTopData[wodTopSection[indexPath.section]] objectAtIndex:indexPath.row];
     
     cell.textLabel.text = obj[@"name"];
-    
+    cell.detailTextLabel.text=obj[@"score"];
     return cell;
 }
 

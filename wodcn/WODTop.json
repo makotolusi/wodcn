@@ -1,5 +1,5 @@
 {
-    "skill": [
+    "技能": [
               {
               "name": "Bench Press",
               "type": "weight",
@@ -26,7 +26,7 @@
               "score": "150kg"
               }
               ],
-    "wod": [
+    "WOD": [
             {
             "name": "Open 16.1",
             "type": "weight",
