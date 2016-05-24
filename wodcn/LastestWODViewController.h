@@ -11,4 +11,7 @@
 @interface LastestWODViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *lastestWODScoreList;
 
+@property (weak, nonatomic) IBOutlet UIView *timerView;
+
+- (IBAction)timerMenuShow:(id)sender;
 @end
