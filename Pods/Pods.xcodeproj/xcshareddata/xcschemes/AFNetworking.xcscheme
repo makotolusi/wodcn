@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C5D99A821CC7335100A450C2"
-               BuildableName = "wodcn.app"
-               BlueprintName = "wodcn"
-               ReferencedContainer = "container:wodcn.xcodeproj">
+               BlueprintIdentifier = "29A7A53B795696888D95584B9ED91FA6"
+               BuildableName = "libAFNetworking.a"
+               BlueprintName = "AFNetworking"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,36 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C5D99A9B1CC7335200A450C2"
-               BuildableName = "wodcnTests.xctest"
-               BlueprintName = "wodcnTests"
-               ReferencedContainer = "container:wodcn.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C5D99AA61CC7335200A450C2"
-               BuildableName = "wodcnUITests.xctest"
-               BlueprintName = "wodcnUITests"
-               ReferencedContainer = "container:wodcn.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C5D99A821CC7335100A450C2"
-            BuildableName = "wodcn.app"
-            BlueprintName = "wodcn"
-            ReferencedContainer = "container:wodcn.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -71,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C5D99A821CC7335100A450C2"
-            BuildableName = "wodcn.app"
-            BlueprintName = "wodcn"
-            ReferencedContainer = "container:wodcn.xcodeproj">
+            BlueprintIdentifier = "29A7A53B795696888D95584B9ED91FA6"
+            BuildableName = "libAFNetworking.a"
+            BlueprintName = "AFNetworking"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -90,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C5D99A821CC7335100A450C2"
-            BuildableName = "wodcn.app"
-            BlueprintName = "wodcn"
-            ReferencedContainer = "container:wodcn.xcodeproj">
+            BlueprintIdentifier = "29A7A53B795696888D95584B9ED91FA6"
+            BuildableName = "libAFNetworking.a"
+            BlueprintName = "AFNetworking"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

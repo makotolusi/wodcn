@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "AFNetworking.h"
+#import "XMLDictionary.h"
 @interface LastestWODViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *lastestWODScoreList;
 

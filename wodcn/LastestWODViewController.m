@@ -20,7 +20,8 @@
     [super viewDidLoad];
 //    [self setHidden:YES];
 //    self.timerView.backgroundColor=[UIColor redColor];
-    
+    [self xmlGetRequest];
+                           
     self.lastestWODScoreList.delegate=self;
     self.lastestWODScoreList.dataSource=self;
     lastestWODScoreData=[[NSMutableArray alloc] init];
@@ -94,6 +95,29 @@
 -(void)animationStop
 {
     [self.timerView setHidden:!self.timerView.hidden];
+}
+
+- (void)xmlGetRequest
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [[AFXMLParserResponseSerializer alloc] init];
+    manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/rss+xml",nil];
+    [manager GET:@"http://www.alexandriacrossfit.com/feed" parameters:nil success:^(AFHTTPRequestOperation *operation,id responseObject){
+        
+        NSXMLParser *parser = (NSXMLParser *)responseObject;
+        NSDictionary *dic = [NSDictionary dictionaryWithXMLParser:parser];
+        NSDictionary *channel=dic[@"channel"];
+        NSString* title=channel[@"title"];
+        NSArray* item=channel[@"item"];
+        for (NSDictionary *wod in item) {
+            NSLog(@"key: %@ ", wod[@"description"]);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation,NSError *error){
+        
+        NSLog(@"error = %@",error);
+        
+    }];
 }
 
 @end
