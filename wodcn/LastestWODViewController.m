@@ -18,9 +18,57 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self setHidden:YES];
-//    self.timerView.backgroundColor=[UIColor redColor];
-    [self xmlGetRequest];
+
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFXMLParserResponseSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/rss+xml",nil];//application/rss+xml
+    [manager GET:@"http://www.alexandriacrossfit.com/feed/" parameters:nil success:^(AFHTTPRequestOperation *operation,id responseObject){
+    
+        NSXMLParser *parser = (NSXMLParser *)responseObject;
+                NSDictionary *dic = [NSDictionary dictionaryWithXMLParser:parser];
+                NSDictionary *channel=dic[@"channel"];
+                NSString* wodSource=channel[@"title"];
+                NSArray* item=channel[@"item"];
+                NSDictionary* totdayWod=item[0];
+//               NSString* wodDescription=totdayWod[@"description"];
+                NSString* wodDate=totdayWod[@"title"];
+            NSString* link=totdayWod[@"link"];
+                self.wodDate.text=wodDate;
+                self.wodSource.text=[@"By " stringByAppendingString:wodSource];
+        
+        manager.responseSerializer = [[AFHTTPResponseSerializer alloc] init];
+        manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"text/html",nil];//application/rss+xml
+        [manager GET:link parameters:nil success:^(AFHTTPRequestOperation *operation,id responseObject){
+            
+            NSString* searchText=[[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+            NSLog(@"%@",searchText);
+            //        NSString *searchText = @"<div class=\"content\">";
+            NSError *error = NULL;
+            NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(?i)<div class=\"content\"[\\s\\S]+?</div>" options:NSRegularExpressionCaseInsensitive error:&error];
+            NSTextCheckingResult *result = [regex firstMatchInString:searchText options:0 range:NSMakeRange(0, [searchText length])];
+            if (result) {
+                NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithData:[[searchText substringWithRange:result.range] dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+                [attributedString  addAttribute:NSFontAttributeName
+                                                value:[UIFont fontWithName:@"Arial-BoldItalicMT" size:15]
+                                               range:NSMakeRange(0, attributedString.length)];
+                self.wodDesc.attributedText=attributedString;
+//                NSLog(@"%@\n", [searchText substringWithRange:result.range]);
+            }
+            //
+            
+        } failure:^(AFHTTPRequestOperation *operation,NSError *error){
+            
+            NSLog(@"error = %@",error);
+            
+        }];
+
+        
+    } failure:^(AFHTTPRequestOperation *operation,NSError *error){
+        
+        NSLog(@"error = %@",error);
+        
+    }];
+
                            
     self.lastestWODScoreList.delegate=self;
     self.lastestWODScoreList.dataSource=self;
@@ -42,6 +90,10 @@
     return 1;
 }
 
+
+- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return @"成绩";
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [lastestWODScoreData count];
@@ -97,27 +149,6 @@
     [self.timerView setHidden:!self.timerView.hidden];
 }
 
-- (void)xmlGetRequest
-{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [[AFXMLParserResponseSerializer alloc] init];
-    manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/rss+xml",nil];
-    [manager GET:@"http://www.alexandriacrossfit.com/feed" parameters:nil success:^(AFHTTPRequestOperation *operation,id responseObject){
-        
-        NSXMLParser *parser = (NSXMLParser *)responseObject;
-        NSDictionary *dic = [NSDictionary dictionaryWithXMLParser:parser];
-        NSDictionary *channel=dic[@"channel"];
-        NSString* title=channel[@"title"];
-        NSArray* item=channel[@"item"];
-        for (NSDictionary *wod in item) {
-            NSLog(@"key: %@ ", wod[@"description"]);
-        }
-        
-    } failure:^(AFHTTPRequestOperation *operation,NSError *error){
-        
-        NSLog(@"error = %@",error);
-        
-    }];
-}
+
 
 @end

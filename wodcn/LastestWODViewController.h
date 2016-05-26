@@ -11,8 +11,11 @@
 #import "XMLDictionary.h"
 @interface LastestWODViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *lastestWODScoreList;
-
 @property (weak, nonatomic) IBOutlet UIView *timerView;
+
+@property (weak, nonatomic) IBOutlet UITextView *wodDesc;
+@property (weak, nonatomic) IBOutlet UILabel *wodDate;
+@property (weak, nonatomic) IBOutlet UILabel *wodSource;
 
 - (IBAction)timerMenuShow:(id)sender;
 @end

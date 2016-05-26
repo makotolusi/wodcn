@@ -34,6 +34,11 @@
 		C5893BB01CF58C6E00218738 /* Pods.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C5893BAF1CF58C6E00218738 /* Pods.debug.xcconfig */; };
 		C5893BB21CF58C8000218738 /* Pods.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C5893BB11CF58C8000218738 /* Pods.release.xcconfig */; };
 		C5BF27E31CE46FF50023C178 /* WODAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BF27E21CE46FF50023C178 /* WODAddViewController.m */; };
+		C5D74F121CF6FE3D00262EED /* timer@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D74F111CF6FE3D00262EED /* timer@3x.png */; };
+		C5D74F141CF70D6200262EED /* schedule@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D74F131CF70D6200262EED /* schedule@3x.png */; };
+		C5D74F1A1CF70ECE00262EED /* movement@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D74F181CF70ECE00262EED /* movement@3x.png */; };
+		C5D74F1D1CF7108100262EED /* user@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D74F1B1CF7108100262EED /* user@3x.png */; };
+		C5D74F1E1CF7108100262EED /* wod@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D74F1C1CF7108100262EED /* wod@3x.png */; };
 		C5D99A881CC7335100A450C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D99A871CC7335100A450C2 /* main.m */; };
 		C5D99A8B1CC7335100A450C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D99A8A1CC7335100A450C2 /* AppDelegate.m */; };
 		C5D99A8E1CC7335100A450C2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D99A8D1CC7335100A450C2 /* ViewController.m */; };
@@ -107,6 +112,11 @@
 		C5BF27E11CE46FF50023C178 /* WODAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WODAddViewController.h; sourceTree = "<group>"; };
 		C5BF27E21CE46FF50023C178 /* WODAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WODAddViewController.m; sourceTree = "<group>"; };
 		C5BF27E41CE47F030023C178 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		C5D74F111CF6FE3D00262EED /* timer@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timer@3x.png"; sourceTree = "<group>"; };
+		C5D74F131CF70D6200262EED /* schedule@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule@3x.png"; sourceTree = "<group>"; };
+		C5D74F181CF70ECE00262EED /* movement@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "movement@3x.png"; sourceTree = "<group>"; };
+		C5D74F1B1CF7108100262EED /* user@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user@3x.png"; sourceTree = "<group>"; };
+		C5D74F1C1CF7108100262EED /* wod@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wod@3x.png"; sourceTree = "<group>"; };
 		C5D99A831CC7335100A450C2 /* wodcn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wodcn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5D99A871CC7335100A450C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C5D99A891CC7335100A450C2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -182,6 +192,11 @@
 		C517FD4E1CDB323E006768D1 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				C5D74F1B1CF7108100262EED /* user@3x.png */,
+				C5D74F1C1CF7108100262EED /* wod@3x.png */,
+				C5D74F181CF70ECE00262EED /* movement@3x.png */,
+				C5D74F131CF70D6200262EED /* schedule@3x.png */,
+				C5D74F111CF6FE3D00262EED /* timer@3x.png */,
 				C569F6121CF400130098822B /* head2.jpg */,
 				C569B6231CEEFA3600E177FF /* head.jpg */,
 			);
@@ -467,11 +482,16 @@
 				C5DEF7DC1CF309D400BCC091 /* WODTop.json in Resources */,
 				C5893BB21CF58C8000218738 /* Pods.release.xcconfig in Resources */,
 				C569F6131CF400130098822B /* head2.jpg in Resources */,
+				C5D74F1A1CF70ECE00262EED /* movement@3x.png in Resources */,
 				C569F6111CF3FE080098822B /* LastestWODScore.json in Resources */,
+				C5D74F141CF70D6200262EED /* schedule@3x.png in Resources */,
+				C5D74F121CF6FE3D00262EED /* timer@3x.png in Resources */,
 				C569B6241CEEFA3600E177FF /* head.jpg in Resources */,
+				C5D74F1D1CF7108100262EED /* user@3x.png in Resources */,
 				C5D99A961CC7335100A450C2 /* LaunchScreen.storyboard in Resources */,
 				C5D99A931CC7335100A450C2 /* Assets.xcassets in Resources */,
 				C5893BB01CF58C6E00218738 /* Pods.debug.xcconfig in Resources */,
+				C5D74F1E1CF7108100262EED /* wod@3x.png in Resources */,
 				C5D99A911CC7335100A450C2 /* Main.storyboard in Resources */,
 				C569B6221CEEB3B900E177FF /* Skill.json in Resources */,
 			);
