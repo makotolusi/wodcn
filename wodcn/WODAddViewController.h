@@ -11,6 +11,7 @@
 #import "WODTypePicker.h"
 @interface WODAddViewController : UIViewController
 - (IBAction)saveEvent:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *wodName;
 @property (strong, nonatomic) WODTypePicker *wodType;
 @property (weak, nonatomic) IBOutlet UILabel *wodTypeLabel;
 @property (weak, nonatomic) IBOutlet UITextView *wodTextArea;

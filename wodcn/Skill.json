@@ -2,42 +2,52 @@
     "skill": [
               {
               "name": "Bench Press",
+               "cn": "卧推",
               "type": "weight"
               },
               {
               "name": "Dead Lift",
+               "cn": "硬拉",
               "type": "weight"
               },
               {
               "name": "Front Squat",
+               "cn": "前蹲",
               "type": "weight"
               },
               {
               "name": "Clean",
+               "cn": "前蹲翻",
               "type": "weight"
               },
               {
               "name": "Over Squart",
+               "cn": "过头顿",
               "type": "weight"
               },
               {
               "name": "Snatch",
+               "cn": "抓举",
               "type": "weight"
               },
               {
               "name": "Truster",
+               "cn": "火箭推",
               "type": "weight"
               },
               {
               "name": "Sumo Deadlift High Pull",
+               "cn": "相扑硬拉",
               "type": "weight"
               },
               {
               "name": "Back Squart",
+               "cn": "背蹲",
               "type": "weight"
               },
               {
               "name": "Jerk",
+               "cn": "挺举",
               "type": "weight"
               }
               ]

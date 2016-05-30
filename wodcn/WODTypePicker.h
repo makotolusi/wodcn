@@ -14,6 +14,8 @@
 
 @property (strong,nonatomic) UIPickerView *picker;
 
+@property (strong,nonatomic) NSString *currentValue;
+
 - (instancetype)initWithFrame:(CGRect)frame Data:(NSArray*)data;
 
 @end

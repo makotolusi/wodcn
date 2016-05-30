@@ -12,9 +12,9 @@
 
 @property (strong,nonatomic)NSManagedObjectContext *context;
 
-- (void)insert:(NSMutableArray*)dataArray;
+//- (void)insert:(NSMutableArray*)dataArray;
 
 //查询
-- (NSMutableArray*)query:(int)pageSize andOffset:(int)currentPage;
+//- (NSMutableArray*)query:(int)pageSize andOffset:(int)currentPage;
 
 @end

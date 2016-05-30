@@ -20,6 +20,7 @@
         self.picker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         self.picker.dataSource=self;
         self.picker.delegate=self;
+        self.currentValue=self.pickerArray[0];
         [self addSubview:self.picker];
     }
     return self;
@@ -37,5 +38,12 @@
 -(void)textFieldDidEndEditing:(UITextField *)textField{
     
 }
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component __TVOS_PROHIBITED{
+
+    self.currentValue=[self.pickerArray objectAtIndex:row];
+    
+}
+
 
 @end

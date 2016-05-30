@@ -16,9 +16,21 @@
 {
     NSMutableArray *lastestWODScoreData;
 }
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    UIView *statusBarView=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 600, 20)];
+    
+    statusBarView.backgroundColor=[UIColor blackColor];
+    
+    [self.view addSubview:statusBarView];
+    
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFXMLParserResponseSerializer serializer];
     manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/rss+xml",nil];//application/rss+xml
@@ -41,16 +53,15 @@
         [manager GET:link parameters:nil success:^(AFHTTPRequestOperation *operation,id responseObject){
             
             NSString* searchText=[[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-            NSLog(@"%@",searchText);
-            //        NSString *searchText = @"<div class=\"content\">";
             NSError *error = NULL;
             NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(?i)<div class=\"content\"[\\s\\S]+?</div>" options:NSRegularExpressionCaseInsensitive error:&error];
             NSTextCheckingResult *result = [regex firstMatchInString:searchText options:0 range:NSMakeRange(0, [searchText length])];
             if (result) {
                 NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithData:[[searchText substringWithRange:result.range] dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
                 [attributedString  addAttribute:NSFontAttributeName
-                                                value:[UIFont fontWithName:@"Arial-BoldItalicMT" size:15]
+                                                value:[UIFont fontWithName:@"Arial-BoldItalicMT"  size:15]
                                                range:NSMakeRange(0, attributedString.length)];
+//                [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, attributedString.length)];
                 self.wodDesc.attributedText=attributedString;
 //                NSLog(@"%@\n", [searchText substringWithRange:result.range]);
             }

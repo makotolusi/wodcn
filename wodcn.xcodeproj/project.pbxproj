@@ -13,6 +13,9 @@
 		C510F55E1CD853EC00C060AF /* WODModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C510F55D1CD853EC00C060AF /* WODModel.m */; };
 		C510F5611CD99F0600C060AF /* WODDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C510F5601CD99F0600C060AF /* WODDetailViewController.m */; };
 		C518B38A1CEB292F0098B477 /* WODTypePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = C518B3891CEB292F0098B477 /* WODTypePicker.m */; };
+		C52A2A0D1CFC18F20050EB12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C52A2A0B1CFC18F20050EB12 /* Main.storyboard */; };
+		C52A2A101CFC26C40050EB12 /* WODDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C52A2A0F1CFC26C40050EB12 /* WODDataManager.m */; };
+		C52A2A161CFC3EB00050EB12 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C52A2A151CFC3EB00050EB12 /* NSString+Extension.m */; };
 		C55EAB131CF5A672002C9958 /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = C55EAB121CF5A672002C9958 /* XMLDictionary.m */; };
 		C569B61F1CEEB09200E177FF /* SkillListController.m in Sources */ = {isa = PBXBuildFile; fileRef = C569B61E1CEEB09200E177FF /* SkillListController.m */; };
 		C569B6221CEEB3B900E177FF /* Skill.json in Resources */ = {isa = PBXBuildFile; fileRef = C569B6211CEEB3B900E177FF /* Skill.json */; };
@@ -24,6 +27,8 @@
 		C569F6171CF442D30098822B /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C569F6161CF442D30098822B /* TimerViewController.m */; };
 		C569F61A1CF461EE0098822B /* TimerOptionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C569F6191CF461EE0098822B /* TimerOptionTableViewController.m */; };
 		C57C8C301CE580980033666D /* WODKeyBoardToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C57C8C2F1CE580980033666D /* WODKeyBoardToolBar.m */; };
+		C581796F1CF7E60700BE6BC5 /* add@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C581796E1CF7E60700BE6BC5 /* add@3x.png */; };
+		C58179721CF7E7F000BE6BC5 /* SkillDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C58179711CF7E7F000BE6BC5 /* SkillDetailViewController.m */; };
 		C583930B1CEC1156008A9BAC /* WODTagsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C583930A1CEC1156008A9BAC /* WODTagsView.m */; };
 		C583930D1CEC5893008A9BAC /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C583930C1CEC5893008A9BAC /* libsqlite3.tbd */; };
 		C583930F1CEC5B38008A9BAC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C583930E1CEC5B38008A9BAC /* CoreData.framework */; };
@@ -34,6 +39,11 @@
 		C5893BB01CF58C6E00218738 /* Pods.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C5893BAF1CF58C6E00218738 /* Pods.debug.xcconfig */; };
 		C5893BB21CF58C8000218738 /* Pods.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C5893BB11CF58C8000218738 /* Pods.release.xcconfig */; };
 		C5BF27E31CE46FF50023C178 /* WODAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BF27E21CE46FF50023C178 /* WODAddViewController.m */; };
+		C5D2C3F41CF82C6400F1BD5C /* SkillRecord+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D2C3F11CF82C6400F1BD5C /* SkillRecord+CoreDataProperties.m */; };
+		C5D2C3F51CF82C6400F1BD5C /* SkillRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D2C3F31CF82C6400F1BD5C /* SkillRecord.m */; };
+		C5D2C3F81CF830CB00F1BD5C /* SkillRecordDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D2C3F71CF830CB00F1BD5C /* SkillRecordDataManager.m */; };
+		C5D2C3FB1CF8348C00F1BD5C /* SkillEditeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D2C3FA1CF8348C00F1BD5C /* SkillEditeViewController.m */; };
+		C5D2C3FF1CF8460B00F1BD5C /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D2C3FE1CF8460B00F1BD5C /* NSDate+Extension.m */; };
 		C5D74F121CF6FE3D00262EED /* timer@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D74F111CF6FE3D00262EED /* timer@3x.png */; };
 		C5D74F141CF70D6200262EED /* schedule@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D74F131CF70D6200262EED /* schedule@3x.png */; };
 		C5D74F1A1CF70ECE00262EED /* movement@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D74F181CF70ECE00262EED /* movement@3x.png */; };
@@ -42,7 +52,6 @@
 		C5D99A881CC7335100A450C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D99A871CC7335100A450C2 /* main.m */; };
 		C5D99A8B1CC7335100A450C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D99A8A1CC7335100A450C2 /* AppDelegate.m */; };
 		C5D99A8E1CC7335100A450C2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D99A8D1CC7335100A450C2 /* ViewController.m */; };
-		C5D99A911CC7335100A450C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5D99A8F1CC7335100A450C2 /* Main.storyboard */; };
 		C5D99A931CC7335100A450C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5D99A921CC7335100A450C2 /* Assets.xcassets */; };
 		C5D99A961CC7335100A450C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5D99A941CC7335100A450C2 /* LaunchScreen.storyboard */; };
 		C5D99AA11CC7335200A450C2 /* wodcnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D99AA01CC7335200A450C2 /* wodcnTests.m */; };
@@ -78,6 +87,11 @@
 		C510F5601CD99F0600C060AF /* WODDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WODDetailViewController.m; sourceTree = "<group>"; };
 		C518B3881CEB292F0098B477 /* WODTypePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WODTypePicker.h; sourceTree = "<group>"; };
 		C518B3891CEB292F0098B477 /* WODTypePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WODTypePicker.m; sourceTree = "<group>"; };
+		C52A2A0C1CFC18F20050EB12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C52A2A0E1CFC26C40050EB12 /* WODDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WODDataManager.h; sourceTree = "<group>"; };
+		C52A2A0F1CFC26C40050EB12 /* WODDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WODDataManager.m; sourceTree = "<group>"; };
+		C52A2A141CFC3EB00050EB12 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		C52A2A151CFC3EB00050EB12 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 		C55EAB111CF5A672002C9958 /* XMLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLDictionary.h; sourceTree = "<group>"; };
 		C55EAB121CF5A672002C9958 /* XMLDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLDictionary.m; sourceTree = "<group>"; };
 		C569B61D1CEEB09200E177FF /* SkillListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillListController.h; sourceTree = "<group>"; };
@@ -96,6 +110,9 @@
 		C569F6191CF461EE0098822B /* TimerOptionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerOptionTableViewController.m; sourceTree = "<group>"; };
 		C57C8C2E1CE580980033666D /* WODKeyBoardToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WODKeyBoardToolBar.h; sourceTree = "<group>"; };
 		C57C8C2F1CE580980033666D /* WODKeyBoardToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WODKeyBoardToolBar.m; sourceTree = "<group>"; };
+		C581796E1CF7E60700BE6BC5 /* add@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add@3x.png"; sourceTree = "<group>"; };
+		C58179701CF7E7F000BE6BC5 /* SkillDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillDetailViewController.h; sourceTree = "<group>"; };
+		C58179711CF7E7F000BE6BC5 /* SkillDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillDetailViewController.m; sourceTree = "<group>"; };
 		C58393091CEC1156008A9BAC /* WODTagsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WODTagsView.h; sourceTree = "<group>"; };
 		C583930A1CEC1156008A9BAC /* WODTagsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WODTagsView.m; sourceTree = "<group>"; };
 		C583930C1CEC5893008A9BAC /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -112,6 +129,16 @@
 		C5BF27E11CE46FF50023C178 /* WODAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WODAddViewController.h; sourceTree = "<group>"; };
 		C5BF27E21CE46FF50023C178 /* WODAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WODAddViewController.m; sourceTree = "<group>"; };
 		C5BF27E41CE47F030023C178 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		C5D2C3F01CF82C6400F1BD5C /* SkillRecord+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SkillRecord+CoreDataProperties.h"; sourceTree = "<group>"; };
+		C5D2C3F11CF82C6400F1BD5C /* SkillRecord+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SkillRecord+CoreDataProperties.m"; sourceTree = "<group>"; };
+		C5D2C3F21CF82C6400F1BD5C /* SkillRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillRecord.h; sourceTree = "<group>"; };
+		C5D2C3F31CF82C6400F1BD5C /* SkillRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillRecord.m; sourceTree = "<group>"; };
+		C5D2C3F61CF830CB00F1BD5C /* SkillRecordDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillRecordDataManager.h; sourceTree = "<group>"; };
+		C5D2C3F71CF830CB00F1BD5C /* SkillRecordDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillRecordDataManager.m; sourceTree = "<group>"; };
+		C5D2C3F91CF8348C00F1BD5C /* SkillEditeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillEditeViewController.h; sourceTree = "<group>"; };
+		C5D2C3FA1CF8348C00F1BD5C /* SkillEditeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillEditeViewController.m; sourceTree = "<group>"; };
+		C5D2C3FD1CF8460B00F1BD5C /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
+		C5D2C3FE1CF8460B00F1BD5C /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
 		C5D74F111CF6FE3D00262EED /* timer@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timer@3x.png"; sourceTree = "<group>"; };
 		C5D74F131CF70D6200262EED /* schedule@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule@3x.png"; sourceTree = "<group>"; };
 		C5D74F181CF70ECE00262EED /* movement@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "movement@3x.png"; sourceTree = "<group>"; };
@@ -123,7 +150,6 @@
 		C5D99A8A1CC7335100A450C2 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C5D99A8C1CC7335100A450C2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C5D99A8D1CC7335100A450C2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		C5D99A901CC7335100A450C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C5D99A921CC7335100A450C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5D99A951CC7335100A450C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5D99A971CC7335100A450C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -192,6 +218,7 @@
 		C517FD4E1CDB323E006768D1 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				C581796E1CF7E60700BE6BC5 /* add@3x.png */,
 				C5D74F1B1CF7108100262EED /* user@3x.png */,
 				C5D74F1C1CF7108100262EED /* wod@3x.png */,
 				C5D74F181CF70ECE00262EED /* movement@3x.png */,
@@ -217,6 +244,10 @@
 			children = (
 				C569B61D1CEEB09200E177FF /* SkillListController.h */,
 				C569B61E1CEEB09200E177FF /* SkillListController.m */,
+				C58179701CF7E7F000BE6BC5 /* SkillDetailViewController.h */,
+				C58179711CF7E7F000BE6BC5 /* SkillDetailViewController.m */,
+				C5D2C3F91CF8348C00F1BD5C /* SkillEditeViewController.h */,
+				C5D2C3FA1CF8348C00F1BD5C /* SkillEditeViewController.m */,
 			);
 			name = Skill;
 			sourceTree = "<group>";
@@ -263,6 +294,8 @@
 		C57C8C2D1CE57F110033666D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C52A2A141CFC3EB00050EB12 /* NSString+Extension.h */,
+				C52A2A151CFC3EB00050EB12 /* NSString+Extension.m */,
 				C55EAB101CF5A672002C9958 /* XMLDictionary */,
 				C57C8C2E1CE580980033666D /* WODKeyBoardToolBar.h */,
 				C57C8C2F1CE580980033666D /* WODKeyBoardToolBar.m */,
@@ -270,6 +303,8 @@
 				C518B3891CEB292F0098B477 /* WODTypePicker.m */,
 				C58393621CEC6929008A9BAC /* CoreDataManager.h */,
 				C58393631CEC6929008A9BAC /* CoreDataManager.m */,
+				C5D2C3FD1CF8460B00F1BD5C /* NSDate+Extension.h */,
+				C5D2C3FE1CF8460B00F1BD5C /* NSDate+Extension.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -277,10 +312,18 @@
 		C583935B1CEC6435008A9BAC /* model */ = {
 			isa = PBXGroup;
 			children = (
+				C5D2C3F01CF82C6400F1BD5C /* SkillRecord+CoreDataProperties.h */,
+				C5D2C3F11CF82C6400F1BD5C /* SkillRecord+CoreDataProperties.m */,
+				C5D2C3F21CF82C6400F1BD5C /* SkillRecord.h */,
+				C5D2C3F31CF82C6400F1BD5C /* SkillRecord.m */,
 				C583935C1CEC6476008A9BAC /* WOD+CoreDataProperties.h */,
 				C583935D1CEC6476008A9BAC /* WOD+CoreDataProperties.m */,
 				C583935E1CEC6476008A9BAC /* WOD.h */,
 				C583935F1CEC6476008A9BAC /* WOD.m */,
+				C5D2C3F61CF830CB00F1BD5C /* SkillRecordDataManager.h */,
+				C5D2C3F71CF830CB00F1BD5C /* SkillRecordDataManager.m */,
+				C52A2A0E1CFC26C40050EB12 /* WODDataManager.h */,
+				C52A2A0F1CFC26C40050EB12 /* WODDataManager.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -312,6 +355,7 @@
 		C5D99A851CC7335100A450C2 /* wodcn */ = {
 			isa = PBXGroup;
 			children = (
+				C52A2A0B1CFC18F20050EB12 /* Main.storyboard */,
 				C569F6141CF442BB0098822B /* Timer */,
 				C569F60C1CF3FCF50098822B /* LastestWOD */,
 				C569B6281CEEFFE400E177FF /* Profile */,
@@ -323,7 +367,6 @@
 				C5D99A8A1CC7335100A450C2 /* AppDelegate.m */,
 				C5D99A8C1CC7335100A450C2 /* ViewController.h */,
 				C5D99A8D1CC7335100A450C2 /* ViewController.m */,
-				C5D99A8F1CC7335100A450C2 /* Main.storyboard */,
 				C5D99A921CC7335100A450C2 /* Assets.xcassets */,
 				C5D99A941CC7335100A450C2 /* LaunchScreen.storyboard */,
 				C5D99A971CC7335100A450C2 /* Info.plist */,
@@ -484,15 +527,16 @@
 				C569F6131CF400130098822B /* head2.jpg in Resources */,
 				C5D74F1A1CF70ECE00262EED /* movement@3x.png in Resources */,
 				C569F6111CF3FE080098822B /* LastestWODScore.json in Resources */,
+				C52A2A0D1CFC18F20050EB12 /* Main.storyboard in Resources */,
 				C5D74F141CF70D6200262EED /* schedule@3x.png in Resources */,
 				C5D74F121CF6FE3D00262EED /* timer@3x.png in Resources */,
 				C569B6241CEEFA3600E177FF /* head.jpg in Resources */,
 				C5D74F1D1CF7108100262EED /* user@3x.png in Resources */,
 				C5D99A961CC7335100A450C2 /* LaunchScreen.storyboard in Resources */,
 				C5D99A931CC7335100A450C2 /* Assets.xcassets in Resources */,
+				C581796F1CF7E60700BE6BC5 /* add@3x.png in Resources */,
 				C5893BB01CF58C6E00218738 /* Pods.debug.xcconfig in Resources */,
 				C5D74F1E1CF7108100262EED /* wod@3x.png in Resources */,
-				C5D99A911CC7335100A450C2 /* Main.storyboard in Resources */,
 				C569B6221CEEB3B900E177FF /* Skill.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -570,6 +614,7 @@
 				C510F5561CD83ABB00C060AF /* WODListTableViewController.m in Sources */,
 				C569B6271CEEFFDB00E177FF /* ProfileViewController.m in Sources */,
 				C583930B1CEC1156008A9BAC /* WODTagsView.m in Sources */,
+				C52A2A101CFC26C40050EB12 /* WODDataManager.m in Sources */,
 				C58393601CEC6476008A9BAC /* WOD+CoreDataProperties.m in Sources */,
 				C55EAB131CF5A672002C9958 /* XMLDictionary.m in Sources */,
 				C58393611CEC6476008A9BAC /* WOD.m in Sources */,
@@ -578,14 +623,21 @@
 				C569B61F1CEEB09200E177FF /* SkillListController.m in Sources */,
 				C5D99A8B1CC7335100A450C2 /* AppDelegate.m in Sources */,
 				C58393641CEC6929008A9BAC /* CoreDataManager.m in Sources */,
+				C5D2C3F41CF82C6400F1BD5C /* SkillRecord+CoreDataProperties.m in Sources */,
 				C5D99A881CC7335100A450C2 /* main.m in Sources */,
+				C5D2C3F51CF82C6400F1BD5C /* SkillRecord.m in Sources */,
 				C569F6171CF442D30098822B /* TimerViewController.m in Sources */,
 				C57C8C301CE580980033666D /* WODKeyBoardToolBar.m in Sources */,
 				C5BF27E31CE46FF50023C178 /* WODAddViewController.m in Sources */,
+				C5D2C3FB1CF8348C00F1BD5C /* SkillEditeViewController.m in Sources */,
+				C58179721CF7E7F000BE6BC5 /* SkillDetailViewController.m in Sources */,
 				C569F60F1CF3FD490098822B /* LastestWODViewController.m in Sources */,
 				C510F55E1CD853EC00C060AF /* WODModel.m in Sources */,
 				C518B38A1CEB292F0098B477 /* WODTypePicker.m in Sources */,
+				C5D2C3F81CF830CB00F1BD5C /* SkillRecordDataManager.m in Sources */,
+				C5D2C3FF1CF8460B00F1BD5C /* NSDate+Extension.m in Sources */,
 				C569F61A1CF461EE0098822B /* TimerOptionTableViewController.m in Sources */,
+				C52A2A161CFC3EB00050EB12 /* NSString+Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,10 +673,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C5D99A8F1CC7335100A450C2 /* Main.storyboard */ = {
+		C52A2A0B1CFC18F20050EB12 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C5D99A901CC7335100A450C2 /* Base */,
+				C52A2A0C1CFC18F20050EB12 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

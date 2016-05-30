@@ -10,6 +10,7 @@
 #import "WODKeyBoardToolBar.h"
 #import "WODTagsView.h"
 #import "CoreDataManager.h"
+#import "WODDataManager.h"
 @interface WODAddViewController ()<WODKeyBoardToolBarDelegate,UITextViewDelegate,WODTagsViewDelegate>
 {
     
@@ -87,6 +88,7 @@
     self.wodType.frame = CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT*0.3);
     wodpickerdone.frame =CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, 30);
     [UIView setAnimationDelegate:self];
+    self.wodTypeLabel.text=self.wodType.currentValue;
     // 动画完毕后调用animationFinished
 //    [UIView setAnimationDidStopSelector:@selector(animationFinished)];
     [UIView commitAnimations];
@@ -124,8 +126,10 @@
     }
 }
 
-- (IBAction)saveEvent:(id)sender {
-    CoreDataManager *cd=[[CoreDataManager alloc] init];
-    [cd query:20 andOffset:0];
+- (IBAction)saveEvent:(id)sender{
+    NSDictionary *wod=@{@"title":self.wodName.text,@"type":self.wodTypeLabel.text,@"desc":self.wodTextArea.text};
+    WODDataManager *manager=[[WODDataManager alloc] init];
+    [manager insert:wod];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

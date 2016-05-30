@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "WOD.h"
 @interface WODDetailViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *wodName;
+@property (weak, nonatomic) IBOutlet UITextView *wodDesc;
+
+@property (weak, nonatomic) IBOutlet UILabel *wodType;
+
+@property (strong, nonatomic) WOD *wod;
 
 @end
