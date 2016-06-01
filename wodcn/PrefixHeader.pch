@@ -19,7 +19,12 @@
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 
-
+//----------------------sina weibo---------------------------
+#define kAppKey @"438118877"
+#define kRedirectURI @"https://api.weibo.com/oauth2/default.html"
+#define kUserLogo @"userLogo"
+#define kUserName @"userName"
+#define kWBToken @"token"
 //----------------------颜色类---------------------------
 //带有RGBA的颜色设置
 #define COLOR_LIGHT_BLUE [UIColor colorWithRed:0.10 green:0.68 blue:0.94 alpha:0.7]

@@ -101,8 +101,8 @@
                                                 <integer key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="30" width="540" height="21"/>
+                                        <variation key="heightClass=regular" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="31" width="580" height="37"/>
                                         </variation>
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="0.0" y="9" width="330" height="21"/>
@@ -264,6 +264,12 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="今日WOD" id="6Ue-kW-Khp">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="share.png" id="PFR-ZR-DIT">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="shareWOD:" destination="RD8-J2-Vcn" id="7y5-oz-8pd"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="timer.png" style="plain" id="KBn-vO-sw8" userLabel="计时器">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
@@ -294,6 +300,9 @@
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="0.0" y="10" width="340" height="0.0"/>
                                         </variation>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="45" width="340" height="24"/>
+                                        </variation>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="正在读取......" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DRh-8P-wSi">
                                         <rect key="frame" x="0.0" y="79" width="540" height="250"/>
@@ -309,6 +318,9 @@
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="0.0" y="20" width="340" height="157"/>
                                         </variation>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="79" width="340" height="250"/>
+                                        </variation>
                                     </textView>
                                 </subviews>
                                 <variation key="heightClass=regular" misplaced="YES">
@@ -316,6 +328,9 @@
                                 </variation>
                                 <variation key="widthClass=compact" alignment="fill" axis="vertical" misplaced="YES">
                                     <rect key="frame" x="0.0" y="75" width="340" height="177"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="10" y="74" width="340" height="329"/>
                                 </variation>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="vs8-5O-frv">
@@ -354,9 +369,6 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
-                                <variation key="heightClass=regular" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="592.5" width="600" height="158.5"/>
-                                </variation>
                             </tableView>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iqr-wz-hgT" userLabel="Timer View">
                                 <rect key="frame" x="0.0" y="60" width="600" height="128"/>
@@ -754,7 +766,7 @@ Each partner completes a full round before switching.</string>
         <!--Tab Bar Controller-->
         <scene sceneID="O6G-P1-gnZ">
             <objects>
-                <tabBarController hidesBottomBarWhenPushed="YES" id="XMh-Xf-AsD" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabbar" hidesBottomBarWhenPushed="YES" id="XMh-Xf-AsD" sceneMemberID="viewController">
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <tabBar key="tabBar" contentMode="scaleAspectFit" id="bbF-f9-gk6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -777,7 +789,7 @@ Each partner completes a full round before switching.</string>
         <!--用户-->
         <scene sceneID="9lP-hE-ekG">
             <objects>
-                <viewController title="用户" id="ORV-n9-o5K" customClass="ProfileViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profile" title="用户" id="ORV-n9-o5K" customClass="ProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iiq-HR-xpG"/>
                         <viewControllerLayoutGuide type="bottom" id="70y-yv-BCq"/>
@@ -792,7 +804,18 @@ Each partner completes a full round before switching.</string>
                                     <constraint firstAttribute="height" constant="44" id="DNh-TL-xlo"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Title" id="1D2-x6-1m8"/>
+                                    <navigationItem id="1D2-x6-1m8">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="7dr-IH-sS6">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4Xo-sd-PlJ">
+                                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="Logout.png"/>
+                                                <connections>
+                                                    <action selector="logout:" destination="ORV-n9-o5K" eventType="touchUpInside" id="Ztk-qZ-ME3"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -878,13 +901,14 @@ Each partner completes a full round before switching.</string>
                                     </mask>
                                 </variation>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ytw-SH-xzc">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ytw-SH-xzc">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="13" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="wodTopCellIdentifier" textLabel="S3K-ug-zDN" detailTextLabel="LKD-lx-ZjG" style="IBUITableViewCellStyleValue1" id="Kwp-xi-Y8T">
+                                        <rect key="frame" x="0.0" y="49.5" width="240" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kwp-xi-Y8T" id="QFm-bv-W6x">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
@@ -915,38 +939,40 @@ Each partner completes a full round before switching.</string>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHE-rO-t6o">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dHE-rO-t6o">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="陆思" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tp0-kq-8wN">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="186" y="121" width="34" height="21"/>
-                                        </variation>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Egt-ah-bxW">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="head2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Egt-ah-bxW">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="150" y="13" width="100" height="100"/>
                                         </variation>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="点击头像登录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tp0-kq-8wN">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="186" y="121" width="34" height="21"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="100" y="121" width="200" height="21"/>
+                                        </variation>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9d3-ih-RSf" userLabel="无名">
+                                        <rect key="frame" x="97" y="49" width="46" height="30"/>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="150" y="13" width="100" height="100"/>
+                                        </variation>
+                                        <connections>
+                                            <segue destination="duW-vx-cj1" kind="presentation" id="Xvf-ST-1ZB"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="tp0-kq-8wN"/>
-                                        <exclude reference="Egt-ah-bxW"/>
-                                    </mask>
-                                </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="0.0" y="72" width="400" height="159"/>
-                                    <mask key="subviews">
-                                        <include reference="tp0-kq-8wN"/>
-                                        <include reference="Egt-ah-bxW"/>
-                                    </mask>
                                 </variation>
                             </view>
                         </subviews>
@@ -971,8 +997,6 @@ Each partner completes a full round before switching.</string>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="NpG-1v-mfe"/>
-                                <exclude reference="ytw-SH-xzc"/>
-                                <exclude reference="dHE-rO-t6o"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="HtM-o8-gjN"/>
@@ -995,8 +1019,6 @@ Each partner completes a full round before switching.</string>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="NpG-1v-mfe"/>
-                                <include reference="ytw-SH-xzc"/>
-                                <include reference="dHE-rO-t6o"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="HtM-o8-gjN"/>
@@ -1021,12 +1043,98 @@ Each partner completes a full round before switching.</string>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <connections>
                         <outlet property="headView" destination="Egt-ah-bxW" id="hzp-mT-DLf"/>
+                        <outlet property="loginbtn" destination="9d3-ih-RSf" id="j8A-oK-n8d"/>
+                        <outlet property="logoutBar" destination="NpG-1v-mfe" id="eFu-zw-C35"/>
+                        <outlet property="logoutbtn" destination="4Xo-sd-PlJ" id="NLs-lA-ecL"/>
+                        <outlet property="name" destination="tp0-kq-8wN" id="Mbd-aP-0bk"/>
                         <outlet property="wodTopList" destination="ytw-SH-xzc" id="8d2-Uu-eut"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ID-Ip-2Rg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1192.5" y="-811"/>
+            <point key="canvasLocation" x="1192.5" y="-811.5"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="TZW-Xg-AG3">
+            <objects>
+                <viewController storyboardIdentifier="loginView" id="duW-vx-cj1" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JmO-Qp-sKm"/>
+                        <viewControllerLayoutGuide type="bottom" id="oOR-bA-lVd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xje-zu-0VU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fVr-yn-AXC">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="Nhb-xv-Can">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="6r3-qt-62D">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WX1-94-Jgs">
+                                                <rect key="frame" x="20" y="7" width="133" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="退出"/>
+                                                <connections>
+                                                    <action selector="nologin:" destination="duW-vx-cj1" eventType="touchUpInside" id="sff-FT-Gdt"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="20" width="400" height="44"/>
+                                </variation>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRv-tV-hDK">
+                                <rect key="frame" x="268" y="285" width="105" height="30"/>
+                                <state key="normal" title="用微博账号登录"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="168" y="288" width="105" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="sinaLogin:" destination="duW-vx-cj1" eventType="touchUpInside" id="Jxl-zV-To1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTC-HJ-gfC">
+                                <rect key="frame" x="268" y="331" width="105" height="30"/>
+                                <state key="normal" title="用微信账号登录"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="168" y="334" width="105" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="weixinLogin:" destination="duW-vx-cj1" eventType="touchUpInside" id="bEJ-jm-51h"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="今日WOD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iek-I3-I3W">
+                                <rect key="frame" x="199" y="143" width="203" height="65"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="35"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="99" y="146" width="203" height="65"/>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="weixin.png" translatesAutoresizingMaskIntoConstraints="NO" id="XSf-ap-GWG">
+                                <rect key="frame" x="227" y="328" width="33" height="35"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="127" y="331" width="33" height="35"/>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sina.png" translatesAutoresizingMaskIntoConstraints="NO" id="WVi-h1-ezT">
+                                <rect key="frame" x="227" y="285" width="33" height="35"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="127" y="288" width="33" height="35"/>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="m2j-Xe-pZy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CRo-cU-FHa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2259" y="-1006.5"/>
         </scene>
         <!--技能-->
         <scene sceneID="5lb-Cj-WJW">
@@ -1158,9 +1266,6 @@ Each partner completes a full round before switching.</string>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="30"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="158" height="21"/>
-                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日期 2016年5月24日" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jN5-gt-IC0">
                                         <rect key="frame" x="0.0" y="62" width="590" height="60"/>
@@ -1171,9 +1276,6 @@ Each partner completes a full round before switching.</string>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="21" width="158" height="21"/>
-                                        </variation>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="sjw-ft-cok">
                                         <rect key="frame" x="0.0" y="124" width="590" height="40"/>
@@ -1187,9 +1289,6 @@ Each partner completes a full round before switching.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
-                                                <variation key="heightClass=regular" ambiguous="YES">
-                                                    <rect key="frame" x="0.0" y="0.0" width="53" height="30"/>
-                                                </variation>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="135" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q3X-XH-tfu">
                                                 <rect key="frame" x="197" y="0.0" width="196" height="40"/>
@@ -1199,9 +1298,6 @@ Each partner completes a full round before switching.</string>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
-                                                <variation key="heightClass=regular" ambiguous="YES">
-                                                    <rect key="frame" x="53" y="0.0" width="53" height="30"/>
-                                                </variation>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kg" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0m-kb-0GI">
                                                 <rect key="frame" x="394" y="0.0" width="196" height="40"/>
@@ -1212,17 +1308,11 @@ Each partner completes a full round before switching.</string>
                                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
-                                                <variation key="heightClass=regular" ambiguous="YES">
-                                                    <rect key="frame" x="106" y="0.0" width="53" height="30"/>
-                                                </variation>
                                             </label>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="97I-1Q-mMf"/>
                                         </constraints>
-                                        <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="41" width="158" height="30"/>
-                                        </variation>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="描述下你今天的表现" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="o9r-F0-Jcs">
                                         <rect key="frame" x="0.0" y="166" width="590" height="412"/>
@@ -1231,9 +1321,6 @@ Each partner completes a full round before switching.</string>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="238" y="304" width="158" height="71"/>
-                                </variation>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -1302,10 +1389,14 @@ Each partner completes a full round before switching.</string>
         </scene>
     </scenes>
     <resources>
+        <image name="Logout.png" width="42" height="42"/>
         <image name="head2.jpg" width="750" height="750"/>
         <image name="movement.png" width="42" height="42"/>
         <image name="schedule.png" width="42" height="42"/>
+        <image name="share.png" width="42" height="42"/>
+        <image name="sina.png" width="42" height="42"/>
         <image name="timer.png" width="42" height="42"/>
         <image name="user.png" width="42" height="42"/>
+        <image name="weixin.png" width="42" height="42"/>
     </resources>
 </document>

@@ -7,7 +7,9 @@
 //
 
 #import "LastestWODViewController.h"
-
+#import "AppDelegate.h"
+#import "WeiboSDK.h"
+#import "AuthTool.h"
 @interface LastestWODViewController ()
 
 @end
@@ -63,6 +65,7 @@
                                                range:NSMakeRange(0, attributedString.length)];
 //                [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, attributedString.length)];
                 self.wodDesc.attributedText=attributedString;
+               
 //                NSLog(@"%@\n", [searchText substringWithRange:result.range]);
             }
             //
@@ -162,4 +165,72 @@
 
 
 
+- (IBAction)shareWOD:(id)sender {
+    if ([AuthTool isAuthorized]) {
+        WBAuthorizeRequest *authRequest = [WBAuthorizeRequest request];
+        authRequest.redirectURI = kRedirectURI;
+        authRequest.scope = @"all";
+        NSString* token=[[NSUserDefaults   standardUserDefaults] objectForKey:kWBToken];
+        
+
+      UIImage *wordImage=  [self getImageFromView:self.wodDesc];
+        
+        WBMessageObject *message = [WBMessageObject message];
+         message.text = @"来源于《今日WOD》";
+        WBImageObject *image = [WBImageObject object];
+        image.imageData = UIImagePNGRepresentation(wordImage);
+        message.imageObject = image;
+        
+        WBSendMessageToWeiboRequest *request = [WBSendMessageToWeiboRequest requestWithMessage:message authInfo:authRequest access_token: token];
+        request.userInfo = @{@"ShareMessageFrom": @"SendMessageToWeiboViewController",
+                             @"Other_Info_1": [NSNumber numberWithInt:123],
+                             @"Other_Info_2": @[@"obj1", @"obj2"],
+                             @"Other_Info_3": @{@"key1": @"obj1", @"key2": @"obj2"}};
+        //    request.shouldOpenWeiboAppInstallPageIfNotInstalled = NO;
+        [WeiboSDK sendRequest:request];
+    }else{
+        UIStoryboard *board=[UIStoryboard storyboardWithName:@"Main"bundle:nil];
+        UIViewController *detailViewController=[board instantiateViewControllerWithIdentifier:@"loginView"];
+        [self presentViewController:detailViewController animated:YES completion:nil];
+    }
+    
+   
+}
+
+//UIView -> UIImage
+//#import “QuartzCore/QuartzCore.h”
+//把UIView 转换成图片
+-(UIImage *)getImageFromView:(UIView *)view{
+    UIGraphicsBeginImageContext(view.bounds.size);
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
+//
+////UIImage -> PNG / JPG
+//// Create paths to output images
+//NSString  *pngPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/Test.png"];
+//NSString  *jpgPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/Test.jpg"];
+//
+//// Write a UIImage to JPEG with minimum compression (best quality)
+//// The value 'image' must be a UIImage object
+//// The value '1.0' represents image compression quality as value from 0.0 to 1.0
+//
+//[UIImageJPEGRepresentation(image, 1.0) writeToFile:jpgPath atomically:YES];
+//
+//// Write image to PNG
+//[UIImagePNGRepresentation(image) writeToFile:pngPath atomically:YES];
+//
+//// Let's check to see if files were successfully written...
+//// Create file manager
+//NSError *error;
+//NSFileManager *fileMgr = [NSFileManager defaultManager];
+//
+//// Point to Document directory
+//NSString *documentsDirectory = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+//
+//// Write out the contents of home directory to console
+//NSLog(@"Documents directory: %@", [fileMgr contentsOfDirectoryAtPath:documentsDirectory error:&error]);
 @end

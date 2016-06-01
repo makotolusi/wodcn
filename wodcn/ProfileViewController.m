@@ -7,7 +7,9 @@
 //
 
 #import "ProfileViewController.h"
-
+#import "AuthTool.h"
+#import "WeiboSDK.h"
+#import "AppDelegate.h"
 @interface ProfileViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSMutableArray* wodTopSection;
@@ -30,7 +32,28 @@
     for (NSString *groupName in wodTopData) {
         [wodTopSection addObject:groupName];
     }
+    
+    [self reloadData];
+    
+  
 }
+
+- (void)reloadData {
+    if ([AuthTool isAuthorized]) {
+        NSString* url= [[NSUserDefaults   standardUserDefaults] objectForKey:kUserLogo];
+        NSString* name= [[NSUserDefaults   standardUserDefaults] objectForKey:kUserName];
+        UIImage * result = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
+        [  self.headView setImage:result];
+        self.name.text=name;
+        [self.loginbtn setHidden:YES];
+        [self.logoutbtn setHidden:NO];
+    }else{
+        [self.logoutbtn setHidden:YES];
+        [self.loginbtn setHidden:NO];
+    }
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -70,4 +93,41 @@
     return wodTopSection[section];
 }
 
+- (IBAction)logout:(id)sender {
+    [self showOkayCancelAlert];
+
+}
+
+- (void)showOkayCancelAlert {
+    NSString *title = NSLocalizedString(@"是否退出登录", nil);
+//    NSString *message = NSLocalizedString(@"A message should be a short, complete sentence.", nil);
+    NSString *cancelButtonTitle = NSLocalizedString(@"取消", nil);
+    NSString *otherButtonTitle = NSLocalizedString(@"确定", nil);
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
+    
+    // Create the actions.
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelButtonTitle style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        NSLog(@"The \"Okay/Cancel\" alert's cancel action occured.");
+       
+    }];
+    
+    UIAlertAction *otherAction = [UIAlertAction actionWithTitle:otherButtonTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSLog(@"The \"Okay/Cancel\" alert's other action occured.");//
+        NSString *token=[[NSUserDefaults standardUserDefaults] valueForKey:kWBToken];
+        [WeiboSDK logOutWithToken:token delegate:self withTag:@"user1"];
+        NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+        [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+        self.name.text=@"点击头像登录";
+        self.headView.image=[UIImage imageNamed:@"defaulthead.jpg"];
+        self.loginbtn.hidden=NO;
+        self.logoutbtn.hidden=YES;
+    }];
+    
+    // Add the actions.
+    [alertController addAction:cancelAction];
+    [alertController addAction:otherAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
 @end
