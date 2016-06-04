@@ -42,4 +42,25 @@
     
 }
 
++ (BOOL) isFirstLoad{
+    NSString *currentVersion = [[[NSBundle mainBundle] infoDictionary]
+                                objectForKey:@"CFBundleShortVersionString"];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *lastRunVersion = [defaults objectForKey:@"lastRunKey"];
+    
+    
+    if (!lastRunVersion) {
+          [defaults setObject:currentVersion forKey:@"lastRunKey"];
+        return YES;
+        // App is being run for first time
+    }else if (![lastRunVersion isEqualToString:currentVersion]) {
+            [defaults setObject:currentVersion forKey:@"lastRunKey"];
+            return YES;
+            // App has been updated since last run
+        }
+    return NO;
+}
+
 @end

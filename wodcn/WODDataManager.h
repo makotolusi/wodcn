@@ -19,4 +19,6 @@
 
 - (NSMutableArray*)query;
 
+- (void)deleteOneByName:(NSString*)name;
+
 @end

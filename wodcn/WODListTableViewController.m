@@ -18,19 +18,25 @@
 {
     NSMutableDictionary *wods;
     NSMutableArray *wodGroup;
+    WODDataManager *manager;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    self.tableView.sectionFooterHeight = 0;
     wodGroup=[[NSMutableArray alloc] init];
-    [wodGroup addObject:MYWOD];
     NSString *path= [[NSBundle mainBundle] pathForResource:@"WODGroup" ofType:@"json"];
     NSData *fileData = [NSData dataWithContentsOfFile:path];
     wods=[[NSMutableDictionary alloc] initWithDictionary:[NSJSONSerialization JSONObjectWithData:fileData options:NSJSONReadingMutableLeaves error:nil]];
     for (NSString *groupName in wods) {
         [wodGroup addObject:groupName];
     }
-    WODDataManager *manager=[[WODDataManager alloc] init];
-    [wods setValue:[manager query] forKey:MYWOD];
+    manager=[[WODDataManager alloc] init];
+    NSMutableArray* datas=[manager query];
+    if (datas.count!=0) {
+        [wodGroup insertObject:MYWOD atIndex:0];
+        [wods setValue:[manager query] forKey:MYWOD];
+    }
+    [self.tableView reloadData];
 }
 
 - (void)viewDidLoad {
@@ -65,14 +71,22 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleSubtitle  reuseIdentifier:identifier];
     }
+    if (indexPath.row%2==0) {
+        cell.backgroundColor=[UIColor lightTextColor];
+    }
     NSString *key=wodGroup[indexPath.section];
     if([key isEqualToString:MYWOD]){
         WOD *wod=[wods[key] objectAtIndex:indexPath.row];
         cell.textLabel.text=wod.title;
-        cell.detailTextLabel.text=wod.desc;
+        NSString* de=wod.desc;
+        de=[de stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
+        cell.detailTextLabel.text=de;
     }else{
-        cell.textLabel.text = [wods[key] objectAtIndex:indexPath.row];
-        cell.detailTextLabel.text=@"100 pull-ups 100 push-ups 100 push-ups 100 push-ups 100 push-ups 100 push-ups 100 ";
+        NSDictionary* dic=[wods[key] objectAtIndex:indexPath.row];
+        cell.textLabel.text = dic[@"name"];
+        NSString* de=dic[@"desc"];
+        de=[de stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
+        cell.detailTextLabel.text=de;
     }
     return cell;
 }
@@ -81,17 +95,67 @@
 - (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     return wodGroup[section];
 }
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 30;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0;
+}
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView* myView = [[UIView alloc] init];
+    myView.backgroundColor = COLOR_LIGHT_BLUE;
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 2, 600, 30)];
+    titleLabel.textColor=[UIColor whiteColor];
+    titleLabel.backgroundColor = [UIColor clearColor];
+    titleLabel.font=[UIFont fontWithName:@"American Typewriter" size:25];
+    titleLabel.text=wodGroup[section];
+    [myView addSubview:titleLabel];
+    return myView;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     UIStoryboard *board=[UIStoryboard storyboardWithName:@"Main"bundle:nil];
     WODDetailViewController *detailViewController=[board instantiateViewControllerWithIdentifier:@"WODDetail"];
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-     WODDataManager *manager=[[WODDataManager alloc] init];
-    detailViewController.wod=[manager getWillInsertWOD];
-    [detailViewController.wod setTitle:cell.textLabel.text];
-    detailViewController.wod.desc=cell.detailTextLabel.text;
+    
+    
+    NSString *key=wodGroup[indexPath.section];
+    if([key isEqualToString:MYWOD]){
+        WOD *wod=[wods[key] objectAtIndex:indexPath.row];
+        NSDictionary* dic=@{@"name":wod.title,@"desc":wod.desc,@"type":wod.type};
+         detailViewController.wodDic=dic;
+    }else{
+        NSDictionary* dic=[wods[key] objectAtIndex:indexPath.row];
+        detailViewController.wodDic=dic;
+    }
     [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section==0) {
+        return YES;
+    }else
+        return NO;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSString *key=wodGroup[indexPath.section];
+        NSMutableArray* mywod= wods[key];
+         WOD *wod=[mywod objectAtIndex:indexPath.row];
+        [manager deleteOneByName:wod.title];
+        [mywod removeObject:wod];
+         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"删除";
 }
 
 @end

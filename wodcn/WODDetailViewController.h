@@ -14,6 +14,5 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *wodType;
 
-@property (strong, nonatomic) WOD *wod;
-
+@property (strong, nonatomic) NSDictionary *wodDic;
 @end

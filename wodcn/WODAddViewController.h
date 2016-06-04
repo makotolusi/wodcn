@@ -9,10 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "WODKeyBoardToolBar.h"
 #import "WODTypePicker.h"
+#import "AFViewShaker.h"
 @interface WODAddViewController : UIViewController
 - (IBAction)saveEvent:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *wodName;
 @property (strong, nonatomic) WODTypePicker *wodType;
 @property (weak, nonatomic) IBOutlet UILabel *wodTypeLabel;
 @property (weak, nonatomic) IBOutlet UITextView *wodTextArea;
+@property (nonatomic, strong) AFViewShaker * viewShaker;
+- (IBAction)outEdit:(id)sender;
+@property (nonatomic, strong) IBOutletCollection(UIView) NSMutableArray * allTextFields;
+- (IBAction)wodnameTouchDown:(id)sender;
+
+
 @end

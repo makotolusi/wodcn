@@ -16,13 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.wodName.text=self.wod.title;
+    self.wodName.text=_wodDic[@"name"];
     self.wodType.backgroundColor=COLOR_LIGHT_BLUE;
-    if (StringIsNullOrEmpty(self.wod.type)) {
+    if (StringIsNullOrEmpty(_wodDic[@"type"])) {
         self.wodType.text=@"For Time";
     }else
-        self.wodType.text=self.wod.type;
-    self.wodDesc.text=self.wod.desc;
+        self.wodType.text=[NSString stringWithFormat:@"%@:",_wodDic[@"type"]];
+    
+    self.wodDesc.text=_wodDic[@"desc"];
     // Do any additional setup after loading the view.
 }
 

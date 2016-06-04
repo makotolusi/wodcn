@@ -52,6 +52,10 @@
 		C58393601CEC6476008A9BAC /* WOD+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C583935D1CEC6476008A9BAC /* WOD+CoreDataProperties.m */; };
 		C58393611CEC6476008A9BAC /* WOD.m in Sources */ = {isa = PBXBuildFile; fileRef = C583935F1CEC6476008A9BAC /* WOD.m */; };
 		C58393641CEC6929008A9BAC /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C58393631CEC6929008A9BAC /* CoreDataManager.m */; };
+		C58456951D00136C00FAA357 /* Skill+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C58456921D00136C00FAA357 /* Skill+CoreDataProperties.m */; };
+		C58456961D00136C00FAA357 /* Skill.m in Sources */ = {isa = PBXBuildFile; fileRef = C58456941D00136C00FAA357 /* Skill.m */; };
+		C58456991D00186000FAA357 /* SkillDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C58456981D00186000FAA357 /* SkillDataManager.m */; };
+		C584569D1D0164C900FAA357 /* AFViewShaker.m in Sources */ = {isa = PBXBuildFile; fileRef = C584569C1D0164C900FAA357 /* AFViewShaker.m */; };
 		C5893BB01CF58C6E00218738 /* Pods.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C5893BAF1CF58C6E00218738 /* Pods.debug.xcconfig */; };
 		C5893BB21CF58C8000218738 /* Pods.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C5893BB11CF58C8000218738 /* Pods.release.xcconfig */; };
 		C592B88F1CFE807000010BA1 /* Logout@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C592B88E1CFE807000010BA1 /* Logout@3x.png */; };
@@ -174,6 +178,14 @@
 		C583935F1CEC6476008A9BAC /* WOD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOD.m; sourceTree = "<group>"; };
 		C58393621CEC6929008A9BAC /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		C58393631CEC6929008A9BAC /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		C58456911D00136C00FAA357 /* Skill+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Skill+CoreDataProperties.h"; sourceTree = "<group>"; };
+		C58456921D00136C00FAA357 /* Skill+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Skill+CoreDataProperties.m"; sourceTree = "<group>"; };
+		C58456931D00136C00FAA357 /* Skill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Skill.h; sourceTree = "<group>"; };
+		C58456941D00136C00FAA357 /* Skill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Skill.m; sourceTree = "<group>"; };
+		C58456971D00186000FAA357 /* SkillDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillDataManager.h; sourceTree = "<group>"; };
+		C58456981D00186000FAA357 /* SkillDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillDataManager.m; sourceTree = "<group>"; };
+		C584569B1D0164C900FAA357 /* AFViewShaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFViewShaker.h; sourceTree = "<group>"; };
+		C584569C1D0164C900FAA357 /* AFViewShaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFViewShaker.m; sourceTree = "<group>"; };
 		C5893BAF1CF58C6E00218738 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C5893BB11CF58C8000218738 /* Pods.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C592B88E1CFE807000010BA1 /* Logout@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logout@3x.png"; sourceTree = "<group>"; };
@@ -402,6 +414,7 @@
 		C57C8C2D1CE57F110033666D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C584569A1D0164C900FAA357 /* AFViewShaker */,
 				C592B8941CFEE49300010BA1 /* Wechat */,
 				C57844451CFD77A0006BAAA0 /* libWeiboSDK */,
 				C52A2A141CFC3EB00050EB12 /* NSString+Extension.h */,
@@ -424,6 +437,10 @@
 		C583935B1CEC6435008A9BAC /* model */ = {
 			isa = PBXGroup;
 			children = (
+				C58456911D00136C00FAA357 /* Skill+CoreDataProperties.h */,
+				C58456921D00136C00FAA357 /* Skill+CoreDataProperties.m */,
+				C58456931D00136C00FAA357 /* Skill.h */,
+				C58456941D00136C00FAA357 /* Skill.m */,
 				C5D2C3F01CF82C6400F1BD5C /* SkillRecord+CoreDataProperties.h */,
 				C5D2C3F11CF82C6400F1BD5C /* SkillRecord+CoreDataProperties.m */,
 				C5D2C3F21CF82C6400F1BD5C /* SkillRecord.h */,
@@ -436,8 +453,19 @@
 				C5D2C3F71CF830CB00F1BD5C /* SkillRecordDataManager.m */,
 				C52A2A0E1CFC26C40050EB12 /* WODDataManager.h */,
 				C52A2A0F1CFC26C40050EB12 /* WODDataManager.m */,
+				C58456971D00186000FAA357 /* SkillDataManager.h */,
+				C58456981D00186000FAA357 /* SkillDataManager.m */,
 			);
 			name = model;
+			sourceTree = "<group>";
+		};
+		C584569A1D0164C900FAA357 /* AFViewShaker */ = {
+			isa = PBXGroup;
+			children = (
+				C584569B1D0164C900FAA357 /* AFViewShaker.h */,
+				C584569C1D0164C900FAA357 /* AFViewShaker.m */,
+			);
+			path = AFViewShaker;
 			sourceTree = "<group>";
 		};
 		C592B8941CFEE49300010BA1 /* Wechat */ = {
@@ -739,6 +767,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C578446B1CFD93F7006BAAA0 /* LoginViewController.m in Sources */,
+				C58456961D00136C00FAA357 /* Skill.m in Sources */,
 				C510F5611CD99F0600C060AF /* WODDetailViewController.m in Sources */,
 				C510F5561CD83ABB00C060AF /* WODListTableViewController.m in Sources */,
 				C569B6271CEEFFDB00E177FF /* ProfileViewController.m in Sources */,
@@ -746,8 +775,10 @@
 				C57844721CFD9BAA006BAAA0 /* AuthTool.m in Sources */,
 				C52A2A101CFC26C40050EB12 /* WODDataManager.m in Sources */,
 				C58393601CEC6476008A9BAC /* WOD+CoreDataProperties.m in Sources */,
+				C584569D1D0164C900FAA357 /* AFViewShaker.m in Sources */,
 				C55EAB131CF5A672002C9958 /* XMLDictionary.m in Sources */,
 				C58393611CEC6476008A9BAC /* WOD.m in Sources */,
+				C58456951D00136C00FAA357 /* Skill+CoreDataProperties.m in Sources */,
 				C5D99A8E1CC7335100A450C2 /* ViewController.m in Sources */,
 				C58393121CEC5C9D008A9BAC /* WodCN.xcdatamodeld in Sources */,
 				C569B61F1CEEB09200E177FF /* SkillListController.m in Sources */,
@@ -764,6 +795,7 @@
 				C569F60F1CF3FD490098822B /* LastestWODViewController.m in Sources */,
 				C510F55E1CD853EC00C060AF /* WODModel.m in Sources */,
 				C518B38A1CEB292F0098B477 /* WODTypePicker.m in Sources */,
+				C58456991D00186000FAA357 /* SkillDataManager.m in Sources */,
 				C5D2C3F81CF830CB00F1BD5C /* SkillRecordDataManager.m in Sources */,
 				C5D2C3FF1CF8460B00F1BD5C /* NSDate+Extension.m in Sources */,
 				C569F61A1CF461EE0098822B /* TimerOptionTableViewController.m in Sources */,

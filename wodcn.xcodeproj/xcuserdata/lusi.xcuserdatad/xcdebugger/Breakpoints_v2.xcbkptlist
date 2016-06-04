@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wodcn/WODAddViewController.m"
-            timestampString = "486288395.19795"
+            timestampString = "486636900.111838"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "-textViewDidBeginEditing:"
             landmarkType = "5">
          </BreakpointContent>
@@ -128,6 +128,22 @@
             startingLineNumber = "30"
             endingLineNumber = "30"
             landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "wodcn/AppDelegate.m"
+            timestampString = "486546375.639979"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "267"
+            endingLineNumber = "267"
+            landmarkName = "-onReq:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -10,4 +10,5 @@
 
 @interface AuthTool : NSObject
 +(BOOL)isAuthorized;
++ (BOOL) isFirstLoad;
 @end

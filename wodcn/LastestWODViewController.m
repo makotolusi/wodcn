@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "WeiboSDK.h"
 #import "AuthTool.h"
+#import "WXApi.h"
 @interface LastestWODViewController ()
 
 @end
@@ -166,17 +167,23 @@
 
 
 - (IBAction)shareWOD:(id)sender {
+   
+    [self sendWXImageContent];
+   
+}
+
+-(void)sendWBMessage{
     if ([AuthTool isAuthorized]) {
         WBAuthorizeRequest *authRequest = [WBAuthorizeRequest request];
         authRequest.redirectURI = kRedirectURI;
         authRequest.scope = @"all";
         NSString* token=[[NSUserDefaults   standardUserDefaults] objectForKey:kWBToken];
         
-
-      UIImage *wordImage=  [self getImageFromView:self.wodDesc];
+        
+        UIImage *wordImage=  [self getImageFromView:self.wodDesc];
         
         WBMessageObject *message = [WBMessageObject message];
-         message.text = @"来源于《今日WOD》";
+        message.text = @"来源于《今日WOD》";
         WBImageObject *image = [WBImageObject object];
         image.imageData = UIImagePNGRepresentation(wordImage);
         message.imageObject = image;
@@ -193,8 +200,6 @@
         UIViewController *detailViewController=[board instantiateViewControllerWithIdentifier:@"loginView"];
         [self presentViewController:detailViewController animated:YES completion:nil];
     }
-    
-   
 }
 
 //UIView -> UIImage
@@ -208,29 +213,30 @@
     return image;
 }
 
-//
-////UIImage -> PNG / JPG
-//// Create paths to output images
-//NSString  *pngPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/Test.png"];
-//NSString  *jpgPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/Test.jpg"];
-//
-//// Write a UIImage to JPEG with minimum compression (best quality)
-//// The value 'image' must be a UIImage object
-//// The value '1.0' represents image compression quality as value from 0.0 to 1.0
-//
-//[UIImageJPEGRepresentation(image, 1.0) writeToFile:jpgPath atomically:YES];
-//
-//// Write image to PNG
-//[UIImagePNGRepresentation(image) writeToFile:pngPath atomically:YES];
-//
-//// Let's check to see if files were successfully written...
-//// Create file manager
-//NSError *error;
-//NSFileManager *fileMgr = [NSFileManager defaultManager];
-//
-//// Point to Document directory
-//NSString *documentsDirectory = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
-//
-//// Write out the contents of home directory to console
-//NSLog(@"Documents directory: %@", [fileMgr contentsOfDirectoryAtPath:documentsDirectory error:&error]);
+- (void) sendWXImageContent
+{
+    enum WXScene  *_scene = WXSceneSession;
+    UIImage *wordImage=  [self getImageFromView:self.wodDesc];
+    WXMediaMessage *message = [WXMediaMessage message];
+    [message setThumbImage:[UIImage imageNamed:@"movement.png"]];
+    
+    WXImageObject *ext = [WXImageObject object];
+    ext.imageData = UIImagePNGRepresentation(wordImage);
+    
+//    //UIImage* image = [UIImage imageWithContentsOfFile:filePath];
+//    UIImage* image = [UIImage imageWithData:ext.imageData];
+//    ext.imageData = UIImagePNGRepresentation(image);
+    
+    //    UIImage* image = [UIImage imageNamed:@"res5thumb.png"];
+    //    ext.imageData = UIImagePNGRepresentation(image);
+    
+    message.mediaObject = ext;
+    
+    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+    req.bText = NO;
+    req.message = message;
+    req.scene = _scene;
+    
+    [WXApi sendReq:req];
+}
 @end

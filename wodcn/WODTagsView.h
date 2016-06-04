@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "WODAddViewController.h"
 @protocol WODTagsViewDelegate
 
 -(void)didSelectTag:(NSString*)text;
@@ -18,6 +18,7 @@
 
 @property (strong,nonatomic) UITableView *tagsTable;
 
+@property (strong,nonatomic) NSArray* tags;
 
 @property (assign,nonatomic) id <WODTagsViewDelegate> wodTagDelegate;
 

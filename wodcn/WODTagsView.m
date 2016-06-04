@@ -7,10 +7,11 @@
 //
 
 #import "WODTagsView.h"
-
+#import "SkillDataManager.h"
+#import "Skill.h"
+#import "WODAddViewController.h"
 @implementation WODTagsView
 {
-    NSArray* tags;
 }
 
 
@@ -21,8 +22,10 @@
         self.tagsTable=[[UITableView alloc] initWithFrame:frame];
         self.tagsTable.dataSource=self;
         self.tagsTable.delegate=self;
-        tags=[NSArray arrayWithObjects:@"Push ups",@"Clean & Jerk",@"Double Under",@"Cal row", nil];
+        _tags=[[NSMutableArray alloc] init];
         [self addSubview:_tagsTable];
+        SkillDataManager *skill=[[SkillDataManager alloc] init];
+        _tags=[skill queryLikeName:@""];
     }
     return self;
 }
@@ -30,7 +33,7 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [tags count];
+    return [_tags count];
 }
 
 
@@ -42,7 +45,8 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleSubtitle  reuseIdentifier:identifier];
     }
-    cell.textLabel.text=tags[indexPath.row];
+    Skill *skill=_tags[indexPath.row];
+    cell.textLabel.text=[skill.name stringByAppendingString:[NSString stringWithFormat:@"（%@）",skill.cn]];
     return cell;
 }
 
@@ -52,5 +56,7 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     [self.wodTagDelegate didSelectTag:cell.textLabel.text];
 }
+
+
 
 @end

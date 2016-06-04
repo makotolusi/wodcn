@@ -12,6 +12,8 @@
 
 @synthesize context;
 
+
+
 - (WOD*)getWillInsertWOD{
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     self.context = delegate.managedObjectContext;
@@ -52,6 +54,29 @@
     return resultArray;
 }
 
+//查询
+- (WOD*)queryOneByName:(NSString*)name
+{
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    self.context = delegate.managedObjectContext;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"title = '%@' ", name]];
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"WOD" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    if (fetchedObjects.count!=0) {
+        return fetchedObjects[0];
+    }
+    return nil;
+}
 
+- (void)deleteOneByName:(NSString*)name{
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    self.context = delegate.managedObjectContext;
+   WOD* wod= [self queryOneByName:name];
+    [context deleteObject:wod];
+}
 
 @end

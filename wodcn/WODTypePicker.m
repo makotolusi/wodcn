@@ -20,6 +20,7 @@
         self.picker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         self.picker.dataSource=self;
         self.picker.delegate=self;
+        self.picker.backgroundColor=[UIColor groupTableViewBackgroundColor];
         self.currentValue=self.pickerArray[0];
         [self addSubview:self.picker];
     }
@@ -36,6 +37,30 @@
 }
 
 -(void)textFieldDidEndEditing:(UITextField *)textField{
+    
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component __TVOS_PROHIBITED{
+    return 40;
+}
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+
+{
+    
+    UILabel *myView = nil;
+        
+        myView = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, SCREEN_WIDTH, 30)];
+        
+        myView.text = [self.pickerArray objectAtIndex:row];
+        
+        myView.textAlignment = NSTextAlignmentCenter;
+    
+        myView.font = [UIFont systemFontOfSize:30];
+        
+        myView.backgroundColor = [UIColor clearColor];
+    
+    return myView;
     
 }
 

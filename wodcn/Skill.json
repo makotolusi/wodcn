@@ -31,7 +31,7 @@
               "type": "weight"
               },
               {
-              "name": "Truster",
+              "name": "Thruster",
                "cn": "火箭推",
               "type": "weight"
               },
@@ -49,6 +49,22 @@
               "name": "Jerk",
                "cn": "挺举",
               "type": "weight"
+              } ,
+              {
+              "name": "Push up",
+              "cn": "引体",
+              "type": "weight"
+              } ,
+              {
+              "name": "Chest To Bar",
+              "cn": "引体胸触杠",
+              "type": "weight"
+              },
+              {
+              "name": "Muscle Up",
+              "cn": "双力臂",
+              "type": "weight"
               }
+             
               ]
 }

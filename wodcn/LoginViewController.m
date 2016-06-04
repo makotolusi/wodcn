@@ -36,6 +36,17 @@
 }
 
 - (IBAction)weixinLogin:(id)sender {
-    
+    [self sendWXAuthRequest];
 }
+
+-(void)sendWXAuthRequest
+{
+    //构造SendAuthReq结构体
+    SendAuthReq* req =[[SendAuthReq alloc ] init ] ;
+    req.scope = @"snsapi_userinfo" ;
+    req.state = @"123" ;
+    //第三方向微信终端发送一个SendAuthReq消息结构
+    [WXApi sendReq:req];
+}
+
 @end

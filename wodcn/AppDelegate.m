@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "WeiboSDK.h"
 #import "WXApi.h"
+#import "AuthTool.h"
+#import "SkillDataManager.h"
 #import "ProfileViewController.h"
 @interface AppDelegate ()
 
@@ -24,23 +26,34 @@
     
     [WXApi registerApp:@"wx7ba51e60e59b4bd8"];
     
-   
+    if ([AuthTool isFirstLoad]) {
+        NSMutableArray *skillData=[[NSMutableArray alloc] init];
+        NSString *path= [[NSBundle mainBundle] pathForResource:@"Skill" ofType:@"json"];
+        NSData *fileData = [NSData dataWithContentsOfFile:path];
+        NSDictionary *wods = [NSJSONSerialization JSONObjectWithData:fileData options:NSJSONReadingMutableLeaves error:nil];
+        skillData=wods[@"skill"];
+        SkillDataManager *manager=[[SkillDataManager alloc] init];
+        [manager insertBatch:skillData];
+    }
     return YES;
 }
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url NS_DEPRECATED_IOS(2_0, 9_0, "Please use application:openURL:options:") __TVOS_PROHIBITED{
     NSString *string =[url absoluteString];
-    
-//    if ([string hasPrefix:@\"微博url的前缀\"]) {
-//         return [WeiboSDK handleOpenURL:url delegate:self];
-//    }else if ([string hasPrefix:@\"微信的url的前缀\"]){
-//                    return [WXApi handleOpenURL:url delegate:self];
-//    }
-    return [WeiboSDK handleOpenURL:url delegate:self];
+    if ([string hasPrefix:@"wx"]) {
+        return [WXApi handleOpenURL:url delegate:self];
+    }else {
+        return [WeiboSDK handleOpenURL:url delegate:self];
+    }
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(id)annotation NS_DEPRECATED_IOS(4_2, 9_0, "Please use application:openURL:options:") __TVOS_PROHIBITED{
-    return [WeiboSDK handleOpenURL:url delegate:self];
+   NSString *string =[url absoluteString];
+    if ([string hasPrefix:@"wx"]) {
+        return [WXApi handleOpenURL:url delegate:self];
+    }else {
+        return [WeiboSDK handleOpenURL:url delegate:self];
+    }
 }
 
 - (void)didReceiveWeiboRequest:(WBBaseRequest *)request
@@ -251,11 +264,30 @@
 
 
 -(void) onReq:(BaseReq*)req{
+    if([req isKindOfClass:[GetMessageFromWXReq class]])
+    {
+        
+    }
+    else if([req isKindOfClass:[ShowMessageFromWXReq class]])
+    {
 
+    }
+    else if([req isKindOfClass:[LaunchFromWXReq class]])
+    {
+        
+    }
 }
 
 -(void) onResp:(BaseResp*)resp{
-
+    if([resp isKindOfClass:[SendMessageToWXResp class]])
+    {
+        NSString *strTitle = [NSString stringWithFormat:@"发送媒体消息结果"];
+        NSString *strMsg = [NSString stringWithFormat:@"errcode:%d", resp.errCode];
+        
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:strTitle message:strMsg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+//        [alert show];
+//        [alert release];
+    }
 }
 
 @end
