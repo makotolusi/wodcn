@@ -19,6 +19,7 @@
 
 - (NSMutableArray*)query;
 
+- (WOD*)queryOneByName:(NSString*)name;
 - (void)deleteOneByName:(NSString*)name;
-
+-(void)update:(WOD*)wod;
 @end

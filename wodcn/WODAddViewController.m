@@ -22,6 +22,7 @@
     NSString* placeholderString;
     WODTagsView *view;
     NSString* prefix;
+    BOOL *isUpdate;
     
 }
 @end
@@ -29,6 +30,7 @@
 @implementation WODAddViewController
 
 - (void)viewDidLoad {
+   
     self.viewShaker = [[AFViewShaker alloc] initWithViewsArray:self.allTextFields];
     [super viewDidLoad];
       prefix=@"";
@@ -55,7 +57,16 @@
     self.wodTextArea.text =placeholderString;
     self.wodTextArea.textColor=[UIColor lightGrayColor];
     [self.wodName setInputAccessoryView:wodKeyboardtoolbar];
-    
+    if (StringIsNullOrEmpty(self.name)) {
+        isUpdate=NO;
+    }else{
+        isUpdate=YES;
+        _wodName.text=_name;
+        _wodTypeLabel.text=_type;
+        _wodTypeLabel.textColor=[UIColor blackColor];
+        _wodTextArea.text=_desc;
+         self.wodTextArea.textColor=[UIColor blackColor];
+    }
 }
 
 -(void)off{
@@ -168,10 +179,16 @@
          [[[AFViewShaker alloc] initWithView:self.wodTextArea] shake];
         return;
     }
+    WODDataManager *manager=[[WODDataManager alloc] init];
+    if (isUpdate) {
+        WOD* wod=[manager queryOneByName:_name];
+        [manager update:wod];
+        [self.navigationController popViewControllerAnimated:YES];
+    }else{
         NSDictionary *wod=@{@"title":self.wodName.text,@"type":self.wodTypeLabel.text,@"desc":self.wodTextArea.text};
-        WODDataManager *manager=[[WODDataManager alloc] init];
         [manager insert:wod];
         [self.navigationController popViewControllerAnimated:YES];
+    }
 
 }
 - (IBAction)outEdit:(id)sender {

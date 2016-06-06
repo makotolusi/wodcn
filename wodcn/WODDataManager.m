@@ -72,6 +72,16 @@
     return nil;
 }
 
+-(void)update:(WOD*)wod{
+    NSError *error = nil;
+    if(![context save:&error])
+    {
+        NSLog(@"不能保存：%@",[error localizedDescription]);
+    }
+    
+    NSLog(@"update success");
+}
+
 - (void)deleteOneByName:(NSString*)name{
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     self.context = delegate.managedObjectContext;

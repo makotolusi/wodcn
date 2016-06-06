@@ -17,6 +17,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *wodTypeLabel;
 @property (weak, nonatomic) IBOutlet UITextView *wodTextArea;
 @property (nonatomic, strong) AFViewShaker * viewShaker;
+
+@property (nonatomic, strong) NSString * name;
+@property (nonatomic, strong) NSString * desc;
+@property (nonatomic, strong) NSString * type;
+
 - (IBAction)outEdit:(id)sender;
 @property (nonatomic, strong) IBOutletCollection(UIView) NSMutableArray * allTextFields;
 - (IBAction)wodnameTouchDown:(id)sender;

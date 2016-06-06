@@ -65,7 +65,11 @@
                                                 value:[UIFont fontWithName:@"Arial-BoldItalicMT"  size:15]
                                                range:NSMakeRange(0, attributedString.length)];
 //                [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, attributedString.length)];
-                self.wodDesc.attributedText=attributedString;
+                 self.wodDesc.attributedText=attributedString;
+              float height=  [self heightForString:self.wodDesc andWidth:self.wodDesc.frame.size.width];
+                
+                self.wodDesc.frame=CGRectMake(self.wodDesc.frame.origin.x, self.wodDesc.frame.origin.y
+                                              , self.wodDesc.frame.size.width, height);
                
 //                NSLog(@"%@\n", [searchText substringWithRange:result.range]);
             }
@@ -91,6 +95,17 @@
     NSString *path= [[NSBundle mainBundle] pathForResource:@"LastestWODScore" ofType:@"json"];
     NSData *fileData = [NSData dataWithContentsOfFile:path];
     lastestWODScoreData = [NSJSONSerialization JSONObjectWithData:fileData options:NSJSONReadingMutableLeaves error:nil];
+}
+
+/**
+ @method 获取指定宽度width的字符串在UITextView上的高度
+ @param textView 待计算的UITextView
+ @param Width 限制字符串显示区域的宽度
+ @result float 返回的高度
+ */
+- (float) heightForString:(UITextView *)textView andWidth:(float)width{
+    CGSize sizeToFit = [textView sizeThatFits:CGSizeMake(width, MAXFLOAT)];
+    return sizeToFit.height;
 }
 
 - (void)didReceiveMemoryWarning {
