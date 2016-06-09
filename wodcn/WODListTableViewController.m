@@ -9,6 +9,9 @@
 #import "WODListTableViewController.h"
 #import "WODDataManager.h"
 #import "WODDetailViewController.h"
+#import "AFNetworking.h"
+#import "XMLDictionary.h"
+#import "WODCell.h"
 #define MYWOD @"我的WOD"
 @interface WODListTableViewController ()
 
@@ -19,24 +22,61 @@
     NSMutableDictionary *wods;
     NSMutableArray *wodGroup;
     WODDataManager *manager;
+    int lastIndex;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     self.tableView.sectionFooterHeight = 0;
-    wodGroup=[[NSMutableArray alloc] init];
-    NSString *path= [[NSBundle mainBundle] pathForResource:@"WODGroup" ofType:@"json"];
-    NSData *fileData = [NSData dataWithContentsOfFile:path];
-    wods=[[NSMutableDictionary alloc] initWithDictionary:[NSJSONSerialization JSONObjectWithData:fileData options:NSJSONReadingMutableLeaves error:nil]];
-    for (NSString *groupName in wods) {
-        [wodGroup addObject:groupName];
-    }
-    manager=[[WODDataManager alloc] init];
-    NSMutableArray* datas=[manager query];
-    if (datas.count!=0) {
-        [wodGroup insertObject:MYWOD atIndex:0];
-        [wods setValue:[manager query] forKey:MYWOD];
-    }
-    [self.tableView reloadData];
+    self.navigationController.navigationBar.barTintColor=[UIColor blackColor];
+    self.navigationController.navigationBar.titleTextAttributes=[NSDictionary dictionaryWithObjectsAndKeys:
+                        [UIFont fontWithName:@"American Typewriter" size:23.0],NSFontAttributeName,
+                                                               [UIColor whiteColor]  ,NSForegroundColorAttributeName,
+                                                                 nil];
+    //rss feed
+    AFHTTPRequestOperationManager *af = [AFHTTPRequestOperationManager manager];
+    af.responseSerializer = [AFXMLParserResponseSerializer serializer];
+    af.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/rss+xml",nil];//application/rss+xml
+    [af GET:@"http://www.alexandriacrossfit.com/feed/" parameters:nil success:^(AFHTTPRequestOperation *operation,id responseObject){
+        wodGroup=[[NSMutableArray alloc] init];
+        NSString *path= [[NSBundle mainBundle] pathForResource:@"WODGroup" ofType:@"json"];
+        NSData *fileData = [NSData dataWithContentsOfFile:path];
+        wods=[[NSMutableDictionary alloc] initWithDictionary:[NSJSONSerialization JSONObjectWithData:fileData options:NSJSONReadingMutableLeaves error:nil]];
+        for (NSString *groupName in wods) {
+            [wodGroup addObject:groupName];
+        }
+        manager=[[WODDataManager alloc] init];
+        NSMutableArray* datas=[manager query];
+        if (datas.count!=0) {
+            [wodGroup insertObject:MYWOD atIndex:0];
+            [wods setValue:[manager query] forKey:MYWOD];
+        }
+        //----------data-------
+        NSXMLParser *parser = (NSXMLParser *)responseObject;
+        NSDictionary *dic = [NSDictionary dictionaryWithXMLParser:parser];
+        NSDictionary *channel=dic[@"channel"];
+        NSString* wodSource=channel[@"title"];
+        NSArray* item=channel[@"item"];
+        NSMutableArray* alwods=[NSMutableArray arrayWithCapacity:item.count];
+        for (NSDictionary* wod in item) {
+            NSDictionary* alwod=@{@"name":wod[@"title"],@"desc":wod[@"description"],@"link":wod[@"link"]};
+            [alwods addObject:alwod];
+        }
+
+            [wodGroup insertObject:wodSource atIndex:1];
+            [wods setValue:alwods forKey:wodSource];
+//        self.wodDate.text=wodDate;
+//        self.wodSource.text=[@"By " stringByAppendingString:wodSource];
+        
+        [self.tableView reloadData];
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation,NSError *error){
+        
+        NSLog(@"error = %@",error);
+        
+    }];
+    //end
+    
 }
 
 - (void)viewDidLoad {
@@ -64,29 +104,31 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *identifier = @"wodCellIdentifier";
+    static NSString *identifier = @"WODCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    WODCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleSubtitle  reuseIdentifier:identifier];
+        cell = [[WODCell alloc] initWithStyle: UITableViewCellStyleSubtitle  reuseIdentifier:identifier];
     }
     if (indexPath.row%2==0) {
-        cell.backgroundColor=[UIColor lightTextColor];
+        cell.backgroundColor=[UIColor groupTableViewBackgroundColor];
+    }else{
+        cell.backgroundColor=[UIColor whiteColor];
     }
     NSString *key=wodGroup[indexPath.section];
     if([key isEqualToString:MYWOD]){
         WOD *wod=[wods[key] objectAtIndex:indexPath.row];
-        cell.textLabel.text=wod.title;
+        cell.titleLabel.text=wod.title;
         NSString* de=wod.desc;
         de=[de stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
-        cell.detailTextLabel.text=de;
+        cell.descLabel.text=de;
     }else{
         NSDictionary* dic=[wods[key] objectAtIndex:indexPath.row];
-        cell.textLabel.text = dic[@"name"];
+        cell.titleLabel.text = dic[@"name"];
         NSString* de=dic[@"desc"];
         de=[de stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
-        cell.detailTextLabel.text=de;
+        cell.descLabel.text=de;
     }
     return cell;
 }
@@ -105,10 +147,10 @@
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView* myView = [[UIView alloc] init];
     myView.backgroundColor = COLOR_LIGHT_BLUE;
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 2, 600, 30)];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, SCREEN_WIDTH, 20)];
     titleLabel.textColor=[UIColor whiteColor];
     titleLabel.backgroundColor = [UIColor clearColor];
-    titleLabel.font=[UIFont fontWithName:@"American Typewriter" size:25];
+    titleLabel.font=[UIFont fontWithName:@"American Typewriter" size:18];
     titleLabel.text=wodGroup[section];
     [myView addSubview:titleLabel];
     return myView;

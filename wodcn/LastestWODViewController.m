@@ -64,14 +64,12 @@
                 [attributedString  addAttribute:NSFontAttributeName
                                                 value:[UIFont fontWithName:@"Arial-BoldItalicMT"  size:15]
                                                range:NSMakeRange(0, attributedString.length)];
-//                [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, attributedString.length)];
                  self.wodDesc.attributedText=attributedString;
               float height=  [self heightForString:self.wodDesc andWidth:self.wodDesc.frame.size.width];
                 
                 self.wodDesc.frame=CGRectMake(self.wodDesc.frame.origin.x, self.wodDesc.frame.origin.y
                                               , self.wodDesc.frame.size.width, height);
                
-//                NSLog(@"%@\n", [searchText substringWithRange:result.range]);
             }
             //
             

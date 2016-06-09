@@ -8,40 +8,91 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--wod 列表-->
+        <!--WOD 仓库-->
         <scene sceneID="BXx-o3-xnk">
             <objects>
                 <tableViewController extendedLayoutIncludesOpaqueBars="YES" id="I8S-zU-V6c" customClass="WODListTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="60" sectionHeaderHeight="18" sectionFooterHeight="18" id="2zB-tv-WkN">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="80" sectionHeaderHeight="18" sectionFooterHeight="18" id="2zB-tv-WkN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="6Yn-XW-rLR">
+                            <rect key="frame" x="0.0" y="64" width="600" height="88"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <searchBar contentMode="redraw" misplaced="YES" placeholder="搜索" translatesAutoresizingMaskIntoConstraints="NO" id="X8e-tQ-g2g">
+                                    <rect key="frame" x="0.0" y="44" width="600" height="44"/>
+                                    <color key="barTintColor" red="0.17928685897435892" green="0.17928685897435892" blue="0.17928685897435892" alpha="1" colorSpace="calibratedRGB"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kx8-o2-Him">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFq-O2-8HP">
+                                            <rect key="frame" x="0.0" y="4" width="300" height="35"/>
+                                            <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="16"/>
+                                            <state key="normal" title="分类">
+                                                <color key="titleColor" red="0.17928685899999999" green="0.17928685899999999" blue="0.17928685899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8K-NB-eqO">
+                                            <rect key="frame" x="300" y="4" width="300" height="35"/>
+                                            <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="16"/>
+                                            <state key="normal" title="随机WOD">
+                                                <color key="titleColor" red="0.17928685899999999" green="0.17928685899999999" blue="0.17928685899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="kx8-o2-Him" firstAttribute="leading" secondItem="6Yn-XW-rLR" secondAttribute="leading" id="2Yv-Yv-WF5"/>
+                                <constraint firstAttribute="trailing" secondItem="X8e-tQ-g2g" secondAttribute="trailing" id="ZQs-Fi-rF8"/>
+                                <constraint firstItem="X8e-tQ-g2g" firstAttribute="leading" secondItem="6Yn-XW-rLR" secondAttribute="leading" id="eOj-kM-EI6"/>
+                                <constraint firstItem="X8e-tQ-g2g" firstAttribute="top" secondItem="kx8-o2-Him" secondAttribute="bottom" id="ip9-of-scO"/>
+                                <constraint firstAttribute="trailing" secondItem="kx8-o2-Him" secondAttribute="trailing" id="jyi-gv-GrC"/>
+                                <constraint firstItem="kx8-o2-Him" firstAttribute="top" secondItem="6Yn-XW-rLR" secondAttribute="top" id="omD-AK-64O"/>
+                                <constraint firstAttribute="bottom" secondItem="X8e-tQ-g2g" secondAttribute="bottom" constant="1" id="xOm-7q-ufJ"/>
+                            </constraints>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="WodCell" textLabel="gEc-Eh-Ypb" detailTextLabel="sgW-4s-RXF" style="IBUITableViewCellStyleSubtitle" id="fsL-XR-Rd2">
-                                <rect key="frame" x="0.0" y="113.5" width="600" height="60"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="WODCell" id="fsL-XR-Rd2" customClass="WODCell">
+                                <rect key="frame" x="0.0" y="201.5" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fsL-XR-Rd2" id="393-wg-5EB">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="59.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gEc-Eh-Ypb">
-                                            <rect key="frame" x="15" y="14" width="31.5" height="19.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sgW-4s-RXF">
-                                            <rect key="frame" x="15" y="33.5" width="40.5" height="13.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Y7b-yW-MYz">
+                                            <rect key="frame" x="38" y="8" width="551" height="44"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVQ-fJ-3c9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="551" height="24"/>
+                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="el5-3I-fQU">
+                                                    <rect key="frame" x="0.0" y="29" width="551" height="16"/>
+                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="13"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Y7b-yW-MYz" firstAttribute="leading" secondItem="393-wg-5EB" secondAttribute="leadingMargin" id="d4M-B2-L14"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Y7b-yW-MYz" secondAttribute="trailing" id="uD8-B2-5o4"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <accessibility key="accessibilityConfiguration" identifier="wodCellIdentifier"/>
+                                <connections>
+                                    <outlet property="descLabel" destination="el5-3I-fQU" id="xdG-Sf-741"/>
+                                    <outlet property="titleLabel" destination="GVQ-fJ-3c9" id="2MF-EG-JM9"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -49,11 +100,13 @@
                             <outlet property="delegate" destination="I8S-zU-V6c" id="uqz-Yr-fXS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="wod 列表" id="Of0-CT-5RG">
-                        <barButtonItem key="rightBarButtonItem" title="添加WOD" id="nCm-Fj-A1n">
-                            <connections>
-                                <segue destination="vzb-iL-H8B" kind="push" id="4vS-3a-V4J"/>
-                            </connections>
+                    <navigationItem key="navigationItem" title="WOD 仓库" id="Of0-CT-5RG">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="n6I-Y0-A2l">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1XH-Gf-cjS">
+                                <rect key="frame" x="516" y="-10" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="添加白色.png"/>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
@@ -75,10 +128,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bug-1W-WfB">
-                                <rect key="frame" x="10" y="64" width="580" height="367"/>
+                                <rect key="frame" x="10" y="64" width="580" height="460"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="WOD名称" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uqz-Pz-L42">
-                                        <rect key="frame" x="0.0" y="0.0" width="580" height="251"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="580" height="344"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="fac-aD-GuM"/>
                                         </constraints>
@@ -107,7 +160,7 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="WOD类型" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iR6-MO-CAh">
-                                        <rect key="frame" x="0.0" y="251" width="580" height="37"/>
+                                        <rect key="frame" x="0.0" y="344" width="580" height="37"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="00j-K7-KMD"/>
@@ -138,7 +191,7 @@
                                         </variation>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" keyboardDismissMode="interactive" text=" " translatesAutoresizingMaskIntoConstraints="NO" id="eco-jI-xla">
-                                        <rect key="frame" x="0.0" y="288" width="580" height="79"/>
+                                        <rect key="frame" x="0.0" y="381" width="580" height="79"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="light" returnKeyType="next"/>
@@ -266,16 +319,20 @@
             </objects>
             <point key="canvasLocation" x="2721" y="385"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--WOD-->
         <scene sceneID="XOt-bK-hXv">
             <objects>
                 <navigationController id="WUD-ZR-gDo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="xQh-FW-wVf">
+                    <tabBarItem key="tabBarItem" title="WOD" image="随机训练" id="xQh-FW-wVf">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="w7L-y4-k3M">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="I8S-zU-V6c" kind="relationship" relationship="rootViewController" id="Icu-Tg-PNn"/>
@@ -324,7 +381,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gGJ-jr-DeW">
                                 <rect key="frame" x="40" y="80" width="540" height="529"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2016年5月24日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Tw-1d-0mh">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016年5月24日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Tw-1d-0mh">
                                         <rect key="frame" x="0.0" y="0.0" width="540" height="35"/>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="30"/>
                                         <nil key="highlightedColor"/>
@@ -444,7 +501,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="每日WOD" image="schedule.png" id="YQu-1i-3PM"/>
+                    <tabBarItem key="tabBarItem" title="每日WOD" image="今日.png" id="YQu-1i-3PM"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <connections>
                         <outlet property="contentView" destination="gGJ-jr-DeW" id="bvv-B3-o15"/>
@@ -826,8 +883,9 @@ Each partner completes a full round before switching.</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="selectedImageTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="RD8-J2-Vcn" kind="relationship" relationship="viewControllers" id="uLj-Jb-du7"/>
@@ -1455,7 +1513,9 @@ Each partner completes a full round before switching.</string>
         <scene sceneID="V9k-d1-uDq">
             <objects>
                 <navigationController title="技能" id="oPS-A5-Lta" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="技能" image="movement.png" id="Hgx-me-cUq"/>
+                    <tabBarItem key="tabBarItem" title="技能" image="举重.png" id="Hgx-me-cUq">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-2"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Aus-X0-nd0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1466,36 +1526,21 @@ Each partner completes a full round before switching.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iVi-jQ-FBv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="26" y="242"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="jgv-b5-G8N">
-            <objects>
-                <viewController id="i0D-3H-2hn" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="BGO-Yw-e8x"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ike-op-kcp"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="t9d-we-yDJ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nR2-GD-JvH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
+            <point key="canvasLocation" x="26" y="234"/>
         </scene>
     </scenes>
     <resources>
         <image name="CFPIC.jpg" width="474" height="403"/>
         <image name="Logout.png" width="42" height="42"/>
         <image name="head2.jpg" width="750" height="750"/>
-        <image name="movement.png" width="42" height="42"/>
-        <image name="schedule.png" width="42" height="42"/>
         <image name="share.png" width="42" height="42"/>
         <image name="sina.png" width="42" height="42"/>
         <image name="timer.png" width="42" height="42"/>
-        <image name="user.png" width="42" height="42"/>
+        <image name="user.png" width="32" height="32"/>
         <image name="weixin.png" width="42" height="42"/>
+        <image name="举重.png" width="64" height="64"/>
+        <image name="今日.png" width="64" height="64"/>
+        <image name="添加白色.png" width="64" height="64"/>
+        <image name="随机训练" width="64" height="64"/>
     </resources>
 </document>
