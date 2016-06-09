@@ -18,6 +18,14 @@
     }
 }
 
+-(void)viewDidLoad{
+
+//    UIImageView *customBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cfpic2.jpg"]];
+//    customBackground.contentMode=UIViewContentModeScaleAspectFit;
+//    [self.view addSubview:customBackground];
+    [self.view sendSubviewToBack:_backgroudImage];
+}
+
 - (IBAction)nologin:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }

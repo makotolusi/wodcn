@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *wodDesc;
 @property (weak, nonatomic) IBOutlet UILabel *wodDate;
 @property (weak, nonatomic) IBOutlet UILabel *wodSource;
+@property (weak, nonatomic) IBOutlet UIStackView *contentView;
 
 - (IBAction)timerMenuShow:(id)sender;
 @end

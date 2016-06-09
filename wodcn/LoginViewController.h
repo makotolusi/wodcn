@@ -12,5 +12,6 @@
 - (IBAction)nologin:(id)sender;
 - (IBAction)sinaLogin:(id)sender;
 - (IBAction)weixinLogin:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroudImage;
 
 @end

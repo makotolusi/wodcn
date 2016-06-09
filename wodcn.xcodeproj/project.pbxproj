@@ -16,6 +16,13 @@
 		C52A2A0D1CFC18F20050EB12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C52A2A0B1CFC18F20050EB12 /* Main.storyboard */; };
 		C52A2A101CFC26C40050EB12 /* WODDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C52A2A0F1CFC26C40050EB12 /* WODDataManager.m */; };
 		C52A2A161CFC3EB00050EB12 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C52A2A151CFC3EB00050EB12 /* NSString+Extension.m */; };
+		C559EA511D068CC9003FA7C9 /* schedule4.png in Resources */ = {isa = PBXBuildFile; fileRef = C559EA4A1D068CC9003FA7C9 /* schedule4.png */; };
+		C559EA521D068CC9003FA7C9 /* schedule3.png in Resources */ = {isa = PBXBuildFile; fileRef = C559EA4B1D068CC9003FA7C9 /* schedule3.png */; };
+		C559EA531D068CC9003FA7C9 /* schedule1.png in Resources */ = {isa = PBXBuildFile; fileRef = C559EA4C1D068CC9003FA7C9 /* schedule1.png */; };
+		C559EA541D068CC9003FA7C9 /* schedule7.png in Resources */ = {isa = PBXBuildFile; fileRef = C559EA4D1D068CC9003FA7C9 /* schedule7.png */; };
+		C559EA551D068CC9003FA7C9 /* schedule6.png in Resources */ = {isa = PBXBuildFile; fileRef = C559EA4E1D068CC9003FA7C9 /* schedule6.png */; };
+		C559EA561D068CC9003FA7C9 /* schedule5.png in Resources */ = {isa = PBXBuildFile; fileRef = C559EA4F1D068CC9003FA7C9 /* schedule5.png */; };
+		C559EA571D068CC9003FA7C9 /* schedule2.png in Resources */ = {isa = PBXBuildFile; fileRef = C559EA501D068CC9003FA7C9 /* schedule2.png */; };
 		C55EAB131CF5A672002C9958 /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = C55EAB121CF5A672002C9958 /* XMLDictionary.m */; };
 		C569B61F1CEEB09200E177FF /* SkillListController.m in Sources */ = {isa = PBXBuildFile; fileRef = C569B61E1CEEB09200E177FF /* SkillListController.m */; };
 		C569B6221CEEB3B900E177FF /* Skill.json in Resources */ = {isa = PBXBuildFile; fileRef = C569B6211CEEB3B900E177FF /* Skill.json */; };
@@ -82,6 +89,8 @@
 		C5D99AA11CC7335200A450C2 /* wodcnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D99AA01CC7335200A450C2 /* wodcnTests.m */; };
 		C5D99AAC1CC7335200A450C2 /* wodcnUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D99AAB1CC7335200A450C2 /* wodcnUITests.m */; };
 		C5DEF7DC1CF309D400BCC091 /* WODTop.json in Resources */ = {isa = PBXBuildFile; fileRef = C5DEF7DB1CF309D400BCC091 /* WODTop.json */; };
+		C5E371A41D08F62F00DDBF87 /* cfpic2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5E371A31D08F62F00DDBF87 /* cfpic2.jpg */; };
+		C5E371A61D09021700DDBF87 /* CFPIC.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5E371A51D09021700DDBF87 /* CFPIC.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +126,13 @@
 		C52A2A0F1CFC26C40050EB12 /* WODDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WODDataManager.m; sourceTree = "<group>"; };
 		C52A2A141CFC3EB00050EB12 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
 		C52A2A151CFC3EB00050EB12 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		C559EA4A1D068CC9003FA7C9 /* schedule4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule4.png; sourceTree = "<group>"; };
+		C559EA4B1D068CC9003FA7C9 /* schedule3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule3.png; sourceTree = "<group>"; };
+		C559EA4C1D068CC9003FA7C9 /* schedule1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule1.png; sourceTree = "<group>"; };
+		C559EA4D1D068CC9003FA7C9 /* schedule7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule7.png; sourceTree = "<group>"; };
+		C559EA4E1D068CC9003FA7C9 /* schedule6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule6.png; sourceTree = "<group>"; };
+		C559EA4F1D068CC9003FA7C9 /* schedule5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule5.png; sourceTree = "<group>"; };
+		C559EA501D068CC9003FA7C9 /* schedule2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule2.png; sourceTree = "<group>"; };
 		C55EAB111CF5A672002C9958 /* XMLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLDictionary.h; sourceTree = "<group>"; };
 		C55EAB121CF5A672002C9958 /* XMLDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLDictionary.m; sourceTree = "<group>"; };
 		C569B61D1CEEB09200E177FF /* SkillListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillListController.h; sourceTree = "<group>"; };
@@ -229,6 +245,8 @@
 		C5D99AAB1CC7335200A450C2 /* wodcnUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wodcnUITests.m; sourceTree = "<group>"; };
 		C5D99AAD1CC7335200A450C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5DEF7DB1CF309D400BCC091 /* WODTop.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = WODTop.json; sourceTree = "<group>"; };
+		C5E371A31D08F62F00DDBF87 /* cfpic2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cfpic2.jpg; sourceTree = "<group>"; };
+		C5E371A51D09021700DDBF87 /* CFPIC.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CFPIC.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +329,15 @@
 		C517FD4E1CDB323E006768D1 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				C559EA4A1D068CC9003FA7C9 /* schedule4.png */,
+				C5E371A51D09021700DDBF87 /* CFPIC.jpg */,
+				C5E371A31D08F62F00DDBF87 /* cfpic2.jpg */,
+				C559EA4B1D068CC9003FA7C9 /* schedule3.png */,
+				C559EA4C1D068CC9003FA7C9 /* schedule1.png */,
+				C559EA4D1D068CC9003FA7C9 /* schedule7.png */,
+				C559EA4E1D068CC9003FA7C9 /* schedule6.png */,
+				C559EA4F1D068CC9003FA7C9 /* schedule5.png */,
+				C559EA501D068CC9003FA7C9 /* schedule2.png */,
 				C592B8921CFED51900010BA1 /* share@3x.png */,
 				C592B88E1CFE807000010BA1 /* Logout@3x.png */,
 				C592B8901CFEC18C00010BA1 /* defaulthead.jpg */,
@@ -673,12 +700,16 @@
 			files = (
 				C578446F1CFD9661006BAAA0 /* weixin@3x.png in Resources */,
 				C592B8931CFED51900010BA1 /* share@3x.png in Resources */,
+				C559EA561D068CC9003FA7C9 /* schedule5.png in Resources */,
 				C510F55B1CD84D9A00C060AF /* WODGroup.json in Resources */,
 				C592B8911CFEC18C00010BA1 /* defaulthead.jpg in Resources */,
+				C5E371A61D09021700DDBF87 /* CFPIC.jpg in Resources */,
+				C559EA571D068CC9003FA7C9 /* schedule2.png in Resources */,
 				C5DEF7DC1CF309D400BCC091 /* WODTop.json in Resources */,
 				C5893BB21CF58C8000218738 /* Pods.release.xcconfig in Resources */,
 				C569F6131CF400130098822B /* head2.jpg in Resources */,
 				C5D74F1A1CF70ECE00262EED /* movement@3x.png in Resources */,
+				C559EA541D068CC9003FA7C9 /* schedule7.png in Resources */,
 				C57844541CFD77A0006BAAA0 /* WeiboSDK.bundle in Resources */,
 				C569F6111CF3FE080098822B /* LastestWODScore.json in Resources */,
 				C52A2A0D1CFC18F20050EB12 /* Main.storyboard in Resources */,
@@ -688,12 +719,17 @@
 				C5D74F1D1CF7108100262EED /* user@3x.png in Resources */,
 				C5D99A961CC7335100A450C2 /* LaunchScreen.storyboard in Resources */,
 				C5D99A931CC7335100A450C2 /* Assets.xcassets in Resources */,
+				C559EA511D068CC9003FA7C9 /* schedule4.png in Resources */,
+				C5E371A41D08F62F00DDBF87 /* cfpic2.jpg in Resources */,
+				C559EA521D068CC9003FA7C9 /* schedule3.png in Resources */,
 				C592B88F1CFE807000010BA1 /* Logout@3x.png in Resources */,
 				C581796F1CF7E60700BE6BC5 /* add@3x.png in Resources */,
 				C5893BB01CF58C6E00218738 /* Pods.debug.xcconfig in Resources */,
 				C5D74F1E1CF7108100262EED /* wod@3x.png in Resources */,
 				C569B6221CEEB3B900E177FF /* Skill.json in Resources */,
+				C559EA531D068CC9003FA7C9 /* schedule1.png in Resources */,
 				C578446D1CFD9622006BAAA0 /* sina@3x.png in Resources */,
+				C559EA551D068CC9003FA7C9 /* schedule6.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

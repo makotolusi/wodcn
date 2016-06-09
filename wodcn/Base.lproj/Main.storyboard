@@ -168,7 +168,7 @@
                     <navigationItem key="navigationItem" id="E3n-Ym-dJN">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="ZsG-rQ-3S4">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zUz-ur-ERR" userLabel="放弃编辑">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <rect key="frame" x="20" y="7" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="退出"/>
                                 <connections>
@@ -322,10 +322,10 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gGJ-jr-DeW">
-                                <rect key="frame" x="40" y="80" width="540" height="470"/>
+                                <rect key="frame" x="40" y="80" width="540" height="529"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016年5月24日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Tw-1d-0mh">
-                                        <rect key="frame" x="0.0" y="0.0" width="540" height="0.0"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2016年5月24日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Tw-1d-0mh">
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="35"/>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="30"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="widthClass=compact" misplaced="YES">
@@ -335,8 +335,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="340" height="35"/>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="来源:WodCN.COM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siN-4C-MXe">
-                                        <rect key="frame" x="0.0" y="10" width="540" height="0.0"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="来源:WodCN.COM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siN-4C-MXe">
+                                        <rect key="frame" x="0.0" y="45" width="540" height="24"/>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular" misplaced="YES">
@@ -349,8 +349,8 @@
                                             <rect key="frame" x="0.0" y="45" width="340" height="24"/>
                                         </variation>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="正在读取......" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DRh-8P-wSi">
-                                        <rect key="frame" x="0.0" y="20" width="540" height="450"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="正在读取......" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DRh-8P-wSi">
+                                        <rect key="frame" x="0.0" y="79" width="540" height="450"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="450" id="cLa-4a-Qz6"/>
@@ -378,7 +378,7 @@
                                     <rect key="frame" x="10" y="74" width="340" height="529"/>
                                 </variation>
                             </stackView>
-                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="vs8-5O-frv">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="vs8-5O-frv">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="111"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -438,10 +438,16 @@
                             <constraint firstAttribute="trailingMargin" secondItem="gGJ-jr-DeW" secondAttribute="trailing" constant="30" id="nOe-n8-7Rd"/>
                             <constraint firstItem="RGh-4e-CCX" firstAttribute="leading" secondItem="7iM-FY-adc" secondAttribute="leadingMargin" constant="-20" id="w9l-1G-smZ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="XOU-ck-YeE"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="每日WOD" image="schedule.png" id="YQu-1i-3PM"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <connections>
+                        <outlet property="contentView" destination="gGJ-jr-DeW" id="bvv-B3-o15"/>
                         <outlet property="lastestWODScoreList" destination="vs8-5O-frv" id="C7w-iI-nQ4"/>
                         <outlet property="timerView" destination="Iqr-wz-hgT" id="r4F-ma-djj"/>
                         <outlet property="wodDate" destination="7Tw-1d-0mh" id="edw-xc-GWa"/>
@@ -1134,55 +1140,99 @@ Each partner completes a full round before switching.</string>
                                     <rect key="frame" x="0.0" y="20" width="400" height="44"/>
                                 </variation>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRv-tV-hDK">
-                                <rect key="frame" x="268" y="285" width="105" height="30"/>
-                                <state key="normal" title="用微博账号登录"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="168" y="288" width="105" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="sinaLogin:" destination="duW-vx-cj1" eventType="touchUpInside" id="Jxl-zV-To1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTC-HJ-gfC">
-                                <rect key="frame" x="268" y="331" width="105" height="30"/>
-                                <state key="normal" title="用微信账号登录"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="168" y="334" width="105" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="weixinLogin:" destination="duW-vx-cj1" eventType="touchUpInside" id="bEJ-jm-51h"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="今日WOD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iek-I3-I3W">
-                                <rect key="frame" x="199" y="143" width="203" height="65"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="35"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fIr-kp-spc">
+                                <rect key="frame" x="227" y="285" width="167" height="84"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="pAl-bJ-T9p">
+                                        <rect key="frame" x="0.0" y="0.0" width="167" height="42"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sina.png" translatesAutoresizingMaskIntoConstraints="NO" id="WVi-h1-ezT">
+                                                <rect key="frame" x="0.0" y="0.0" width="42" height="42"/>
+                                            </imageView>
+                                            <button alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRv-tV-hDK">
+                                                <rect key="frame" x="47" y="0.0" width="120" height="42"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                <state key="normal" title="用微博账号登录"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="sinaLogin:" destination="duW-vx-cj1" eventType="touchUpInside" id="Jxl-zV-To1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" alpha="0.5" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="S9r-GA-bmo">
+                                        <rect key="frame" x="0.0" y="42" width="167" height="42"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weixin.png" translatesAutoresizingMaskIntoConstraints="NO" id="XSf-ap-GWG">
+                                                <rect key="frame" x="0.0" y="0.0" width="42" height="42"/>
+                                            </imageView>
+                                            <button alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTC-HJ-gfC">
+                                                <rect key="frame" x="47" y="0.0" width="120" height="42"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="M9E-JD-oAy"/>
+                                                </constraints>
+                                                <state key="normal" title="用微信账号登录"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="weixinLogin:" destination="duW-vx-cj1" eventType="touchUpInside" id="bEJ-jm-51h"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="MRv-tV-hDK" firstAttribute="width" secondItem="tTC-HJ-gfC" secondAttribute="width" id="fhl-x7-CNb"/>
+                                </constraints>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="CFPIC.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="M2T-rK-9ws">
+                                <rect key="frame" x="0.0" y="64" width="240" height="128"/>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="WOD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iek-I3-I3W">
+                                <rect key="frame" x="98" y="122" width="203" height="65"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="57"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="99" y="146" width="203" height="65"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="weixin.png" translatesAutoresizingMaskIntoConstraints="NO" id="XSf-ap-GWG">
-                                <rect key="frame" x="227" y="328" width="33" height="35"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="127" y="331" width="33" height="35"/>
-                                </variation>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sina.png" translatesAutoresizingMaskIntoConstraints="NO" id="WVi-h1-ezT">
-                                <rect key="frame" x="227" y="285" width="33" height="35"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="127" y="288" width="33" height="35"/>
-                                </variation>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="M2T-rK-9ws" firstAttribute="top" secondItem="JmO-Qp-sKm" secondAttribute="bottom" constant="44" id="Aee-f2-kDA"/>
+                            <constraint firstItem="oOR-bA-lVd" firstAttribute="top" secondItem="M2T-rK-9ws" secondAttribute="bottom" id="G7t-HU-bU0"/>
+                            <constraint firstItem="fIr-kp-spc" firstAttribute="centerX" secondItem="xje-zu-0VU" secondAttribute="centerX" id="QWe-pv-CA4"/>
+                            <constraint firstItem="iek-I3-I3W" firstAttribute="centerX" secondItem="xje-zu-0VU" secondAttribute="centerX" id="Rdh-Y3-haP"/>
+                            <constraint firstItem="M2T-rK-9ws" firstAttribute="leading" secondItem="xje-zu-0VU" secondAttribute="leadingMargin" constant="-20" id="bvI-m7-Pgw"/>
+                            <constraint firstItem="fIr-kp-spc" firstAttribute="centerY" secondItem="xje-zu-0VU" secondAttribute="centerY" constant="200" id="eza-6g-FYq"/>
+                            <constraint firstItem="iek-I3-I3W" firstAttribute="centerY" secondItem="xje-zu-0VU" secondAttribute="centerY" constant="100" id="kIM-WU-lgG"/>
+                            <constraint firstItem="M2T-rK-9ws" firstAttribute="width" secondItem="xje-zu-0VU" secondAttribute="width" id="s9i-aD-QVr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="M2T-rK-9ws" secondAttribute="trailing" constant="-20" id="yqB-ZE-CnB"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="s9i-aD-QVr"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="m2j-Xe-pZy"/>
+                    <connections>
+                        <outlet property="backgroudImage" destination="M2T-rK-9ws" id="2Zu-GC-3VZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRo-cU-FHa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2259" y="-1006.5"/>
+            <point key="canvasLocation" x="2258.5" y="-1007.5"/>
         </scene>
         <!--技能-->
         <scene sceneID="5lb-Cj-WJW">
@@ -1437,6 +1487,7 @@ Each partner completes a full round before switching.</string>
         </scene>
     </scenes>
     <resources>
+        <image name="CFPIC.jpg" width="474" height="403"/>
         <image name="Logout.png" width="42" height="42"/>
         <image name="head2.jpg" width="750" height="750"/>
         <image name="movement.png" width="42" height="42"/>
