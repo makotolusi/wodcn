@@ -1,15 +1,5 @@
 {
-    "skill": [
-              {
-              "name": "Bench Press",
-               "cn": "卧推",
-              "type": "weight"
-              },
-              {
-              "name": "Dead Lift",
-               "cn": "硬拉",
-              "type": "weight"
-              },
+    "举重": [
               {
               "name": "Front Squat",
                "cn": "前蹲",
@@ -40,31 +30,46 @@
                "cn": "相扑硬拉",
               "type": "weight"
               },
-              {
-              "name": "Back Squart",
-               "cn": "背蹲",
-              "type": "weight"
-              },
+           
               {
               "name": "Jerk",
                "cn": "挺举",
               "type": "weight"
-              } ,
-              {
-              "name": "Push up",
-              "cn": "引体",
-              "type": "weight"
-              } ,
-              {
-              "name": "Chest To Bar",
-              "cn": "引体胸触杠",
-              "type": "weight"
-              },
-              {
-              "name": "Muscle Up",
-              "cn": "双力臂",
-              "type": "weight"
               }
              
-              ]
+              ],
+    "力量举": [
+           {
+           "name": "Bench Press",
+           "cn": "卧推",
+           "type": "weight"
+           },
+           {
+           "name": "Dead Lift",
+           "cn": "硬拉",
+           "type": "weight"
+            },{
+            "name": "Back Squart",
+            "cn": "背蹲",
+            "type": "weight"
+            }
+           ],
+    "体操": [
+           {
+           "name": "Muscle Up",
+           "cn": "双力臂",
+           "type": "weight"
+           },
+           {
+           "name": "Push up",
+           "cn": "引体",
+           "type": "weight"
+           } ,
+           {
+           "name": "Chest To Bar",
+           "cn": "引体胸触杠",
+           "type": "weight"
+           }
+           
+           ]
 }

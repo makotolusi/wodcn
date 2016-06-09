@@ -16,6 +16,7 @@
 		C52A2A0D1CFC18F20050EB12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C52A2A0B1CFC18F20050EB12 /* Main.storyboard */; };
 		C52A2A101CFC26C40050EB12 /* WODDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C52A2A0F1CFC26C40050EB12 /* WODDataManager.m */; };
 		C52A2A161CFC3EB00050EB12 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C52A2A151CFC3EB00050EB12 /* NSString+Extension.m */; };
+		C541F4021D09783300B49E67 /* SkillCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C541F4011D09783300B49E67 /* SkillCell.m */; };
 		C559EA511D068CC9003FA7C9 /* schedule4.png in Resources */ = {isa = PBXBuildFile; fileRef = C559EA4A1D068CC9003FA7C9 /* schedule4.png */; };
 		C559EA521D068CC9003FA7C9 /* schedule3.png in Resources */ = {isa = PBXBuildFile; fileRef = C559EA4B1D068CC9003FA7C9 /* schedule3.png */; };
 		C559EA531D068CC9003FA7C9 /* schedule1.png in Resources */ = {isa = PBXBuildFile; fileRef = C559EA4C1D068CC9003FA7C9 /* schedule1.png */; };
@@ -133,6 +134,8 @@
 		C52A2A0F1CFC26C40050EB12 /* WODDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WODDataManager.m; sourceTree = "<group>"; };
 		C52A2A141CFC3EB00050EB12 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
 		C52A2A151CFC3EB00050EB12 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		C541F4001D09783300B49E67 /* SkillCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillCell.h; sourceTree = "<group>"; };
+		C541F4011D09783300B49E67 /* SkillCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillCell.m; sourceTree = "<group>"; };
 		C559EA4A1D068CC9003FA7C9 /* schedule4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule4.png; sourceTree = "<group>"; };
 		C559EA4B1D068CC9003FA7C9 /* schedule3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule3.png; sourceTree = "<group>"; };
 		C559EA4C1D068CC9003FA7C9 /* schedule1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule1.png; sourceTree = "<group>"; };
@@ -396,6 +399,8 @@
 				C58179711CF7E7F000BE6BC5 /* SkillDetailViewController.m */,
 				C5D2C3F91CF8348C00F1BD5C /* SkillEditeViewController.h */,
 				C5D2C3FA1CF8348C00F1BD5C /* SkillEditeViewController.m */,
+				C541F4001D09783300B49E67 /* SkillCell.h */,
+				C541F4011D09783300B49E67 /* SkillCell.m */,
 			);
 			name = Skill;
 			sourceTree = "<group>";
@@ -685,6 +690,7 @@
 				TargetAttributes = {
 					C5D99A821CC7335100A450C2 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = JBE83BE297;
 					};
 					C5D99A9B1CC7335200A450C2 = {
 						CreatedOnToolsVersion = 7.3;
@@ -840,6 +846,7 @@
 				C57844721CFD9BAA006BAAA0 /* AuthTool.m in Sources */,
 				C52A2A101CFC26C40050EB12 /* WODDataManager.m in Sources */,
 				C58393601CEC6476008A9BAC /* WOD+CoreDataProperties.m in Sources */,
+				C541F4021D09783300B49E67 /* SkillCell.m in Sources */,
 				C584569D1D0164C900FAA357 /* AFViewShaker.m in Sources */,
 				C55EAB131CF5A672002C9958 /* XMLDictionary.m in Sources */,
 				C58393611CEC6476008A9BAC /* WOD.m in Sources */,
@@ -1011,6 +1018,8 @@
 			baseConfigurationReference = C5893BAF1CF58C6E00218738 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/wodcn/PrefixHeader.pch";
 				INFOPLIST_FILE = wodcn/Info.plist;
@@ -1023,6 +1032,7 @@
 				PODS_ROOT = "${SRCROOT}/Pods";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lscrossfit.wodcn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1031,6 +1041,8 @@
 			baseConfigurationReference = C5893BB11CF58C8000218738 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/wodcn/PrefixHeader.pch";
 				INFOPLIST_FILE = wodcn/Info.plist;
@@ -1043,6 +1055,7 @@
 				PODS_ROOT = "${SRCROOT}/Pods";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lscrossfit.wodcn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

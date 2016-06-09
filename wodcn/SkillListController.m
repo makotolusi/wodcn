@@ -10,20 +10,26 @@
 #import "SkillDetailViewController.h"
 #import "SkillRecord.h"
 #import "SkillRecordDataManager.h"
+#import "SkillCell.h"
 @interface SkillListController ()
 
 @end
 
 @implementation SkillListController
 {
-    NSMutableArray *skillData;
+//    NSMutableArray *skillData;
+    NSMutableDictionary *dic;
+    NSMutableArray *group;
 }
 - (void)viewWillAppear:(BOOL)animated{
-    skillData=[[NSMutableArray alloc] init];
     NSString *path= [[NSBundle mainBundle] pathForResource:@"Skill" ofType:@"json"];
     NSData *fileData = [NSData dataWithContentsOfFile:path];
-    NSDictionary *wods = [NSJSONSerialization JSONObjectWithData:fileData options:NSJSONReadingMutableLeaves error:nil];
-    skillData=wods[@"skill"];
+    dic = [NSJSONSerialization JSONObjectWithData:fileData options:NSJSONReadingMutableLeaves error:nil];
+    group=[[NSMutableArray alloc] init];
+    for (NSString *groupName in dic) {
+        [group addObject:groupName];
+    }
+    
     [self.tableView reloadData];
 }
 
@@ -40,31 +46,51 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return group.count;
+}
+
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView* myView = [[UIView alloc] init];
+    myView.backgroundColor = COLOR_LIGHT_BLUE;
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, SCREEN_WIDTH, 20)];
+    titleLabel.textColor=[UIColor whiteColor];
+    titleLabel.backgroundColor = [UIColor clearColor];
+    titleLabel.font=[UIFont fontWithName:@"PingFang HK" size:18];
+    titleLabel.text=group[section];
+    [myView addSubview:titleLabel];
+    return myView;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [skillData count];
+    return [dic[group[section]] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *identifier = @"skillCellIdentifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    SkillCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleSubtitle  reuseIdentifier:identifier];
+        cell = [[SkillCell alloc] initWithStyle: UITableViewCellStyleSubtitle  reuseIdentifier:identifier];
     }
-    NSDictionary* skill=[skillData objectAtIndex:indexPath.row];
-    cell.textLabel.text =[NSString stringWithFormat:@"%@ (%@)",skill[@"name"],skill[@"cn"]];
+    if (indexPath.row%2==0) {
+        cell.backgroundColor=[UIColor groupTableViewBackgroundColor];
+    }else{
+        cell.backgroundColor=[UIColor whiteColor];
+    }
+    
+      NSString *key=group[indexPath.section];
+    NSDictionary* skill=[dic[key] objectAtIndex:indexPath.row];
+    cell.titleLabel.text =skill[@"name"];
+    cell.descLabel.text=skill[@"cn"];
     SkillRecordDataManager *manager=[[SkillRecordDataManager alloc] init];
     SkillRecord* data=[manager queryByNameMaxScore:skill[@"name"]];
     if (data==nil) {
-        cell.detailTextLabel.text=@"";
-        cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+        
+//        cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
     }else{
-         cell.detailTextLabel.text=data.score.stringValue;
-         cell.accessoryType=UITableViewCellAccessoryDetailDisclosureButton;
+//         cell.descLabel.text=data.score.stringValue;
+//         cell.accessoryType=UITableViewCellAccessoryDetailDisclosureButton;
     }
     
     return cell;
@@ -74,7 +100,8 @@
 {
     UIStoryboard *board=[UIStoryboard storyboardWithName:@"Main"bundle:nil];
     SkillDetailViewController *detailViewController=[board instantiateViewControllerWithIdentifier:@"SkillDetail"];
-    NSDictionary* skill=[skillData objectAtIndex:indexPath.row];
+    NSString *key=group[indexPath.section];
+    NSDictionary* skill=[dic[key] objectAtIndex:indexPath.row];
     detailViewController.skillName=skill[@"name"];
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
