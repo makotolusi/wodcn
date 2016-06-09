@@ -67,7 +67,6 @@
 		C5893BB21CF58C8000218738 /* Pods.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C5893BB11CF58C8000218738 /* Pods.release.xcconfig */; };
 		C592B88F1CFE807000010BA1 /* Logout@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C592B88E1CFE807000010BA1 /* Logout@3x.png */; };
 		C592B8911CFEC18C00010BA1 /* defaulthead.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C592B8901CFEC18C00010BA1 /* defaulthead.jpg */; };
-		C592B8931CFED51900010BA1 /* share@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C592B8921CFED51900010BA1 /* share@3x.png */; };
 		C592B8981CFEE5B200010BA1 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C592B8951CFEE5B200010BA1 /* libWeChatSDK.a */; };
 		C592B89A1CFEE69500010BA1 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C592B8991CFEE69500010BA1 /* libc++.tbd */; };
 		C5BF27E31CE46FF50023C178 /* WODAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BF27E21CE46FF50023C178 /* WODAddViewController.m */; };
@@ -76,7 +75,6 @@
 		C5D2C3F81CF830CB00F1BD5C /* SkillRecordDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D2C3F71CF830CB00F1BD5C /* SkillRecordDataManager.m */; };
 		C5D2C3FB1CF8348C00F1BD5C /* SkillEditeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D2C3FA1CF8348C00F1BD5C /* SkillEditeViewController.m */; };
 		C5D2C3FF1CF8460B00F1BD5C /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D2C3FE1CF8460B00F1BD5C /* NSDate+Extension.m */; };
-		C5D74F121CF6FE3D00262EED /* timer@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D74F111CF6FE3D00262EED /* timer@3x.png */; };
 		C5D74F141CF70D6200262EED /* schedule@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D74F131CF70D6200262EED /* schedule@3x.png */; };
 		C5D74F1A1CF70ECE00262EED /* movement@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D74F181CF70ECE00262EED /* movement@3x.png */; };
 		C5D74F1D1CF7108100262EED /* userselected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D74F1B1CF7108100262EED /* userselected@3x.png */; };
@@ -97,6 +95,9 @@
 		C5E371B31D09640100DDBF87 /* 随机训练@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E371B21D09640100DDBF87 /* 随机训练@2x.png */; };
 		C5E371B51D09648700DDBF87 /* 随机训练2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E371B41D09648700DDBF87 /* 随机训练2@2x.png */; };
 		C5E371B71D09656E00DDBF87 /* 今日@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E371B61D09656E00DDBF87 /* 今日@2x.png */; };
+		C5E371B91D096C2A00DDBF87 /* 分享@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E371B81D096C2A00DDBF87 /* 分享@2x.png */; };
+		C5E371BB1D096D4900DDBF87 /* timer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E371BA1D096D4900DDBF87 /* timer@2x.png */; };
+		C5E371BD1D096DD900DDBF87 /* 分享2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E371BC1D096DD900DDBF87 /* 分享2@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,7 +213,6 @@
 		C5893BB11CF58C8000218738 /* Pods.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C592B88E1CFE807000010BA1 /* Logout@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logout@3x.png"; sourceTree = "<group>"; };
 		C592B8901CFEC18C00010BA1 /* defaulthead.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = defaulthead.jpg; sourceTree = "<group>"; };
-		C592B8921CFED51900010BA1 /* share@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share@3x.png"; sourceTree = "<group>"; };
 		C592B8951CFEE5B200010BA1 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		C592B8961CFEE5B200010BA1 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		C592B8971CFEE5B200010BA1 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
@@ -230,7 +230,6 @@
 		C5D2C3FA1CF8348C00F1BD5C /* SkillEditeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillEditeViewController.m; sourceTree = "<group>"; };
 		C5D2C3FD1CF8460B00F1BD5C /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
 		C5D2C3FE1CF8460B00F1BD5C /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
-		C5D74F111CF6FE3D00262EED /* timer@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timer@3x.png"; sourceTree = "<group>"; };
 		C5D74F131CF70D6200262EED /* schedule@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule@3x.png"; sourceTree = "<group>"; };
 		C5D74F181CF70ECE00262EED /* movement@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "movement@3x.png"; sourceTree = "<group>"; };
 		C5D74F1B1CF7108100262EED /* userselected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userselected@3x.png"; sourceTree = "<group>"; };
@@ -260,6 +259,9 @@
 		C5E371B21D09640100DDBF87 /* 随机训练@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "随机训练@2x.png"; sourceTree = "<group>"; };
 		C5E371B41D09648700DDBF87 /* 随机训练2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "随机训练2@2x.png"; sourceTree = "<group>"; };
 		C5E371B61D09656E00DDBF87 /* 今日@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "今日@2x.png"; sourceTree = "<group>"; };
+		C5E371B81D096C2A00DDBF87 /* 分享@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享@2x.png"; sourceTree = "<group>"; };
+		C5E371BA1D096D4900DDBF87 /* timer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timer@2x.png"; sourceTree = "<group>"; };
+		C5E371BC1D096DD900DDBF87 /* 分享2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享2@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -353,7 +355,6 @@
 				C559EA4E1D068CC9003FA7C9 /* schedule6.png */,
 				C559EA4F1D068CC9003FA7C9 /* schedule5.png */,
 				C559EA501D068CC9003FA7C9 /* schedule2.png */,
-				C592B8921CFED51900010BA1 /* share@3x.png */,
 				C592B88E1CFE807000010BA1 /* Logout@3x.png */,
 				C592B8901CFEC18C00010BA1 /* defaulthead.jpg */,
 				C578446E1CFD9661006BAAA0 /* weixin@3x.png */,
@@ -362,13 +363,15 @@
 				C5E371AC1D0957EC00DDBF87 /* 添加白色.png */,
 				C581796E1CF7E60700BE6BC5 /* add@3x.png */,
 				C5D74F1B1CF7108100262EED /* userselected@3x.png */,
+				C5E371BC1D096DD900DDBF87 /* 分享2@2x.png */,
 				C5E371B41D09648700DDBF87 /* 随机训练2@2x.png */,
+				C5E371B81D096C2A00DDBF87 /* 分享@2x.png */,
 				C5E371B61D09656E00DDBF87 /* 今日@2x.png */,
 				C5E371B01D0961DA00DDBF87 /* 举重@2x.png */,
 				C5E371AE1D0960DB00DDBF87 /* user@2x.png */,
+				C5E371BA1D096D4900DDBF87 /* timer@2x.png */,
 				C5D74F181CF70ECE00262EED /* movement@3x.png */,
 				C5D74F131CF70D6200262EED /* schedule@3x.png */,
-				C5D74F111CF6FE3D00262EED /* timer@3x.png */,
 				C569F6121CF400130098822B /* head2.jpg */,
 				C569B6231CEEFA3600E177FF /* head.jpg */,
 			);
@@ -719,13 +722,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C578446F1CFD9661006BAAA0 /* weixin@3x.png in Resources */,
-				C592B8931CFED51900010BA1 /* share@3x.png in Resources */,
 				C559EA561D068CC9003FA7C9 /* schedule5.png in Resources */,
 				C510F55B1CD84D9A00C060AF /* WODGroup.json in Resources */,
 				C5E371B31D09640100DDBF87 /* 随机训练@2x.png in Resources */,
 				C592B8911CFEC18C00010BA1 /* defaulthead.jpg in Resources */,
 				C5E371B11D0961DA00DDBF87 /* 举重@2x.png in Resources */,
 				C5E371A61D09021700DDBF87 /* CFPIC.jpg in Resources */,
+				C5E371BB1D096D4900DDBF87 /* timer@2x.png in Resources */,
 				C559EA571D068CC9003FA7C9 /* schedule2.png in Resources */,
 				C5DEF7DC1CF309D400BCC091 /* WODTop.json in Resources */,
 				C5E371AD1D0957EC00DDBF87 /* 添加白色.png in Resources */,
@@ -738,7 +741,6 @@
 				C569F6111CF3FE080098822B /* LastestWODScore.json in Resources */,
 				C52A2A0D1CFC18F20050EB12 /* Main.storyboard in Resources */,
 				C5D74F141CF70D6200262EED /* schedule@3x.png in Resources */,
-				C5D74F121CF6FE3D00262EED /* timer@3x.png in Resources */,
 				C569B6241CEEFA3600E177FF /* head.jpg in Resources */,
 				C5D74F1D1CF7108100262EED /* userselected@3x.png in Resources */,
 				C5D99A961CC7335100A450C2 /* LaunchScreen.storyboard in Resources */,
@@ -746,8 +748,10 @@
 				C559EA511D068CC9003FA7C9 /* schedule4.png in Resources */,
 				C5E371A41D08F62F00DDBF87 /* cfpic2.jpg in Resources */,
 				C559EA521D068CC9003FA7C9 /* schedule3.png in Resources */,
+				C5E371BD1D096DD900DDBF87 /* 分享2@2x.png in Resources */,
 				C592B88F1CFE807000010BA1 /* Logout@3x.png in Resources */,
 				C581796F1CF7E60700BE6BC5 /* add@3x.png in Resources */,
+				C5E371B91D096C2A00DDBF87 /* 分享@2x.png in Resources */,
 				C5893BB01CF58C6E00218738 /* Pods.debug.xcconfig in Resources */,
 				C5E371AF1D0960DB00DDBF87 /* user@2x.png in Resources */,
 				C569B6221CEEB3B900E177FF /* Skill.json in Resources */,
