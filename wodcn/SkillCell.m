@@ -12,7 +12,9 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    _unlockLabel.layer.borderWidth=1;
+    _unlockLabel.layer.borderColor=[[UIColor redColor] CGColor];
+    _unlockLabel.layer.cornerRadius=3;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

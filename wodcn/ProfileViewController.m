@@ -72,6 +72,17 @@
     return [wodTopData[wodTopSection[section]] count];
 }
 
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView* myView = [[UIView alloc] init];
+    myView.backgroundColor = COLOR_LIGHT_BLUE;
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, SCREEN_WIDTH, 20)];
+    titleLabel.textColor=[UIColor whiteColor];
+    titleLabel.backgroundColor = [UIColor clearColor];
+    titleLabel.font=[UIFont fontWithName:@"PingFang HK" size:18];
+    titleLabel.text=wodTopSection[section];
+    [myView addSubview:titleLabel];
+    return myView;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *identifier = @"wodTopCellIdentifier";

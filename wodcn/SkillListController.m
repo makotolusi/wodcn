@@ -86,11 +86,11 @@
     SkillRecordDataManager *manager=[[SkillRecordDataManager alloc] init];
     SkillRecord* data=[manager queryByNameMaxScore:skill[@"name"]];
     if (data==nil) {
-        
-//        cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+    
     }else{
-//         cell.descLabel.text=data.score.stringValue;
-//         cell.accessoryType=UITableViewCellAccessoryDetailDisclosureButton;
+        cell.unlockLabel.hidden=YES;
+        cell.scoreLabel.text=[NSString stringWithFormat:@"%@ kg",data.score.stringValue];
+        cell.scoreLabel.hidden=NO;
     }
     
     return cell;

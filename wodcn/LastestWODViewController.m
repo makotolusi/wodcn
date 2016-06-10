@@ -180,8 +180,10 @@
 
 
 - (IBAction)shareWOD:(id)sender {
-   
-    [self sendWXImageContent];
+    if ([_wodDesc.text isEqualToString:@"正在读取......" ]) {
+        
+    }else
+        [self sendWXTextContent];
    
 }
 
@@ -250,6 +252,16 @@
     req.message = message;
     req.scene = _scene;
     
+    [WXApi sendReq:req];
+}
+
+- (void) sendWXTextContent{
+     enum WXScene  *_scene = WXSceneSession;
+    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+    req.bText = YES;
+    NSString* text=[NSString stringWithFormat:@"%@ \n\n %@",_wodDate.text,_wodDesc.text];
+    req.text=text;
+    req.scene=_scene;
     [WXApi sendReq:req];
 }
 @end

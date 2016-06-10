@@ -11,5 +11,7 @@
 @interface SkillCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *descLabel;
+@property (strong, nonatomic) IBOutlet UILabel *unlockLabel;
+@property (strong, nonatomic) IBOutlet UILabel *scoreLabel;
 
 @end
