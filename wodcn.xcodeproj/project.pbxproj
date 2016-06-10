@@ -70,6 +70,7 @@
 		C592B8911CFEC18C00010BA1 /* defaulthead.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C592B8901CFEC18C00010BA1 /* defaulthead.jpg */; };
 		C592B8981CFEE5B200010BA1 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C592B8951CFEE5B200010BA1 /* libWeChatSDK.a */; };
 		C592B89A1CFEE69500010BA1 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C592B8991CFEE69500010BA1 /* libc++.tbd */; };
+		C593CFF81D0AAE4A0090E62D /* TableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C593CFF71D0AAE4A0090E62D /* TableHeaderView.m */; };
 		C5BF27E31CE46FF50023C178 /* WODAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BF27E21CE46FF50023C178 /* WODAddViewController.m */; };
 		C5D2C3F41CF82C6400F1BD5C /* SkillRecord+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D2C3F11CF82C6400F1BD5C /* SkillRecord+CoreDataProperties.m */; };
 		C5D2C3F51CF82C6400F1BD5C /* SkillRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D2C3F31CF82C6400F1BD5C /* SkillRecord.m */; };
@@ -220,6 +221,8 @@
 		C592B8961CFEE5B200010BA1 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		C592B8971CFEE5B200010BA1 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		C592B8991CFEE69500010BA1 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		C593CFF61D0AAE4A0090E62D /* TableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableHeaderView.h; sourceTree = "<group>"; };
+		C593CFF71D0AAE4A0090E62D /* TableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableHeaderView.m; sourceTree = "<group>"; };
 		C5BF27E11CE46FF50023C178 /* WODAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WODAddViewController.h; sourceTree = "<group>"; };
 		C5BF27E21CE46FF50023C178 /* WODAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WODAddViewController.m; sourceTree = "<group>"; };
 		C5BF27E41CE47F030023C178 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -485,6 +488,8 @@
 				C5D2C3FE1CF8460B00F1BD5C /* NSDate+Extension.m */,
 				C57844701CFD9BAA006BAAA0 /* AuthTool.h */,
 				C57844711CFD9BAA006BAAA0 /* AuthTool.m */,
+				C593CFF61D0AAE4A0090E62D /* TableHeaderView.h */,
+				C593CFF71D0AAE4A0090E62D /* TableHeaderView.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -848,6 +853,7 @@
 				C58393601CEC6476008A9BAC /* WOD+CoreDataProperties.m in Sources */,
 				C541F4021D09783300B49E67 /* SkillCell.m in Sources */,
 				C584569D1D0164C900FAA357 /* AFViewShaker.m in Sources */,
+				C593CFF81D0AAE4A0090E62D /* TableHeaderView.m in Sources */,
 				C55EAB131CF5A672002C9958 /* XMLDictionary.m in Sources */,
 				C58393611CEC6476008A9BAC /* WOD.m in Sources */,
 				C58456951D00136C00FAA357 /* Skill+CoreDataProperties.m in Sources */,

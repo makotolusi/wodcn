@@ -25,7 +25,7 @@
 #define kUserLogo @"userLogo"
 #define kUserName @"userName"
 #define kWBToken @"token"
-//----------------------颜色类---------------------------
+//----------------------颜色类------------- [UIColor colorWithRed:0.10 green:0.68 blue:0.94 alpha:0.7]--------------
 //带有RGBA的颜色设置
 #define COLOR_LIGHT_BLUE [UIColor colorWithRed:0.10 green:0.68 blue:0.94 alpha:0.7]
 

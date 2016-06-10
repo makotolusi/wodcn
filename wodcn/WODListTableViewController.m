@@ -13,6 +13,7 @@
 #import "XMLDictionary.h"
 #import "WODCell.h"
 #define MYWOD @"我的WOD"
+#import "TableHeaderView.h"
 @interface WODListTableViewController ()
 
 @end
@@ -145,15 +146,7 @@
     return 0;
 }
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIView* myView = [[UIView alloc] init];
-    myView.backgroundColor = COLOR_LIGHT_BLUE;
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, SCREEN_WIDTH, 20)];
-    titleLabel.textColor=[UIColor whiteColor];
-    titleLabel.backgroundColor = [UIColor clearColor];
-    titleLabel.font=[UIFont fontWithName:@"American Typewriter" size:18];
-    titleLabel.text=wodGroup[section];
-    [myView addSubview:titleLabel];
-    return myView;
+    return [TableHeaderView drawHeaderView:wodGroup[section]];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;

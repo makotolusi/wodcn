@@ -10,6 +10,7 @@
 #import "AuthTool.h"
 #import "WeiboSDK.h"
 #import "AppDelegate.h"
+#import "TableHeaderView.h"
 @interface ProfileViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSMutableArray* wodTopSection;
@@ -73,15 +74,7 @@
 }
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIView* myView = [[UIView alloc] init];
-    myView.backgroundColor = COLOR_LIGHT_BLUE;
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, SCREEN_WIDTH, 20)];
-    titleLabel.textColor=[UIColor whiteColor];
-    titleLabel.backgroundColor = [UIColor clearColor];
-    titleLabel.font=[UIFont fontWithName:@"PingFang HK" size:18];
-    titleLabel.text=wodTopSection[section];
-    [myView addSubview:titleLabel];
-    return myView;
+    return [TableHeaderView drawHeaderView:wodTopSection[section]];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
