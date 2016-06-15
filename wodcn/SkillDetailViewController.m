@@ -81,7 +81,7 @@
     }
     if(datas.count!=0){
     SkillRecord* data= datas[indexPath.row];
-    cell.textLabel.text = [NSDate stringFromDate:data.date];
+    cell.textLabel.text = [data.date stringFromDate];
     cell.detailTextLabel.text =[NSString stringWithFormat:@"%@ kg",data.score];
     }else{
     

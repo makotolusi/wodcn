@@ -12,13 +12,14 @@
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="WOD" representedClassName="WOD" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="SkillRecord" positionX="-128" positionY="-81" width="128" height="118"/>
-        <element name="WOD" positionX="-135" positionY="-189" width="128" height="88"/>
         <element name="Skill" positionX="-297" positionY="-90" width="128" height="73"/>
+        <element name="SkillRecord" positionX="-128" positionY="-81" width="128" height="118"/>
+        <element name="WOD" positionX="-135" positionY="-189" width="128" height="105"/>
     </elements>
 </model>

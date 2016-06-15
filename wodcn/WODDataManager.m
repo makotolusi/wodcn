@@ -28,6 +28,7 @@
     record.title=data[@"title"];
     record.desc=data[@"desc"];
     record.type=data[@"type"];
+    record.date=data[@"date"];
     NSError *error;
     if(![context save:&error])
     {

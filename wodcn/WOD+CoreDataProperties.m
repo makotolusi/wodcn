@@ -16,5 +16,5 @@
 @dynamic title;
 @dynamic desc;
 @dynamic type;
-
+@dynamic date;
 @end

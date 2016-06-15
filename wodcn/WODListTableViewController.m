@@ -9,6 +9,7 @@
 #import "WODListTableViewController.h"
 #import "WODDataManager.h"
 #import "WODDetailViewController.h"
+#import "WODAddViewController.h"
 #import "AFNetworking.h"
 #import "XMLDictionary.h"
 #import "WODCell.h"
@@ -59,7 +60,7 @@
         NSArray* item=channel[@"item"];
         NSMutableArray* alwods=[NSMutableArray arrayWithCapacity:item.count];
         for (NSDictionary* wod in item) {
-            NSDictionary* alwod=@{@"name":wod[@"title"],@"desc":wod[@"description"],@"link":wod[@"link"]};
+            NSDictionary* alwod=@{@"name":wod[@"title"],@"wodSource":wodSource,@"desc":wod[@"description"],@"type":@"alex",@"link":wod[@"link"]};
             [alwods addObject:alwod];
         }
 
@@ -158,7 +159,7 @@
     NSString *key=wodGroup[indexPath.section];
     if([key isEqualToString:MYWOD]){
         WOD *wod=[wods[key] objectAtIndex:indexPath.row];
-        NSDictionary* dic=@{@"name":wod.title,@"desc":wod.desc,@"type":wod.type};
+        NSDictionary* dic=@{@"name":wod.title,@"desc":wod.desc,@"type":wod.type,@"date":wod.date};
          detailViewController.wodDic=dic;
     }else{
         NSDictionary* dic=[wods[key] objectAtIndex:indexPath.row];
@@ -193,4 +194,12 @@
     return @"删除";
 }
 
+- (IBAction)add:(id)sender {
+    UIStoryboard *board=[UIStoryboard storyboardWithName:@"Main"bundle:nil];
+    WODAddViewController *detailViewController=[board instantiateViewControllerWithIdentifier:@"WODAdd"];
+//    detailViewController.name= self.wodName.text;
+//    detailViewController.desc=self.wodDesc.text;
+//    detailViewController.type=self.wodType.text;
+    [self.navigationController pushViewController:detailViewController animated:YES];
+}
 @end

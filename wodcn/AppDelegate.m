@@ -290,4 +290,8 @@
     }
 }
 
+- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+{
+    return UIInterfaceOrientationMaskPortrait;
+}
 @end

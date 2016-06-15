@@ -11,6 +11,8 @@
 #import "WeiboSDK.h"
 #import "AuthTool.h"
 #import "WXApi.h"
+#import "NSString+Extension.h"
+#import "Tool.h"
 @interface LastestWODViewController ()
 
 @end
@@ -32,8 +34,8 @@
     statusBarView.backgroundColor=[UIColor blackColor];
     
     [self.view addSubview:statusBarView];
-    
-    
+
+    NSString* text=_wodDesc.text;
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFXMLParserResponseSerializer serializer];
     manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/rss+xml",nil];//application/rss+xml
@@ -56,22 +58,19 @@
         [manager GET:link parameters:nil success:^(AFHTTPRequestOperation *operation,id responseObject){
             
             NSString* searchText=[[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-            NSError *error = NULL;
-            NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(?i)<div class=\"content\"[\\s\\S]+?</div>" options:NSRegularExpressionCaseInsensitive error:&error];
-            NSTextCheckingResult *result = [regex firstMatchInString:searchText options:0 range:NSMakeRange(0, [searchText length])];
-            if (result) {
-                NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithData:[[searchText substringWithRange:result.range] dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
-                [attributedString  addAttribute:NSFontAttributeName
-                                                value:[UIFont fontWithName:@"Arial-BoldItalicMT"  size:15]
-                                               range:NSMakeRange(0, attributedString.length)];
-                 self.wodDesc.attributedText=attributedString;
-              float height=  [self heightForString:self.wodDesc andWidth:self.wodDesc.frame.size.width];
+            NSMutableAttributedString *attri= [searchText alexWodDescriptionFormat];
+            if (attri!=nil) {
+                   self.wodDesc.attributedText=attri;
+                float height=  [self heightForString:self.wodDesc andWidth:self.wodDesc.frame.size.width];
                 
                 self.wodDesc.frame=CGRectMake(self.wodDesc.frame.origin.x, self.wodDesc.frame.origin.y
                                               , self.wodDesc.frame.size.width, height);
-               
             }
-            //
+
+        
+            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, _wodDate.frame.size.height+_wodSource.frame.size.height+_wodDesc.frame.size.height)];
+            [self.view bringSubviewToFront:_finishLabel];
+            [self.view bringSubviewToFront:_scoreLabel];
             
         } failure:^(AFHTTPRequestOperation *operation,NSError *error){
             
@@ -183,77 +182,41 @@
     if ([_wodDesc.text isEqualToString:@"正在读取......" ]) {
         
     }else
-        [self sendWXTextContent];
+        [Tool sendWXImageContent:self.view];
    
 }
 
--(void)sendWBMessage{
-    if ([AuthTool isAuthorized]) {
-        WBAuthorizeRequest *authRequest = [WBAuthorizeRequest request];
-        authRequest.redirectURI = kRedirectURI;
-        authRequest.scope = @"all";
-        NSString* token=[[NSUserDefaults   standardUserDefaults] objectForKey:kWBToken];
-        
-        
-        UIImage *wordImage=  [self getImageFromView:self.wodDesc];
-        
-        WBMessageObject *message = [WBMessageObject message];
-        message.text = @"来源于《今日WOD》";
-        WBImageObject *image = [WBImageObject object];
-        image.imageData = UIImagePNGRepresentation(wordImage);
-        message.imageObject = image;
-        
-        WBSendMessageToWeiboRequest *request = [WBSendMessageToWeiboRequest requestWithMessage:message authInfo:authRequest access_token: token];
-        request.userInfo = @{@"ShareMessageFrom": @"SendMessageToWeiboViewController",
-                             @"Other_Info_1": [NSNumber numberWithInt:123],
-                             @"Other_Info_2": @[@"obj1", @"obj2"],
-                             @"Other_Info_3": @{@"key1": @"obj1", @"key2": @"obj2"}};
-        //    request.shouldOpenWeiboAppInstallPageIfNotInstalled = NO;
-        [WeiboSDK sendRequest:request];
-    }else{
-        UIStoryboard *board=[UIStoryboard storyboardWithName:@"Main"bundle:nil];
-        UIViewController *detailViewController=[board instantiateViewControllerWithIdentifier:@"loginView"];
-        [self presentViewController:detailViewController animated:YES completion:nil];
-    }
-}
+//-(void)sendWBMessage{
+//    if ([AuthTool isAuthorized]) {
+//        WBAuthorizeRequest *authRequest = [WBAuthorizeRequest request];
+//        authRequest.redirectURI = kRedirectURI;
+//        authRequest.scope = @"all";
+//        NSString* token=[[NSUserDefaults   standardUserDefaults] objectForKey:kWBToken];
+//        
+//        
+//        UIImage *wordImage=  [self getImageFromView:self.wodDesc];
+//        
+//        WBMessageObject *message = [WBMessageObject message];
+//        message.text = @"来源于《今日WOD》";
+//        WBImageObject *image = [WBImageObject object];
+//        image.imageData = UIImagePNGRepresentation(wordImage);
+//        message.imageObject = image;
+//        
+//        WBSendMessageToWeiboRequest *request = [WBSendMessageToWeiboRequest requestWithMessage:message authInfo:authRequest access_token: token];
+//        request.userInfo = @{@"ShareMessageFrom": @"SendMessageToWeiboViewController",
+//                             @"Other_Info_1": [NSNumber numberWithInt:123],
+//                             @"Other_Info_2": @[@"obj1", @"obj2"],
+//                             @"Other_Info_3": @{@"key1": @"obj1", @"key2": @"obj2"}};
+//        //    request.shouldOpenWeiboAppInstallPageIfNotInstalled = NO;
+//        [WeiboSDK sendRequest:request];
+//    }else{
+//        UIStoryboard *board=[UIStoryboard storyboardWithName:@"Main"bundle:nil];
+//        UIViewController *detailViewController=[board instantiateViewControllerWithIdentifier:@"loginView"];
+//        [self presentViewController:detailViewController animated:YES completion:nil];
+//    }
+//}
 
-//UIView -> UIImage
-//#import “QuartzCore/QuartzCore.h”
-//把UIView 转换成图片
--(UIImage *)getImageFromView:(UIView *)view{
-    UIGraphicsBeginImageContext(view.bounds.size);
-    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return image;
-}
 
-- (void) sendWXImageContent
-{
-    enum WXScene  *_scene = WXSceneSession;
-    UIImage *wordImage=  [self getImageFromView:self.wodDesc];
-    WXMediaMessage *message = [WXMediaMessage message];
-    [message setThumbImage:[UIImage imageNamed:@"movement.png"]];
-    
-    WXImageObject *ext = [WXImageObject object];
-    ext.imageData = UIImagePNGRepresentation(wordImage);
-    
-//    //UIImage* image = [UIImage imageWithContentsOfFile:filePath];
-//    UIImage* image = [UIImage imageWithData:ext.imageData];
-//    ext.imageData = UIImagePNGRepresentation(image);
-    
-    //    UIImage* image = [UIImage imageNamed:@"res5thumb.png"];
-    //    ext.imageData = UIImagePNGRepresentation(image);
-    
-    message.mediaObject = ext;
-    
-    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
-    req.bText = NO;
-    req.message = message;
-    req.scene = _scene;
-    
-    [WXApi sendReq:req];
-}
 
 - (void) sendWXTextContent{
      enum WXScene  *_scene = WXSceneSession;
@@ -263,5 +226,11 @@
     req.text=text;
     req.scene=_scene;
     [WXApi sendReq:req];
+}
+- (IBAction)shareAction:(id)sender {
+    if ([_wodDesc.text isEqualToString:@"疯狂手抄中......" ]) {
+        
+    }else
+        [Tool sendWXImageContent:self.view];
 }
 @end

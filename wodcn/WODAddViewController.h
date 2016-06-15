@@ -14,7 +14,14 @@
 - (IBAction)saveEvent:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *wodName;
 @property (strong, nonatomic) WODTypePicker *wodType;
-@property (weak, nonatomic) IBOutlet UILabel *wodTypeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *wodtypeb;
+@property (weak, nonatomic) IBOutlet UILabel *dateb;
+
+
+- (IBAction)dateAction:(id)sender;
+
+- (IBAction)wodtypeaction:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UITextView *wodTextArea;
 @property (nonatomic, strong) AFViewShaker * viewShaker;
 

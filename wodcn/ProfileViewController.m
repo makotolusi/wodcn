@@ -11,6 +11,8 @@
 #import "WeiboSDK.h"
 #import "AppDelegate.h"
 #import "TableHeaderView.h"
+#import "PNChart.h"
+#import "Tool.h"
 @interface ProfileViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSMutableArray* wodTopSection;
@@ -20,10 +22,76 @@
 
 @implementation ProfileViewController
 
+
+-(void)viewDidAppear:(BOOL)animated{
+    
+//
+   
+}
+/**
+ Endurance 心血管和呼吸系统耐力
+ Agility 灵活
+ Balance 平衡
+ Speed 速度
+ Power 力量
+ Accuracy 精准
+ Stamina 耐力
+ Coordination 协调
+ Flexibility柔韧
+ Strength 强度
+ **/
 - (void)viewDidLoad {
+    self.navigationItem.leftBarButtonItem= [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"分享2.png"] style:UIBarButtonItemStylePlain target:self action:@selector(share:)];
+    self.navigationItem.leftBarButtonItem.tintColor=[UIColor whiteColor];
+    
+    [self.view bringSubviewToFront:_totalScore];
+    NSArray *items = @[[PNRadarChartDataItem dataItemWithValue:3 description:@"力量"],
+                       [PNRadarChartDataItem dataItemWithValue:2 description:@"柔韧"],
+                       [PNRadarChartDataItem dataItemWithValue:8 description:@"敏捷"],
+                       [PNRadarChartDataItem dataItemWithValue:5 description:@"速度"],
+                       [PNRadarChartDataItem dataItemWithValue:4 description:@"耐力"],
+                       ];
+    PNRadarChart *radarChart = [[PNRadarChart alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 230) items:items valueDivider:1];
+    [radarChart strokeChart];
+    [self.scrollview addSubview:radarChart];
+    
+    //bar
+    static NSNumberFormatter *barChartFormatter;
+    if (!barChartFormatter){
+        barChartFormatter = [[NSNumberFormatter alloc] init];
+        barChartFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+        barChartFormatter.allowsFloats = NO;
+        barChartFormatter.maximumFractionDigits = 0;
+    }
+//    self.barChart. = @"Bar Chart";
+    
+    self.barChart = [[PNBarChart alloc] initWithFrame:CGRectMake(20, 210, SCREEN_WIDTH-20, 200.0)];
+    //        self.barChart.showLabel = NO;
+    self.barChart.backgroundColor = [UIColor clearColor];
+    self.barChart.yLabelFormatter = ^(CGFloat yValue){
+        return [barChartFormatter stringFromNumber:[NSNumber numberWithFloat:yValue]];
+    };
+    
+    
+//    self.barChart.labelMarginTop = 5.0;
+    self.barChart.showChartBorder = YES;
+    [self.barChart setXLabels:@[@"卧推",@"深蹲",@"硬拉",@"挺举",@"抓举"]];
+    [self.barChart setYValues:@[@100.82,@10.88,@60.96,@130.93,@50.93]];
+    [self.barChart setStrokeColors:@[PNGreen,PNGreen,PNRed,PNGreen,PNGreen]];
+    self.barChart.isGradientShow = NO;
+    self.barChart.isShowNumbers = NO;
+    
+    [self.barChart strokeChart];
+    
+    self.barChart.delegate = self;
+    
+    [self.scrollview addSubview:self.barChart];
+    [self.scrollview setContentSize:CGSizeMake(SCREEN_WIDTH, self.barChart.frame.origin.y+ self.barChart.frame.size.height+20)];
+    
     [super viewDidLoad];
     self.headView.layer.masksToBounds=YES;
     self.headView.layer.cornerRadius=50;
+  
     self.wodTopList.delegate=self;
     self.wodTopList.dataSource=self;
     wodTopSection=[[NSMutableArray alloc] init];
@@ -53,6 +121,7 @@
         [self.loginbtn setHidden:NO];
     }
     
+    
 }
 
 
@@ -65,7 +134,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return [wodTopSection count];
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -73,9 +142,9 @@
     return [wodTopData[wodTopSection[section]] count];
 }
 
-- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    return [TableHeaderView drawHeaderView:wodTopSection[section]];
-}
+//- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+//    return [TableHeaderView drawHeaderView:wodTopSection[section]];
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *identifier = @"wodTopCellIdentifier";
@@ -87,8 +156,8 @@
     }
     NSDictionary* obj=[wodTopData[wodTopSection[indexPath.section]] objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = obj[@"name"];
-    cell.detailTextLabel.text=obj[@"score"];
+//    cell.textLabel.text = obj[@"name"];
+//    cell.detailTextLabel.text=obj[@"score"];
     return cell;
 }
 
@@ -133,5 +202,10 @@
     [alertController addAction:otherAction];
     
     [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)share:(id)sender {
+        [Tool sendWXImageContent:self.view];
+    
 }
 @end

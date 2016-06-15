@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UITextView *wodDesc;
 
 @property (weak, nonatomic) IBOutlet UILabel *wodType;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
+@property (weak, nonatomic) IBOutlet UILabel *woddate;
 @property (strong, nonatomic) NSDictionary *wodDic;
 @end

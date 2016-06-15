@@ -58,12 +58,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wodcn/WODListTableViewController.m"
-            timestampString = "487239687.823496"
+            timestampString = "487651314.785657"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "wodcn/WODDataManager.m"
+            timestampString = "487671385.210403"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "-insert:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

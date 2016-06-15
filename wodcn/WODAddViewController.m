@@ -13,6 +13,8 @@
 #import "WODDataManager.h"
 #import "SkillDataManager.h"
 #import "AFViewShaker.h"
+#import "LGAlertView.h"
+#import "NSDate+Extension.h"
 @interface WODAddViewController ()<WODKeyBoardToolBarDelegate,UITextViewDelegate,WODTagsViewDelegate>
 
 {
@@ -30,7 +32,18 @@
 @implementation WODAddViewController
 
 - (void)viewDidLoad {
-   
+    _wodTextArea.layer.borderWidth=0.7;
+    _wodTextArea.layer.borderColor=[UIColorFromRGB(0xCACACA) CGColor];
+    _wodTextArea.layer.cornerRadius=6;
+    
+    _wodtypeb.layer.borderWidth=0.7;
+    _wodtypeb.layer.borderColor=[UIColorFromRGB(0xCACACA) CGColor];
+    _wodtypeb.layer.cornerRadius=6;
+    
+    _dateb.layer.borderWidth=0.7;
+    _dateb.layer.borderColor=[UIColorFromRGB(0xCACACA) CGColor];
+    _dateb.layer.cornerRadius=6;
+    
     self.viewShaker = [[AFViewShaker alloc] initWithViewsArray:self.allTextFields];
     [super viewDidLoad];
       prefix=@"";
@@ -44,11 +57,15 @@
     self.wodType= [[WODTypePicker alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT*0.3) Data:[NSArray arrayWithObjects:@"计时",@"计次", nil]];
     [self.view addSubview:self.wodType];
     
-    self.wodTypeLabel.userInteractionEnabled=YES;
+//    self.wodTypeLabel.userInteractionEnabled=YES;
     
-    UITapGestureRecognizer *labelTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(popView:)];
+    UITapGestureRecognizer *labelTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dateAction:)];
     
-    [self.wodTypeLabel addGestureRecognizer:labelTapGestureRecognizer];
+    [self.dateb addGestureRecognizer:labelTapGestureRecognizer];
+    
+    UITapGestureRecognizer *typeTouch = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(wodtypeaction:)];
+    
+    [self.wodtypeb addGestureRecognizer:typeTouch];
     
     //定义一个toolBar
     wodKeyboardtoolbar.frame=CGRectMake(0, 0, SCREEN_WIDTH, 30);
@@ -62,8 +79,8 @@
     }else{
         isUpdate=YES;
         _wodName.text=_name;
-        _wodTypeLabel.text=_type;
-        _wodTypeLabel.textColor=[UIColor blackColor];
+//        _wodTypeLabel.text=_type;
+//        _wodTypeLabel.textColor=[UIColor blackColor];
         _wodTextArea.text=_desc;
          self.wodTextArea.textColor=[UIColor blackColor];
     }
@@ -112,8 +129,6 @@
     self.wodType.frame = CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT*0.3);
     wodpickerdone.frame =CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, 30);
     [UIView setAnimationDelegate:self];
-    self.wodTypeLabel.text=self.wodType.currentValue;
-    self.wodTypeLabel.textColor=[UIColor darkTextColor];
     // 动画完毕后调用animationFinished
 //    [UIView setAnimationDidStopSelector:@selector(animationFinished)];
     [UIView commitAnimations];
@@ -171,8 +186,12 @@
         [[[AFViewShaker alloc] initWithView:self.wodName] shake];
         return;
     }
-    if([self.wodTypeLabel.text isEqualToString:@"WOD类型"]){
-        [[[AFViewShaker alloc] initWithView:self.wodTypeLabel] shake];
+    if([self.wodtypeb.text isEqualToString:@"类型"]){
+        [[[AFViewShaker alloc] initWithView:self.wodtypeb] shake];
+        return;
+    }
+    if([self.dateb.text isEqualToString:@"日期"]){
+        [[[AFViewShaker alloc] initWithView:self.dateb] shake];
         return;
     }
     if([self.wodTextArea.text isEqualToString:placeholderString]){
@@ -182,12 +201,16 @@
     WODDataManager *manager=[[WODDataManager alloc] init];
     if (isUpdate) {
         WOD* wod=[manager queryOneByName:_name];
+        wod.title=_wodName.text;
+        wod.desc=_wodTextArea.text;
+        wod.date=_dateb.text;
+        wod.type=_wodtypeb.text;
         [manager update:wod];
-        [self.navigationController popViewControllerAnimated:YES];
+        [self.navigationController popToRootViewControllerAnimated :YES];
     }else{
-        NSDictionary *wod=@{@"title":self.wodName.text,@"type":self.wodTypeLabel.text,@"desc":self.wodTextArea.text};
+        NSDictionary *wod=@{@"title":self.wodName.text,@"type":self.wodtypeb.text,@"desc":self.wodTextArea.text,@"date":self.dateb.text};
         [manager insert:wod];
-        [self.navigationController popViewControllerAnimated:YES];
+        [self.navigationController popToRootViewControllerAnimated:YES];
     }
 
 }
@@ -216,5 +239,81 @@
 
 - (IBAction)wodnameTouchDown:(id)sender {
        [self inView];
+}
+- (void)dateAction:(UITapGestureRecognizer *)recognizer{
+    UIDatePicker *datePicker = [UIDatePicker new];
+    datePicker.datePickerMode = UIDatePickerModeDate;
+    datePicker.frame = CGRectMake(0.f, 0.f, self.view.frame.size.width, 110.f);
+    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];//设置为中
+    datePicker.locale = locale;
+    [[[LGAlertView alloc] initWithViewAndTitle:@"日期"
+                                       message:nil
+                                         style:LGAlertViewStyleActionSheet
+                                          view:datePicker
+                                  buttonTitles:@[@"完成"]
+                             cancelButtonTitle:@"取消"
+                        destructiveButtonTitle:nil
+                                 actionHandler:^(LGAlertView *alertView, NSString *title, NSUInteger index) {
+                                     NSLog(@"actionHandler, %@, %lu", title, (long unsigned)index);
+                                     if (index==0) {
+
+                                         _dateb.text=[datePicker.date stringFromDate];
+                                         _dateb.textColor=[UIColor blackColor];
+                                     }
+                                 }
+                                 cancelHandler:^(LGAlertView *alertView) {
+                                     NSLog(@"cancelHandler");
+                                 }
+                            destructiveHandler:^(LGAlertView *alertView) {
+                                NSLog(@"destructiveHandler");
+                            }] showAnimated:YES completionHandler:nil];
+}
+
+- (void)wodtypeaction:(UITapGestureRecognizer *)recognizer {
+    LGAlertView *alertView = [[LGAlertView alloc] initWithTitle:@"WOD类型"
+                                                        message:nil
+                                                          style:LGAlertViewStyleActionSheet
+                                                   buttonTitles:@[@"计时",@"计次"]
+                                              cancelButtonTitle:@"Cancel"
+                                         destructiveButtonTitle:nil
+                                                  actionHandler:^(LGAlertView *alertView, NSString *title, NSUInteger index) {
+                                                      NSLog(@"actionHandler, %@, %lu", title, (long unsigned)index);
+                                                      _wodtypeb.text=title;
+                                                      _wodtypeb.textColor=[UIColor blackColor];
+                                                  }
+                                                  cancelHandler:nil
+                                             destructiveHandler:nil];
+    
+    alertView.coverColor = [UIColor colorWithWhite:1.f alpha:0.9];
+    alertView.layerShadowColor = [UIColor colorWithWhite:0.f alpha:0.3];
+    alertView.layerShadowRadius = 4.f;
+    alertView.layerCornerRadius = 0.f;
+    alertView.layerBorderWidth = 1.f;
+    alertView.layerBorderColor = [UIColor grayColor];//[UIColor colorWithRed:0.f green:0.5 blue:1.f alpha:1.f];
+    alertView.backgroundColor = [UIColor colorWithWhite:1.f alpha:0.7];
+    alertView.buttonsHeight = 44.f;
+    alertView.titleFont = [UIFont boldSystemFontOfSize:18.f];
+    alertView.titleTextColor = [UIColor blackColor];
+    alertView.messageTextColor = [UIColor blackColor];
+    alertView.width = MIN(self.view.bounds.size.width, self.view.bounds.size.height);
+    alertView.offsetVertical = 0.f;
+    alertView.cancelButtonOffsetY = 0.f;
+    alertView.titleTextAlignment = NSTextAlignmentLeft;
+    alertView.messageTextAlignment = NSTextAlignmentLeft;
+    alertView.destructiveButtonTextAlignment = NSTextAlignmentRight;
+    alertView.buttonsTextAlignment = NSTextAlignmentRight;
+    alertView.cancelButtonTextAlignment = NSTextAlignmentRight;
+    alertView.separatorsColor = [UIColor grayColor];
+    alertView.destructiveButtonTitleColor = [UIColor whiteColor];
+    alertView.buttonsTitleColor = [UIColor whiteColor];
+    alertView.cancelButtonTitleColor = [UIColor whiteColor];
+    alertView.destructiveButtonBackgroundColor = [UIColor colorWithRed:1.f green:0.f blue:0.f alpha:0.5];
+    alertView.buttonsBackgroundColor = [UIColor colorWithRed:0.f green:0.5 blue:1.f alpha:0.5];
+    alertView.cancelButtonBackgroundColor = [UIColor colorWithWhite:0.5 alpha:0.5];
+    alertView.destructiveButtonBackgroundColorHighlighted = [UIColor colorWithRed:1.f green:0.f blue:0.f alpha:1.f];
+    alertView.buttonsBackgroundColorHighlighted = [UIColor colorWithRed:0.f green:0.5 blue:1.f alpha:1.f];
+    alertView.cancelButtonBackgroundColorHighlighted = [UIColor colorWithWhite:0.5 alpha:1.f];
+    [alertView showAnimated:YES completionHandler:nil];
+
 }
 @end

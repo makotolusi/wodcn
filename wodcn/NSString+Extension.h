@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <UIKit/UIKit.h>
 //获取一个字符串转换为URL
 #define URL(str) [NSURL URLWithString:[str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]]
 
@@ -21,6 +21,7 @@
 @class MREntitiesConverter;
 @interface NSString (Extension)
 //
+-(NSMutableAttributedString*)alexWodDescriptionFormat;
 ////返回字符串经过md5加密后的字符
 //+(NSString*)stringDecodingByMD5:(NSString*)str;
 //

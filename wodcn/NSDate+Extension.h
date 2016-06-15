@@ -11,5 +11,5 @@
 @interface NSDate (Extension)
 
 +(NSDate*) convertDateFromString:(NSString*)uiDate;
-+(NSString *)stringFromDate:(NSDate *)date;
+-(NSString *)stringFromDate;
 @end

@@ -17,6 +17,8 @@
 		C52A2A101CFC26C40050EB12 /* WODDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C52A2A0F1CFC26C40050EB12 /* WODDataManager.m */; };
 		C52A2A161CFC3EB00050EB12 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C52A2A151CFC3EB00050EB12 /* NSString+Extension.m */; };
 		C541F4021D09783300B49E67 /* SkillCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C541F4011D09783300B49E67 /* SkillCell.m */; };
+		C552DA9F1D0BA64B00A05CEE /* libPNChart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C552DA9E1D0BA64B00A05CEE /* libPNChart.a */; };
+		C552DAA11D0BA67A00A05CEE /* libUICountingLabel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C552DAA01D0BA67A00A05CEE /* libUICountingLabel.a */; };
 		C559EA511D068CC9003FA7C9 /* schedule4.png in Resources */ = {isa = PBXBuildFile; fileRef = C559EA4A1D068CC9003FA7C9 /* schedule4.png */; };
 		C559EA521D068CC9003FA7C9 /* schedule3.png in Resources */ = {isa = PBXBuildFile; fileRef = C559EA4B1D068CC9003FA7C9 /* schedule3.png */; };
 		C559EA531D068CC9003FA7C9 /* schedule1.png in Resources */ = {isa = PBXBuildFile; fileRef = C559EA4C1D068CC9003FA7C9 /* schedule1.png */; };
@@ -64,6 +66,20 @@
 		C58456961D00136C00FAA357 /* Skill.m in Sources */ = {isa = PBXBuildFile; fileRef = C58456941D00136C00FAA357 /* Skill.m */; };
 		C58456991D00186000FAA357 /* SkillDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C58456981D00186000FAA357 /* SkillDataManager.m */; };
 		C584569D1D0164C900FAA357 /* AFViewShaker.m in Sources */ = {isa = PBXBuildFile; fileRef = C584569C1D0164C900FAA357 /* AFViewShaker.m */; };
+		C5856A8F1D0EAA2500158FEA /* 身高.png in Resources */ = {isa = PBXBuildFile; fileRef = C5856A8E1D0EAA2500158FEA /* 身高.png */; };
+		C5856A911D0EABCA00158FEA /* box.png in Resources */ = {isa = PBXBuildFile; fileRef = C5856A901D0EABCA00158FEA /* box.png */; };
+		C5856A931D0EAE7100158FEA /* 体重.png in Resources */ = {isa = PBXBuildFile; fileRef = C5856A921D0EAE7100158FEA /* 体重.png */; };
+		C5856A951D0EAEA400158FEA /* 性别.png in Resources */ = {isa = PBXBuildFile; fileRef = C5856A941D0EAEA400158FEA /* 性别.png */; };
+		C5856A971D0EAEFD00158FEA /* 姓名.png in Resources */ = {isa = PBXBuildFile; fileRef = C5856A961D0EAEFD00158FEA /* 姓名.png */; };
+		C5856A9A1D0EBA6F00158FEA /* Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = C5856A991D0EBA6F00158FEA /* Tool.m */; };
+		C5856A9E1D0FA92D00158FEA /* 完成@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5856A9D1D0FA92D00158FEA /* 完成@2x.png */; };
+		C5856AAF1D11030A00158FEA /* LGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5856AA11D11030A00158FEA /* LGAlertView.m */; };
+		C5856AB01D11030A00158FEA /* LGAlertViewButtonProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C5856AA31D11030A00158FEA /* LGAlertViewButtonProperties.m */; };
+		C5856AB11D11030A00158FEA /* LGAlertViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5856AA51D11030A00158FEA /* LGAlertViewCell.m */; };
+		C5856AB21D11030A00158FEA /* LGAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5856AA71D11030A00158FEA /* LGAlertViewController.m */; };
+		C5856AB31D11030A00158FEA /* LGAlertViewTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C5856AAA1D11030A00158FEA /* LGAlertViewTextField.m */; };
+		C5856AB41D11030A00158FEA /* LGAlertViewWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = C5856AAC1D11030A00158FEA /* LGAlertViewWindow.m */; };
+		C5856AB51D11030A00158FEA /* UIWindow+LGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5856AAE1D11030A00158FEA /* UIWindow+LGAlertView.m */; };
 		C5893BB01CF58C6E00218738 /* Pods.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C5893BAF1CF58C6E00218738 /* Pods.debug.xcconfig */; };
 		C5893BB21CF58C8000218738 /* Pods.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C5893BB11CF58C8000218738 /* Pods.release.xcconfig */; };
 		C592B88F1CFE807000010BA1 /* Logout@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C592B88E1CFE807000010BA1 /* Logout@3x.png */; };
@@ -137,6 +153,8 @@
 		C52A2A151CFC3EB00050EB12 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 		C541F4001D09783300B49E67 /* SkillCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillCell.h; sourceTree = "<group>"; };
 		C541F4011D09783300B49E67 /* SkillCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillCell.m; sourceTree = "<group>"; };
+		C552DA9E1D0BA64B00A05CEE /* libPNChart.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPNChart.a; path = "../../Library/Developer/Xcode/DerivedData/wodcn-gcjuuezqiomaphbubaxiqvzjygfq/Build/Products/Debug-iphoneos/libPNChart.a"; sourceTree = "<group>"; };
+		C552DAA01D0BA67A00A05CEE /* libUICountingLabel.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUICountingLabel.a; path = "../../Library/Developer/Xcode/DerivedData/wodcn-gcjuuezqiomaphbubaxiqvzjygfq/Build/Products/Debug-iphoneos/libUICountingLabel.a"; sourceTree = "<group>"; };
 		C559EA4A1D068CC9003FA7C9 /* schedule4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule4.png; sourceTree = "<group>"; };
 		C559EA4B1D068CC9003FA7C9 /* schedule3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule3.png; sourceTree = "<group>"; };
 		C559EA4C1D068CC9003FA7C9 /* schedule1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule1.png; sourceTree = "<group>"; };
@@ -213,6 +231,29 @@
 		C58456981D00186000FAA357 /* SkillDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillDataManager.m; sourceTree = "<group>"; };
 		C584569B1D0164C900FAA357 /* AFViewShaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFViewShaker.h; sourceTree = "<group>"; };
 		C584569C1D0164C900FAA357 /* AFViewShaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFViewShaker.m; sourceTree = "<group>"; };
+		C5856A8E1D0EAA2500158FEA /* 身高.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "身高.png"; sourceTree = "<group>"; };
+		C5856A901D0EABCA00158FEA /* box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box.png; sourceTree = "<group>"; };
+		C5856A921D0EAE7100158FEA /* 体重.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "体重.png"; sourceTree = "<group>"; };
+		C5856A941D0EAEA400158FEA /* 性别.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "性别.png"; sourceTree = "<group>"; };
+		C5856A961D0EAEFD00158FEA /* 姓名.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "姓名.png"; sourceTree = "<group>"; };
+		C5856A981D0EBA6F00158FEA /* Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tool.h; sourceTree = "<group>"; };
+		C5856A991D0EBA6F00158FEA /* Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tool.m; sourceTree = "<group>"; };
+		C5856A9D1D0FA92D00158FEA /* 完成@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "完成@2x.png"; sourceTree = "<group>"; };
+		C5856AA01D11030A00158FEA /* LGAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGAlertView.h; sourceTree = "<group>"; };
+		C5856AA11D11030A00158FEA /* LGAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGAlertView.m; sourceTree = "<group>"; };
+		C5856AA21D11030A00158FEA /* LGAlertViewButtonProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGAlertViewButtonProperties.h; sourceTree = "<group>"; };
+		C5856AA31D11030A00158FEA /* LGAlertViewButtonProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGAlertViewButtonProperties.m; sourceTree = "<group>"; };
+		C5856AA41D11030A00158FEA /* LGAlertViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGAlertViewCell.h; sourceTree = "<group>"; };
+		C5856AA51D11030A00158FEA /* LGAlertViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGAlertViewCell.m; sourceTree = "<group>"; };
+		C5856AA61D11030A00158FEA /* LGAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGAlertViewController.h; sourceTree = "<group>"; };
+		C5856AA71D11030A00158FEA /* LGAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGAlertViewController.m; sourceTree = "<group>"; };
+		C5856AA81D11030A00158FEA /* LGAlertViewShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGAlertViewShared.h; sourceTree = "<group>"; };
+		C5856AA91D11030A00158FEA /* LGAlertViewTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGAlertViewTextField.h; sourceTree = "<group>"; };
+		C5856AAA1D11030A00158FEA /* LGAlertViewTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGAlertViewTextField.m; sourceTree = "<group>"; };
+		C5856AAB1D11030A00158FEA /* LGAlertViewWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGAlertViewWindow.h; sourceTree = "<group>"; };
+		C5856AAC1D11030A00158FEA /* LGAlertViewWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGAlertViewWindow.m; sourceTree = "<group>"; };
+		C5856AAD1D11030A00158FEA /* UIWindow+LGAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+LGAlertView.h"; sourceTree = "<group>"; };
+		C5856AAE1D11030A00158FEA /* UIWindow+LGAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+LGAlertView.m"; sourceTree = "<group>"; };
 		C5893BAF1CF58C6E00218738 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C5893BB11CF58C8000218738 /* Pods.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C592B88E1CFE807000010BA1 /* Logout@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logout@3x.png"; sourceTree = "<group>"; };
@@ -275,6 +316,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C552DAA11D0BA67A00A05CEE /* libUICountingLabel.a in Frameworks */,
+				C552DA9F1D0BA64B00A05CEE /* libPNChart.a in Frameworks */,
 				C592B89A1CFEE69500010BA1 /* libc++.tbd in Frameworks */,
 				C57844681CFD789B006BAAA0 /* libz.tbd in Frameworks */,
 				C583930D1CEC5893008A9BAC /* libsqlite3.tbd in Frameworks */,
@@ -314,6 +357,8 @@
 		6B3B8A10F77BCC737D6E1388 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C552DAA01D0BA67A00A05CEE /* libUICountingLabel.a */,
+				C552DA9E1D0BA64B00A05CEE /* libPNChart.a */,
 				C592B8991CFEE69500010BA1 /* libc++.tbd */,
 				C57844671CFD789B006BAAA0 /* libz.tbd */,
 				C57844651CFD7879006BAAA0 /* CoreGraphics.framework */,
@@ -356,17 +401,23 @@
 				C5E371A51D09021700DDBF87 /* CFPIC.jpg */,
 				C5E371A31D08F62F00DDBF87 /* cfpic2.jpg */,
 				C559EA4B1D068CC9003FA7C9 /* schedule3.png */,
+				C5856A921D0EAE7100158FEA /* 体重.png */,
+				C5856A941D0EAEA400158FEA /* 性别.png */,
 				C559EA4C1D068CC9003FA7C9 /* schedule1.png */,
+				C5856A901D0EABCA00158FEA /* box.png */,
 				C559EA4D1D068CC9003FA7C9 /* schedule7.png */,
 				C559EA4E1D068CC9003FA7C9 /* schedule6.png */,
 				C559EA4F1D068CC9003FA7C9 /* schedule5.png */,
+				C5856A961D0EAEFD00158FEA /* 姓名.png */,
 				C559EA501D068CC9003FA7C9 /* schedule2.png */,
 				C592B88E1CFE807000010BA1 /* Logout@3x.png */,
+				C5856A8E1D0EAA2500158FEA /* 身高.png */,
 				C592B8901CFEC18C00010BA1 /* defaulthead.jpg */,
 				C578446E1CFD9661006BAAA0 /* weixin@3x.png */,
 				C578446C1CFD9622006BAAA0 /* sina@3x.png */,
 				C5E371B21D09640100DDBF87 /* 随机训练@2x.png */,
 				C5E371AC1D0957EC00DDBF87 /* 添加白色.png */,
+				C5856A9D1D0FA92D00158FEA /* 完成@2x.png */,
 				C581796E1CF7E60700BE6BC5 /* add@3x.png */,
 				C5D74F1B1CF7108100262EED /* userselected@3x.png */,
 				C5E371BC1D096DD900DDBF87 /* 分享2@2x.png */,
@@ -472,6 +523,7 @@
 		C57C8C2D1CE57F110033666D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C5856A9F1D11030A00158FEA /* LGAlertView */,
 				C584569A1D0164C900FAA357 /* AFViewShaker */,
 				C592B8941CFEE49300010BA1 /* Wechat */,
 				C57844451CFD77A0006BAAA0 /* libWeiboSDK */,
@@ -490,6 +542,8 @@
 				C57844711CFD9BAA006BAAA0 /* AuthTool.m */,
 				C593CFF61D0AAE4A0090E62D /* TableHeaderView.h */,
 				C593CFF71D0AAE4A0090E62D /* TableHeaderView.m */,
+				C5856A981D0EBA6F00158FEA /* Tool.h */,
+				C5856A991D0EBA6F00158FEA /* Tool.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -526,6 +580,28 @@
 				C584569C1D0164C900FAA357 /* AFViewShaker.m */,
 			);
 			path = AFViewShaker;
+			sourceTree = "<group>";
+		};
+		C5856A9F1D11030A00158FEA /* LGAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				C5856AA01D11030A00158FEA /* LGAlertView.h */,
+				C5856AA11D11030A00158FEA /* LGAlertView.m */,
+				C5856AA21D11030A00158FEA /* LGAlertViewButtonProperties.h */,
+				C5856AA31D11030A00158FEA /* LGAlertViewButtonProperties.m */,
+				C5856AA41D11030A00158FEA /* LGAlertViewCell.h */,
+				C5856AA51D11030A00158FEA /* LGAlertViewCell.m */,
+				C5856AA61D11030A00158FEA /* LGAlertViewController.h */,
+				C5856AA71D11030A00158FEA /* LGAlertViewController.m */,
+				C5856AA81D11030A00158FEA /* LGAlertViewShared.h */,
+				C5856AA91D11030A00158FEA /* LGAlertViewTextField.h */,
+				C5856AAA1D11030A00158FEA /* LGAlertViewTextField.m */,
+				C5856AAB1D11030A00158FEA /* LGAlertViewWindow.h */,
+				C5856AAC1D11030A00158FEA /* LGAlertViewWindow.m */,
+				C5856AAD1D11030A00158FEA /* UIWindow+LGAlertView.h */,
+				C5856AAE1D11030A00158FEA /* UIWindow+LGAlertView.m */,
+			);
+			path = LGAlertView;
 			sourceTree = "<group>";
 		};
 		C592B8941CFEE49300010BA1 /* Wechat */ = {
@@ -572,9 +648,9 @@
 				C569B61C1CEEACEB00E177FF /* Skill */,
 				C583935B1CEC6435008A9BAC /* model */,
 				C57C8C2D1CE57F110033666D /* Common */,
-				C510F5531CD83A3E00C060AF /* WOD */,
 				C5D99A891CC7335100A450C2 /* AppDelegate.h */,
 				C5D99A8A1CC7335100A450C2 /* AppDelegate.m */,
+				C510F5531CD83A3E00C060AF /* WOD */,
 				C5D99A8C1CC7335100A450C2 /* ViewController.h */,
 				C5D99A8D1CC7335100A450C2 /* ViewController.m */,
 				C5D99A921CC7335100A450C2 /* Assets.xcassets */,
@@ -739,7 +815,9 @@
 				C592B8911CFEC18C00010BA1 /* defaulthead.jpg in Resources */,
 				C5E371B11D0961DA00DDBF87 /* 举重@2x.png in Resources */,
 				C5E371A61D09021700DDBF87 /* CFPIC.jpg in Resources */,
+				C5856A9E1D0FA92D00158FEA /* 完成@2x.png in Resources */,
 				C5E371BB1D096D4900DDBF87 /* timer@2x.png in Resources */,
+				C5856A911D0EABCA00158FEA /* box.png in Resources */,
 				C559EA571D068CC9003FA7C9 /* schedule2.png in Resources */,
 				C5DEF7DC1CF309D400BCC091 /* WODTop.json in Resources */,
 				C5E371AD1D0957EC00DDBF87 /* 添加白色.png in Resources */,
@@ -750,15 +828,19 @@
 				C559EA541D068CC9003FA7C9 /* schedule7.png in Resources */,
 				C57844541CFD77A0006BAAA0 /* WeiboSDK.bundle in Resources */,
 				C569F6111CF3FE080098822B /* LastestWODScore.json in Resources */,
+				C5856A951D0EAEA400158FEA /* 性别.png in Resources */,
 				C52A2A0D1CFC18F20050EB12 /* Main.storyboard in Resources */,
+				C5856A8F1D0EAA2500158FEA /* 身高.png in Resources */,
 				C5D74F141CF70D6200262EED /* schedule@3x.png in Resources */,
 				C569B6241CEEFA3600E177FF /* head.jpg in Resources */,
 				C5D74F1D1CF7108100262EED /* userselected@3x.png in Resources */,
+				C5856A931D0EAE7100158FEA /* 体重.png in Resources */,
 				C5D99A961CC7335100A450C2 /* LaunchScreen.storyboard in Resources */,
 				C5D99A931CC7335100A450C2 /* Assets.xcassets in Resources */,
 				C559EA511D068CC9003FA7C9 /* schedule4.png in Resources */,
 				C5E371A41D08F62F00DDBF87 /* cfpic2.jpg in Resources */,
 				C559EA521D068CC9003FA7C9 /* schedule3.png in Resources */,
+				C5856A971D0EAEFD00158FEA /* 姓名.png in Resources */,
 				C5E371BD1D096DD900DDBF87 /* 分享2@2x.png in Resources */,
 				C592B88F1CFE807000010BA1 /* Logout@3x.png in Resources */,
 				C581796F1CF7E60700BE6BC5 /* add@3x.png in Resources */,
@@ -842,7 +924,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5856AB41D11030A00158FEA /* LGAlertViewWindow.m in Sources */,
+				C5856AB21D11030A00158FEA /* LGAlertViewController.m in Sources */,
 				C578446B1CFD93F7006BAAA0 /* LoginViewController.m in Sources */,
+				C5856AB31D11030A00158FEA /* LGAlertViewTextField.m in Sources */,
 				C58456961D00136C00FAA357 /* Skill.m in Sources */,
 				C510F5611CD99F0600C060AF /* WODDetailViewController.m in Sources */,
 				C510F5561CD83ABB00C060AF /* WODListTableViewController.m in Sources */,
@@ -855,6 +940,8 @@
 				C584569D1D0164C900FAA357 /* AFViewShaker.m in Sources */,
 				C593CFF81D0AAE4A0090E62D /* TableHeaderView.m in Sources */,
 				C55EAB131CF5A672002C9958 /* XMLDictionary.m in Sources */,
+				C5856AB11D11030A00158FEA /* LGAlertViewCell.m in Sources */,
+				C5856AAF1D11030A00158FEA /* LGAlertView.m in Sources */,
 				C58393611CEC6476008A9BAC /* WOD.m in Sources */,
 				C58456951D00136C00FAA357 /* Skill+CoreDataProperties.m in Sources */,
 				C5D99A8E1CC7335100A450C2 /* ViewController.m in Sources */,
@@ -867,10 +954,13 @@
 				C5D2C3F51CF82C6400F1BD5C /* SkillRecord.m in Sources */,
 				C569F6171CF442D30098822B /* TimerViewController.m in Sources */,
 				C57C8C301CE580980033666D /* WODKeyBoardToolBar.m in Sources */,
+				C5856A9A1D0EBA6F00158FEA /* Tool.m in Sources */,
+				C5856AB51D11030A00158FEA /* UIWindow+LGAlertView.m in Sources */,
 				C5BF27E31CE46FF50023C178 /* WODAddViewController.m in Sources */,
 				C5D2C3FB1CF8348C00F1BD5C /* SkillEditeViewController.m in Sources */,
 				C58179721CF7E7F000BE6BC5 /* SkillDetailViewController.m in Sources */,
 				C569F60F1CF3FD490098822B /* LastestWODViewController.m in Sources */,
+				C5856AB01D11030A00158FEA /* LGAlertViewButtonProperties.m in Sources */,
 				C510F55E1CD853EC00C060AF /* WODModel.m in Sources */,
 				C518B38A1CEB292F0098B477 /* WODTypePicker.m in Sources */,
 				C58456991D00186000FAA357 /* SkillDataManager.m in Sources */,
