@@ -17,9 +17,11 @@
 //插入数据
 - (void)insert:(NSDictionary*)data;
 
-- (NSMutableArray*)query;
+- (NSMutableArray*)queryMyWOD;
 
 - (WOD*)queryOneByName:(NSString*)name;
 - (void)deleteOneByName:(NSString*)name;
 -(void)update:(WOD*)wod;
+- (void)deleteAll;
+- (NSMutableArray*)queryAlex;
 @end

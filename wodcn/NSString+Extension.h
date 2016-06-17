@@ -21,7 +21,9 @@
 @class MREntitiesConverter;
 @interface NSString (Extension)
 //
--(NSMutableAttributedString*)alexWodDescriptionFormat;
+-(NSMutableAttributedString*)alexWODHtmlFormat;
+-(NSString*)fetchWODText;
+-(NSDate *)dateFromString:(NSString *)format;
 ////返回字符串经过md5加密后的字符
 //+(NSString*)stringDecodingByMD5:(NSString*)str;
 //

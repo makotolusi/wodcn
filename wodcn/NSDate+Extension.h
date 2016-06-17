@@ -12,4 +12,6 @@
 
 +(NSDate*) convertDateFromString:(NSString*)uiDate;
 -(NSString *)stringFromDate;
+-(NSString *)stringFromDate:(NSString*)format;
+-(BOOL)isTomorrow;
 @end

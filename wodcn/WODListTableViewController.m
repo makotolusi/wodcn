@@ -34,50 +34,27 @@
                         [UIFont fontWithName:@"American Typewriter" size:23.0],NSFontAttributeName,
                                                                [UIColor whiteColor]  ,NSForegroundColorAttributeName,
                                                                  nil];
-    //rss feed
-    AFHTTPRequestOperationManager *af = [AFHTTPRequestOperationManager manager];
-    af.responseSerializer = [AFXMLParserResponseSerializer serializer];
-    af.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/rss+xml",nil];//application/rss+xml
-    [af GET:@"http://www.alexandriacrossfit.com/feed/" parameters:nil success:^(AFHTTPRequestOperation *operation,id responseObject){
-        wodGroup=[[NSMutableArray alloc] init];
-        NSString *path= [[NSBundle mainBundle] pathForResource:@"WODGroup" ofType:@"json"];
-        NSData *fileData = [NSData dataWithContentsOfFile:path];
-        wods=[[NSMutableDictionary alloc] initWithDictionary:[NSJSONSerialization JSONObjectWithData:fileData options:NSJSONReadingMutableLeaves error:nil]];
-        for (NSString *groupName in wods) {
-            [wodGroup addObject:groupName];
-        }
-        manager=[[WODDataManager alloc] init];
-        NSMutableArray* datas=[manager query];
-        if (datas.count!=0) {
-            [wodGroup insertObject:MYWOD atIndex:0];
-            [wods setValue:[manager query] forKey:MYWOD];
-        }
-        //----------data-------
-        NSXMLParser *parser = (NSXMLParser *)responseObject;
-        NSDictionary *dic = [NSDictionary dictionaryWithXMLParser:parser];
-        NSDictionary *channel=dic[@"channel"];
-        NSString* wodSource=channel[@"title"];
-        NSArray* item=channel[@"item"];
-        NSMutableArray* alwods=[NSMutableArray arrayWithCapacity:item.count];
-        for (NSDictionary* wod in item) {
-            NSDictionary* alwod=@{@"name":wod[@"title"],@"wodSource":wodSource,@"desc":wod[@"description"],@"type":@"alex",@"link":wod[@"link"]};
-            [alwods addObject:alwod];
-        }
-
-            [wodGroup insertObject:wodSource atIndex:1];
-            [wods setValue:alwods forKey:wodSource];
-//        self.wodDate.text=wodDate;
-//        self.wodSource.text=[@"By " stringByAppendingString:wodSource];
-        
-        [self.tableView reloadData];
-        
-        
-    } failure:^(AFHTTPRequestOperation *operation,NSError *error){
-        
-        NSLog(@"error = %@",error);
-        
-    }];
-    //end
+    wodGroup=[[NSMutableArray alloc] init];
+    NSString *path= [[NSBundle mainBundle] pathForResource:@"WODGroup" ofType:@"json"];
+    NSData *fileData = [NSData dataWithContentsOfFile:path];
+    wods=[[NSMutableDictionary alloc] initWithDictionary:[NSJSONSerialization JSONObjectWithData:fileData options:NSJSONReadingMutableLeaves error:nil]];
+    for (NSString *groupName in wods) {
+        [wodGroup addObject:groupName];
+    }
+    manager=[[WODDataManager alloc] init];
+    NSMutableArray* datas=[manager queryMyWOD];
+    if (datas.count!=0) {
+        [wodGroup insertObject:MYWOD atIndex:0];
+        [wods setValue:datas forKey:MYWOD];
+    }
+    //----------data-------
+    WODDataManager *dataManager=[[WODDataManager alloc] init];
+    NSMutableArray* alexwods= [dataManager queryAlex];
+    
+    [wodGroup insertObject:ALEX atIndex:1];
+    [wods setValue:alexwods forKey:ALEX];
+    
+    [self.tableView reloadData];
     
 }
 
@@ -125,12 +102,16 @@
         NSString* de=wod.desc;
         de=[de stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
         cell.descLabel.text=de;
+    }else if([key isEqualToString:ALEX]){
+        WOD* dic=[wods[key] objectAtIndex:indexPath.row];
+        cell.titleLabel.text = dic.title;
+        cell.descLabel.attributedText=[dic.desc alexWODHtmlFormat];
     }else{
         NSDictionary* dic=[wods[key] objectAtIndex:indexPath.row];
         cell.titleLabel.text = dic[@"name"];
-        NSString* de=dic[@"desc"];
-        de=[de stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
-        cell.descLabel.text=de;
+//        NSString* de=dic[@"desc"];
+//        de=[de stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
+        cell.descLabel.text=dic[@"desc"];
     }
     return cell;
 }
@@ -157,11 +138,12 @@
     
     
     NSString *key=wodGroup[indexPath.section];
-    if([key isEqualToString:MYWOD]){
+    if([key isEqualToString:MYWOD]||[key isEqualToString:ALEX]){
         WOD *wod=[wods[key] objectAtIndex:indexPath.row];
         NSDictionary* dic=@{@"name":wod.title,@"desc":wod.desc,@"type":wod.type,@"date":wod.date};
          detailViewController.wodDic=dic;
-    }else{
+    }else
+    {
         NSDictionary* dic=[wods[key] objectAtIndex:indexPath.row];
         detailViewController.wodDic=dic;
     }

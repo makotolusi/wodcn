@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *title;
 @property (nullable, nonatomic, retain) NSString *desc;
 @property (nullable, nonatomic, retain) NSString *type;
-@property (nullable, nonatomic, retain) NSString *date;
+@property (nullable, nonatomic, retain) NSDate *date;
 
 @end
 

@@ -13,6 +13,11 @@
 #import "WXApi.h"
 #import "NSString+Extension.h"
 #import "Tool.h"
+#import "WODDataManager.h"
+#import "WOD.h"
+#import "NSDate+Extension.h"
+#import "LBProgressHUD.h"
+#import "InitData.h"
 @interface LastestWODViewController ()
 
 @end
@@ -25,7 +30,50 @@
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
+-(void)notice:(id)sender{
+    NSLog(@"%@",sender);
+    WODDataManager *dataManager=[[WODDataManager alloc] init];
+    NSMutableArray* alexwods= [dataManager queryAlex];
+     [self loadWODData:alexwods[0]];
+}
 
+-(void)loadWODData:(WOD*)wod{
+    self.wodDate.text=wod.title;//[wod.date stringFromDate:@"MM dd, yyyy"];
+    self.wodSource.text=[@"By " stringByAppendingString:ALEX];
+    NSMutableAttributedString *attri= [wod.desc alexWODHtmlFormat];
+    if (attri!=nil) {
+        self.wodDesc.attributedText=attri;
+        float height=  [self heightForString:self.wodDesc andWidth:self.wodDesc.frame.size.width];
+        
+        self.wodDesc.frame=CGRectMake(self.wodDesc.frame.origin.x, self.wodDesc.frame.origin.y
+                                      , self.wodDesc.frame.size.width-20, height);
+        [_scrollView setContentSize:CGSizeMake(0, _wodDate.frame.size.height+_wodSource.frame.size.height+_wodDesc.frame.size.height)];
+        [self.view bringSubviewToFront:_finishLabel];
+                    [self.view bringSubviewToFront:_scoreLabel];
+    }
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    //获取通知中心单例对象
+    NSNotificationCenter * center = [NSNotificationCenter defaultCenter];
+    //添加当前类对象为一个观察者，name和object设置为nil，表示接收一切通知
+    [center addObserver:self selector:@selector(notice:) name:@"reloadLastedWOD" object:nil];
+    
+    WODDataManager *dataManager=[[WODDataManager alloc] init];
+    NSMutableArray* alexwods= [dataManager queryAlex];
+    if (alexwods.count==0) {//毫无数据
+        [InitData initData:self.view];
+    }else{
+        WOD *lasted= alexwods[0];
+        [self loadWODData:alexwods[0]];
+        if ([lasted.date isTomorrow]) {
+            [InitData initData:self.view];//数据较久
+        }else{
+            [self loadWODData:alexwods[0]];
+        }
+        
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -35,57 +83,9 @@
     
     [self.view addSubview:statusBarView];
 
-    NSString* text=_wodDesc.text;
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFXMLParserResponseSerializer serializer];
-    manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/rss+xml",nil];//application/rss+xml
-    [manager GET:@"http://www.alexandriacrossfit.com/feed/" parameters:nil success:^(AFHTTPRequestOperation *operation,id responseObject){
+   
+   
     
-        NSXMLParser *parser = (NSXMLParser *)responseObject;
-                NSDictionary *dic = [NSDictionary dictionaryWithXMLParser:parser];
-                NSDictionary *channel=dic[@"channel"];
-                NSString* wodSource=channel[@"title"];
-                NSArray* item=channel[@"item"];
-                NSDictionary* totdayWod=item[0];
-//               NSString* wodDescription=totdayWod[@"description"];
-                NSString* wodDate=totdayWod[@"title"];
-            NSString* link=totdayWod[@"link"];
-                self.wodDate.text=wodDate;
-                self.wodSource.text=[@"By " stringByAppendingString:wodSource];
-        
-        manager.responseSerializer = [[AFHTTPResponseSerializer alloc] init];
-        manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"text/html",nil];//application/rss+xml
-        [manager GET:link parameters:nil success:^(AFHTTPRequestOperation *operation,id responseObject){
-            
-            NSString* searchText=[[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-            NSMutableAttributedString *attri= [searchText alexWodDescriptionFormat];
-            if (attri!=nil) {
-                   self.wodDesc.attributedText=attri;
-                float height=  [self heightForString:self.wodDesc andWidth:self.wodDesc.frame.size.width];
-                
-                self.wodDesc.frame=CGRectMake(self.wodDesc.frame.origin.x, self.wodDesc.frame.origin.y
-                                              , self.wodDesc.frame.size.width, height);
-            }
-
-        
-            [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, _wodDate.frame.size.height+_wodSource.frame.size.height+_wodDesc.frame.size.height)];
-            [self.view bringSubviewToFront:_finishLabel];
-            [self.view bringSubviewToFront:_scoreLabel];
-            
-        } failure:^(AFHTTPRequestOperation *operation,NSError *error){
-            
-            NSLog(@"error = %@",error);
-            
-        }];
-
-        
-    } failure:^(AFHTTPRequestOperation *operation,NSError *error){
-        
-        NSLog(@"error = %@",error);
-        
-    }];
-
-                           
     self.lastestWODScoreList.delegate=self;
     self.lastestWODScoreList.dataSource=self;
     lastestWODScoreData=[[NSMutableArray alloc] init];

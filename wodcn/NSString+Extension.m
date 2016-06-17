@@ -13,18 +13,40 @@
 
 @implementation NSString (Extension)
 
--(NSMutableAttributedString*)alexWodDescriptionFormat{
-    NSError *error = NULL;
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(?i)<div class=\"content\"[\\s\\S]+?</div>" options:NSRegularExpressionCaseInsensitive error:&error];
-    NSTextCheckingResult *result = [regex firstMatchInString:self options:0 range:NSMakeRange(0, [self length])];
-    if (result) {
-        NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithData:[[self substringWithRange:result.range] dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+-(NSMutableAttributedString*)alexWODHtmlFormat{
+    if (self) {
+        NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithData:[self dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
         [attributedString  addAttribute:NSFontAttributeName
-                                  value:[UIFont fontWithName:@"Chalkboard SE"  size:17]
+                                  value:[UIFont fontWithName:@"Chalkboard SE"  size:18]
                                   range:NSMakeRange(0, attributedString.length)];
         return  attributedString;
     }else
         return nil;
+}
+
+-(NSString*)fetchWODText{
+    NSError *error = NULL;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(?i)<div class=\"content\"[\\s\\S]+?</div>" options:NSRegularExpressionCaseInsensitive error:&error];
+    NSTextCheckingResult *result = [regex firstMatchInString:self options:0 range:NSMakeRange(0, [self length])];
+    if (result) {
+        return  [self substringWithRange:result.range];
+    }else
+        return nil;
+}
+
+//输入的日期字符串形如：@"1992-05-21 13:08:08"
+
+-(NSDate *)dateFromString:(NSString *)format{
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+     [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
+    
+    [dateFormatter setDateFormat: format];
+    
+    NSDate *destDate= [dateFormatter dateFromString:self];
+    
+    return destDate;
+    
 }
 
 ////判断字符串是否包含指定字符串

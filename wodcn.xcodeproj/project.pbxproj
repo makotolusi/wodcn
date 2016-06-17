@@ -80,6 +80,8 @@
 		C5856AB31D11030A00158FEA /* LGAlertViewTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C5856AAA1D11030A00158FEA /* LGAlertViewTextField.m */; };
 		C5856AB41D11030A00158FEA /* LGAlertViewWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = C5856AAC1D11030A00158FEA /* LGAlertViewWindow.m */; };
 		C5856AB51D11030A00158FEA /* UIWindow+LGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5856AAE1D11030A00158FEA /* UIWindow+LGAlertView.m */; };
+		C5856AB91D124C9C00158FEA /* LBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C5856AB71D124C9C00158FEA /* LBProgressHUD.m */; };
+		C5856ABC1D124E8A00158FEA /* InitData.m in Sources */ = {isa = PBXBuildFile; fileRef = C5856ABB1D124E8A00158FEA /* InitData.m */; };
 		C5893BB01CF58C6E00218738 /* Pods.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C5893BAF1CF58C6E00218738 /* Pods.debug.xcconfig */; };
 		C5893BB21CF58C8000218738 /* Pods.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C5893BB11CF58C8000218738 /* Pods.release.xcconfig */; };
 		C592B88F1CFE807000010BA1 /* Logout@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C592B88E1CFE807000010BA1 /* Logout@3x.png */; };
@@ -98,7 +100,6 @@
 		C5D74F1D1CF7108100262EED /* userselected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D74F1B1CF7108100262EED /* userselected@3x.png */; };
 		C5D99A881CC7335100A450C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D99A871CC7335100A450C2 /* main.m */; };
 		C5D99A8B1CC7335100A450C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D99A8A1CC7335100A450C2 /* AppDelegate.m */; };
-		C5D99A8E1CC7335100A450C2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D99A8D1CC7335100A450C2 /* ViewController.m */; };
 		C5D99A931CC7335100A450C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5D99A921CC7335100A450C2 /* Assets.xcassets */; };
 		C5D99A961CC7335100A450C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5D99A941CC7335100A450C2 /* LaunchScreen.storyboard */; };
 		C5D99AA11CC7335200A450C2 /* wodcnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D99AA01CC7335200A450C2 /* wodcnTests.m */; };
@@ -254,6 +255,10 @@
 		C5856AAC1D11030A00158FEA /* LGAlertViewWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGAlertViewWindow.m; sourceTree = "<group>"; };
 		C5856AAD1D11030A00158FEA /* UIWindow+LGAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+LGAlertView.h"; sourceTree = "<group>"; };
 		C5856AAE1D11030A00158FEA /* UIWindow+LGAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+LGAlertView.m"; sourceTree = "<group>"; };
+		C5856AB61D124C9C00158FEA /* LBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBProgressHUD.h; sourceTree = "<group>"; };
+		C5856AB71D124C9C00158FEA /* LBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBProgressHUD.m; sourceTree = "<group>"; };
+		C5856ABA1D124E8A00158FEA /* InitData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitData.h; sourceTree = "<group>"; };
+		C5856ABB1D124E8A00158FEA /* InitData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitData.m; sourceTree = "<group>"; };
 		C5893BAF1CF58C6E00218738 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C5893BB11CF58C8000218738 /* Pods.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C592B88E1CFE807000010BA1 /* Logout@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logout@3x.png"; sourceTree = "<group>"; };
@@ -284,8 +289,6 @@
 		C5D99A871CC7335100A450C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C5D99A891CC7335100A450C2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C5D99A8A1CC7335100A450C2 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C5D99A8C1CC7335100A450C2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C5D99A8D1CC7335100A450C2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C5D99A921CC7335100A450C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5D99A951CC7335100A450C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5D99A971CC7335100A450C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -523,6 +526,7 @@
 		C57C8C2D1CE57F110033666D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C5856AB81D124C9C00158FEA /* LBProgressHUD */,
 				C5856A9F1D11030A00158FEA /* LGAlertView */,
 				C584569A1D0164C900FAA357 /* AFViewShaker */,
 				C592B8941CFEE49300010BA1 /* Wechat */,
@@ -604,6 +608,16 @@
 			path = LGAlertView;
 			sourceTree = "<group>";
 		};
+		C5856AB81D124C9C00158FEA /* LBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				C5856AB61D124C9C00158FEA /* LBProgressHUD.h */,
+				C5856AB71D124C9C00158FEA /* LBProgressHUD.m */,
+			);
+			name = LBProgressHUD;
+			path = "../../../Downloads/LBProgressHUD-master/LBProgressHUDDemo/LBProgressHUDDemo/LBProgressHUD";
+			sourceTree = "<group>";
+		};
 		C592B8941CFEE49300010BA1 /* Wechat */ = {
 			isa = PBXGroup;
 			children = (
@@ -651,14 +665,14 @@
 				C5D99A891CC7335100A450C2 /* AppDelegate.h */,
 				C5D99A8A1CC7335100A450C2 /* AppDelegate.m */,
 				C510F5531CD83A3E00C060AF /* WOD */,
-				C5D99A8C1CC7335100A450C2 /* ViewController.h */,
-				C5D99A8D1CC7335100A450C2 /* ViewController.m */,
 				C5D99A921CC7335100A450C2 /* Assets.xcassets */,
 				C5D99A941CC7335100A450C2 /* LaunchScreen.storyboard */,
 				C5D99A971CC7335100A450C2 /* Info.plist */,
 				C5BF27E41CE47F030023C178 /* PrefixHeader.pch */,
 				C5D99A861CC7335100A450C2 /* Supporting Files */,
 				C58393101CEC5C9D008A9BAC /* WodCN.xcdatamodeld */,
+				C5856ABA1D124E8A00158FEA /* InitData.h */,
+				C5856ABB1D124E8A00158FEA /* InitData.m */,
 			);
 			path = wodcn;
 			sourceTree = "<group>";
@@ -939,13 +953,14 @@
 				C541F4021D09783300B49E67 /* SkillCell.m in Sources */,
 				C584569D1D0164C900FAA357 /* AFViewShaker.m in Sources */,
 				C593CFF81D0AAE4A0090E62D /* TableHeaderView.m in Sources */,
+				C5856ABC1D124E8A00158FEA /* InitData.m in Sources */,
 				C55EAB131CF5A672002C9958 /* XMLDictionary.m in Sources */,
 				C5856AB11D11030A00158FEA /* LGAlertViewCell.m in Sources */,
 				C5856AAF1D11030A00158FEA /* LGAlertView.m in Sources */,
 				C58393611CEC6476008A9BAC /* WOD.m in Sources */,
 				C58456951D00136C00FAA357 /* Skill+CoreDataProperties.m in Sources */,
-				C5D99A8E1CC7335100A450C2 /* ViewController.m in Sources */,
 				C58393121CEC5C9D008A9BAC /* WodCN.xcdatamodeld in Sources */,
+				C5856AB91D124C9C00158FEA /* LBProgressHUD.m in Sources */,
 				C569B61F1CEEB09200E177FF /* SkillListController.m in Sources */,
 				C5D99A8B1CC7335100A450C2 /* AppDelegate.m in Sources */,
 				C58393641CEC6929008A9BAC /* CoreDataManager.m in Sources */,

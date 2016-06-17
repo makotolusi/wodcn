@@ -38,12 +38,15 @@
 
 
 //查询
-- (NSMutableArray*)query
+- (NSMutableArray*)queryMyWOD
 {
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     self.context = delegate.managedObjectContext;
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"WOD" inManagedObjectContext:context];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"type = '%@' ", @"mywod"]];
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
     [fetchRequest setEntity:entity];
     NSError *error;
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
@@ -73,6 +76,27 @@
     return nil;
 }
 
+//查询
+- (NSMutableArray*)queryAlex
+{
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    self.context = delegate.managedObjectContext;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"type = '%@' ", @"alex"]];
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"WOD" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    NSMutableArray *resultArray = [NSMutableArray array];
+    
+    for (WOD *info in fetchedObjects) {
+        [resultArray addObject:info];
+    }
+    return resultArray;
+}
+
 -(void)update:(WOD*)wod{
     NSError *error = nil;
     if(![context save:&error])
@@ -90,4 +114,9 @@
     [context deleteObject:wod];
 }
 
+- (void)deleteAll{
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    self.context = delegate.managedObjectContext;
+    [context deletedObjects];
+}
 @end
