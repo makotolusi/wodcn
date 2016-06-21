@@ -13,11 +13,16 @@
           "score": "12min"
           }
 ],
-"The benchmarck girls": [
+"The Benchmark Girls": [
                          {
                          "name": "Angie",
                          "type": "计时",
-                         "desc":"100 Pull-ups,\n100 Push-ups,\n100 Sit-ups,\nSquats.\n\n来源CrossFit,inc.",
+                        "desc":"<td><span style="color: #000000;">Three rounds of:</span><p></p>
+                        <ul>
+                        <li><span style="color: #000000;">15 foot Rope climb, 5 ascents</span></li>
+                        <li><span style="color: #000000;">185 pound Back squat, 25 reps</span></li>
+                        </ul>
+                        </td>",
                          "score": "12min"
                          },
                          {

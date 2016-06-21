@@ -24,4 +24,5 @@
 -(void)update:(WOD*)wod;
 - (void)deleteAll;
 - (NSMutableArray*)queryAlex;
+- (void)deleteAlex;
 @end

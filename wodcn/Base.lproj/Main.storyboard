@@ -253,23 +253,23 @@
                                         <rect key="frame" x="10" y="-25" width="600" height="556"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="稍等......" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hz9-fk-V9s">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="37"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="38"/>
                                                 <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="30"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9Z-gO-3UW" userLabel="wod date">
-                                                <rect key="frame" x="0.0" y="42" width="600" height="24"/>
+                                                <rect key="frame" x="0.0" y="43" width="600" height="24"/>
                                                 <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="19"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="稍等,稍等......" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8G-Uu-Ggt">
-                                                <rect key="frame" x="0.0" y="71" width="600" height="25"/>
+                                                <rect key="frame" x="0.0" y="72" width="600" height="25"/>
                                                 <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="疯狂手抄中......" translatesAutoresizingMaskIntoConstraints="NO" id="BHN-Ti-tNE">
-                                                <rect key="frame" x="0.0" y="101" width="600" height="455"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="疯狂手抄中......" translatesAutoresizingMaskIntoConstraints="NO" id="BHN-Ti-tNE">
+                                                <rect key="frame" x="0.0" y="102" width="600" height="455"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -317,8 +317,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="w7L-y4-k3M">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
                         </textAttributes>
                     </navigationBar>
@@ -366,7 +367,7 @@
                             <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="完成.png" translatesAutoresizingMaskIntoConstraints="NO" id="8aw-kl-Zhb">
                                 <rect key="frame" x="111" y="111" width="40" height="40"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="成绩:12:45" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhw-nU-Tod">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="成绩:12:45" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhw-nU-Tod">
                                 <rect key="frame" x="150" y="284" width="200" height="32"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -382,20 +383,20 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="SY3-UI-VIL">
-                                        <rect key="frame" x="0.0" y="20" width="560" height="110"/>
+                                        <rect key="frame" x="0.0" y="20" width="580" height="477"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="稍等......" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkP-p9-1v3">
-                                                <rect key="frame" x="0.0" y="0.0" width="560" height="38"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="580" height="38"/>
                                                 <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="30"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="稍等,稍等......" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BqM-n9-euV">
-                                                <rect key="frame" x="0.0" y="43" width="560" height="25"/>
+                                                <rect key="frame" x="0.0" y="43" width="580" height="25"/>
                                                 <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="疯狂手抄中......" translatesAutoresizingMaskIntoConstraints="NO" id="dDP-6Q-JHf">
-                                                <rect key="frame" x="0.0" y="73" width="560" height="38"/>
+                                                <rect key="frame" x="0.0" y="73" width="580" height="405"/>
                                                 <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textView>
@@ -403,16 +404,24 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="SY3-UI-VIL" firstAttribute="height" secondItem="3WV-WI-SYU" secondAttribute="height" id="Ds1-6l-BeR"/>
                                     <constraint firstItem="dDP-6Q-JHf" firstAttribute="width" secondItem="3WV-WI-SYU" secondAttribute="width" constant="-20" id="RL9-rx-9bC"/>
                                     <constraint firstItem="SY3-UI-VIL" firstAttribute="top" secondItem="3WV-WI-SYU" secondAttribute="top" constant="20" id="dD8-Sr-pDp"/>
                                     <constraint firstAttribute="trailing" secondItem="SY3-UI-VIL" secondAttribute="trailing" constant="10" id="gOT-bw-v6n"/>
+                                    <constraint firstItem="SY3-UI-VIL" firstAttribute="width" secondItem="3WV-WI-SYU" secondAttribute="width" id="lgn-K6-ol6"/>
                                     <constraint firstItem="SY3-UI-VIL" firstAttribute="leading" secondItem="3WV-WI-SYU" secondAttribute="leading" constant="10" id="nPI-eh-K2o"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="gOT-bw-v6n"/>
+                                    </mask>
+                                </variation>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3WV-WI-SYU" firstAttribute="leading" secondItem="7iM-FY-adc" secondAttribute="leadingMargin" constant="-20" id="6Cs-h4-fod"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nhw-nU-Tod" secondAttribute="trailing" constant="20" id="N9l-6W-51x"/>
                             <constraint firstItem="8aw-kl-Zhb" firstAttribute="top" secondItem="KyX-a8-DTp" secondAttribute="bottom" constant="20" id="NbA-WN-EBh"/>
                             <constraint firstItem="ilN-7i-MTv" firstAttribute="top" secondItem="3WV-WI-SYU" secondAttribute="bottom" id="QqG-Qd-xS5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8aw-kl-Zhb" secondAttribute="trailing" constant="-5" id="TgW-3t-EyM"/>

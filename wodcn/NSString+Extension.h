@@ -24,6 +24,9 @@
 -(NSMutableAttributedString*)alexWODHtmlFormat;
 -(NSString*)fetchWODText;
 -(NSDate *)dateFromString:(NSString *)format;
+-(NSMutableAttributedString*)alexWODHtmlFormatDetailsLabel;
+
+-(NSString *)filterNR;
 ////返回字符串经过md5加密后的字符
 //+(NSString*)stringDecodingByMD5:(NSString*)str;
 //

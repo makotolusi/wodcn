@@ -20,7 +20,7 @@
 +(void)initData:(UIView*)view{
     [LBProgressHUD showHUDto:view animated:YES];
     WODDataManager *dataManager=[[WODDataManager alloc] init];
-    [dataManager deleteAll];
+    [dataManager deleteAlex];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFXMLParserResponseSerializer serializer];

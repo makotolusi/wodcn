@@ -114,6 +114,15 @@
     [context deleteObject:wod];
 }
 
+- (void)deleteAlex{
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    self.context = delegate.managedObjectContext;
+    NSMutableArray* wods= [self queryAlex];
+    for (WOD* wod in wods) {
+        [context deleteObject:wod];
+    }
+  
+}
 - (void)deleteAll{
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     self.context = delegate.managedObjectContext;

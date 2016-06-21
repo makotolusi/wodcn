@@ -13,9 +13,10 @@
 #import "AFNetworking.h"
 #import "XMLDictionary.h"
 #import "WODCell.h"
+#import "NSString+Extension.h"
 #define MYWOD @"我的WOD"
 #import "TableHeaderView.h"
-@interface WODListTableViewController ()
+@interface WODListTableViewController ()<NSXMLParserDelegate>
 
 @end
 
@@ -35,11 +36,15 @@
                                                                [UIColor whiteColor]  ,NSForegroundColorAttributeName,
                                                                  nil];
     wodGroup=[[NSMutableArray alloc] init];
-    NSString *path= [[NSBundle mainBundle] pathForResource:@"WODGroup" ofType:@"json"];
-    NSData *fileData = [NSData dataWithContentsOfFile:path];
-    wods=[[NSMutableDictionary alloc] initWithDictionary:[NSJSONSerialization JSONObjectWithData:fileData options:NSJSONReadingMutableLeaves error:nil]];
-    for (NSString *groupName in wods) {
-        [wodGroup addObject:groupName];
+    NSString *path= [[NSBundle mainBundle] pathForResource:@"WODGirlAndHeros" ofType:@"xml"];
+    
+   NSDictionary *xmlDoc = [NSDictionary dictionaryWithXMLFile:path];
+    NSArray* channel = [xmlDoc valueForKeyPath:@"channel"];
+    wods=[[NSMutableDictionary alloc] init];
+ 
+    for (NSDictionary *c in channel) {
+        [wods setObject:[c valueForKeyPath:@"item"] forKey:c[@"title"]];
+        [wodGroup addObject:c[@"title"]];
     }
     manager=[[WODDataManager alloc] init];
     NSMutableArray* datas=[manager queryMyWOD];
@@ -51,7 +56,7 @@
     WODDataManager *dataManager=[[WODDataManager alloc] init];
     NSMutableArray* alexwods= [dataManager queryAlex];
     
-    [wodGroup insertObject:ALEX atIndex:1];
+    [wodGroup insertObject:ALEX atIndex:0];
     [wods setValue:alexwods forKey:ALEX];
     
     [self.tableView reloadData];
@@ -105,13 +110,13 @@
     }else if([key isEqualToString:ALEX]){
         WOD* dic=[wods[key] objectAtIndex:indexPath.row];
         cell.titleLabel.text = dic.title;
-        cell.descLabel.attributedText=[dic.desc alexWODHtmlFormat];
+        cell.descLabel.text=[dic.desc alexWODHtmlFormat].string;
     }else{
         NSDictionary* dic=[wods[key] objectAtIndex:indexPath.row];
-        cell.titleLabel.text = dic[@"name"];
-//        NSString* de=dic[@"desc"];
-//        de=[de stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
-        cell.descLabel.text=dic[@"desc"];
+        cell.titleLabel.text = dic[@"title"];
+        [dic setValue:HEROS_GIRLS forKey:@"type"];
+         cell.descLabel.text=[[dic[@"desc"] alexWODHtmlFormat].string filterNR];
+//        cell.descLabel.text=[dic[@"desc"] filterHTML];
     }
     return cell;
 }
@@ -147,6 +152,7 @@
         NSDictionary* dic=[wods[key] objectAtIndex:indexPath.row];
         detailViewController.wodDic=dic;
     }
+
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 

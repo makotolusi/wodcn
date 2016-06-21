@@ -17,11 +17,46 @@
     if (self) {
         NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithData:[self dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
         [attributedString  addAttribute:NSFontAttributeName
-                                  value:[UIFont fontWithName:@"Chalkboard SE"  size:18]
+                                  value:[UIFont fontWithName:@"American Typewriter"  size:18]
                                   range:NSMakeRange(0, attributedString.length)];
         return  attributedString;
     }else
         return nil;
+}
+
+-(NSMutableAttributedString*)alexWODHtmlFormatDetailsLabel{
+    if (self) {
+        NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithData:[self dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+        [attributedString  addAttribute:NSFontAttributeName
+                                  value:[UIFont fontWithName:@"American Typewriter"  size:13]
+                                  range:NSMakeRange(0, attributedString.length)];
+        [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor lightGrayColor] range:NSMakeRange(0, attributedString.length)];
+        return  attributedString;
+    }else
+        return nil;
+}
+
+
+-(NSString *)filterNR
+{
+    NSString* html=self;
+//    NSScanner * scanner = [NSScanner scannerWithString:html];
+//    NSString * text = nil;
+//    while([scanner isAtEnd]==NO)
+//    {
+//        //找到标签的起始位置
+//        [scanner scanUpToString:@"<" intoString:nil];
+//        //找到标签的结束位置
+//        [scanner scanUpToString:@">" intoString:&text];
+//        //替换字符
+//        html = [html stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@>",text] withString:@""];
+//    }
+//    //    NSString * regEx = @"<([^>]*)>";
+//    //    html = [html stringByReplacingOccurrencesOfString:regEx withString:@""];
+    html = [html stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet ]];
+    html = [html stringByReplacingOccurrencesOfString:@"\r" withString:@""];
+    html = [html stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    return html;
 }
 
 -(NSString*)fetchWODText{

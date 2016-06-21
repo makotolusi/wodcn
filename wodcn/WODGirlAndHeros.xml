@@ -1,0 +1,183 @@
+<xml>
+    <channel>
+        <title>The Benchmark Girls</title>
+        <item>
+            <title>Angie</title>
+            <desc><![CDATA[
+<span style="color: #000000;"> Complete all reps of each exercise before moving to the next.</span>
+<ul>
+<li><span style="color: #000000;">100 Pull-ups</span></li>
+<li><span style="color: #000000;">100 Push-ups</span></li>
+<li><span style="color: #000000;">100 Sit-ups</span></li>
+<li><span style="color: #000000;">100 Squats</span></li>
+</ul>
+
+
+            ]]></desc>
+        </item>
+        
+        <item>
+            <title>Barbara</title>
+            <desc><![CDATA[
+                <span style="color: #000000;">5 rounds for time</span>
+                <ul>
+                <li><span style="color: #000000;">20 Pull-ups</span></li>
+                <li><span style="color: #000000;">30 Push-ups</span></li>
+                <li><span style="color: #000000;">40 Sit-ups</span></li>
+                <li><span style="color: #000000;">50 Squats</span></li>
+                </ul>
+            ]]></desc>
+        </item>
+        
+        <item>
+            <title>Chelsea</title>
+            <desc><![CDATA[
+                <span style="color: #000000;">Each min on the min for 30 min</span>
+                <ul>
+                <li><span style="color: #000000;">5 Pull-ups</span></li>
+                <li><span style="color: #000000;">10 Push-ups</span></li>
+                <li><span style="color: #000000;">15 Squats</span></li>
+                </ul>
+            ]]></desc>
+        </item>
+        
+        <item>
+            <title>Cindy</title>
+            <desc><![CDATA[
+                <span style="color: #000000;">As many rounds as possible in 20 min</span>
+                <ul>
+                <li><span style="color: #000000;">5 Pull-ups</span></li>
+                <li><span style="color: #000000;">10 Push-ups</span></li>
+                <li><span style="color: #000000;">15 Squats</span></li>
+                </ul>
+            ]]></desc>
+        </item>
+        
+        <item>
+            <title>Diane</title>
+            <desc><![CDATA[
+                <span style="color: #000000;">21-15-9 reps, for time</span>
+                <ul>
+                <li><span style="color: #000000;">Deadlift 225 lbs</span></li>
+                <li><span style="color: #000000;">Handstand push-ups</span></li>
+                </ul>
+            ]]></desc>
+        </item>
+        
+        <item>
+            <title>Elizabeth</title>
+            <desc><![CDATA[
+                <span style="color: #000000;">21-15-9 reps, for time</span>
+                <ul>
+                <li><span style="color: #000000;">Clean 135 lbs</span></li>
+                <li><span style="color: #000000;">Ring Dips</span></li>
+                </ul>
+            ]]></desc>
+        </item>
+        
+        <item>
+            <title>Fran</title>
+            <desc><![CDATA[
+                <span style="color: #000000;">21-15-9 reps, for time</span>
+                <ul>
+                <li><span style="color: #000000;">Thruster 95 lbs</span></li>
+                <li><span style="color: #000000;">Pull-ups</span></li>
+                </ul>
+            ]]></desc>
+        </item>
+        
+        <item>
+            <title>Grace</title>
+            <desc><![CDATA[
+                <span style="color: #000000;">30 reps for time</span>
+                <ul>
+                <li><span style="color: #000000;">Clean and Jerk 135 lbs</span></li>
+                </ul>
+            ]]></desc>
+        </item>
+
+<item>
+    <title>Helen</title>
+    <desc><![CDATA[
+        <span style="color: #000000;">3 rounds for time</span>
+        <ul>
+        <li><span style="color: #000000;">400 meter run</span></li>
+        <li><span style="color: #000000;">1.5 pood Kettlebell swing x 21</span></li>
+        <li><span style="color: #000000;">Pull-ups 12 reps</span></li>
+        </ul>
+    ]]></desc>
+</item>
+<item>
+    <title>Isabel</title>
+    <desc><![CDATA[
+        <span style="color: #000000;">30 reps for time</span>
+        <ul>
+        <li><span style="color: #000000;">Snatch 135 pounds</span></li>
+        </ul>
+    ]]></desc>
+</item>
+<item>
+    <title>Jackie</title>
+    <desc><![CDATA[
+        <span style="color: #000000;">For time</span>
+        <ul>
+        <li><span style="color: #000000;">1000 meter row</span></li>
+        <li><span style="color: #000000;">Thruster 45 lbs (50 reps)</span></li>
+        <li><span style="color: #000000;">Pull-ups (30 reps)</span></li>
+        </ul>
+
+    ]]></desc>
+</item>
+<item>
+    <title>Karen</title>
+    <desc><![CDATA[
+        <span style="color: #000000;">For time</span>
+        <ul>
+        <li><span style="color: #000000;">Wall-ball 150 shots</span></li>
+        </ul>
+    ]]></desc>
+</item>
+
+    </channel>
+
+<channel>
+    <title>Heros</title>
+    <item>
+        <title>Angie</title>
+        <desc><![CDATA[
+            <table><tr>
+            <td width="40%"><span style="color: #000000;">Angie</span></td>
+            <td width="35%">
+            <ul>
+            <li><span style="color: #000000;">100 Pull-ups</span></li>
+            <li><span style="color: #000000;">100 Push-ups</span></li>
+            <li><span style="color: #000000;">100 Sit-ups</span></li>
+            <li><span style="color: #000000;">100 Squats</span></li>
+            </ul>
+            </td>
+            <td width="25%"><span style="color: #000000;">For Time</span><br>
+            <span style="color: #000000;"> Complete all reps of each exercise before moving to the next.</span></td>
+            </tr></table>
+        ]]></desc>
+    </item>
+    
+    <item>
+        <title>Angie2</title>
+        <desc><![CDATA[
+            <table><tr>
+            <td width="40%"><span style="color: #000000;">Angie</span></td>
+            <td width="35%">
+            <ul>
+            <li><span style="color: #000000;">100 Pull-ups</span></li>
+            <li><span style="color: #000000;">100 Push-ups</span></li>
+            <li><span style="color: #000000;">100 Sit-ups</span></li>
+            <li><span style="color: #000000;">100 Squats</span></li>
+            </ul>
+            </td>
+            <td width="25%"><span style="color: #000000;">For Time</span><br>
+            <span style="color: #000000;"> Complete all reps of each exercise before moving to the next.</span></td>
+            </tr></table>
+        ]]></desc>
+    </item>
+</channel>
+</xml>

@@ -46,14 +46,18 @@
         float height=  [self heightForString:self.wodDesc andWidth:self.wodDesc.frame.size.width];
         
         self.wodDesc.frame=CGRectMake(self.wodDesc.frame.origin.x, self.wodDesc.frame.origin.y
-                                      , self.wodDesc.frame.size.width-20, height);
-        [_scrollView setContentSize:CGSizeMake(0, _wodDate.frame.size.height+_wodSource.frame.size.height+_wodDesc.frame.size.height)];
+                                      , self.wodDesc.frame.size.width, height);
+        [_scrollView setContentSize:CGSizeMake(0, _wodDate.frame.size.height+_wodSource.frame.size.height+height)];
         [self.view bringSubviewToFront:_finishLabel];
                     [self.view bringSubviewToFront:_scoreLabel];
     }
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+   
+}
+- (void)viewDidLoad {
+      [super viewDidLoad];
     //获取通知中心单例对象
     NSNotificationCenter * center = [NSNotificationCenter defaultCenter];
     //添加当前类对象为一个观察者，name和object设置为nil，表示接收一切通知
@@ -61,6 +65,7 @@
     
     WODDataManager *dataManager=[[WODDataManager alloc] init];
     NSMutableArray* alexwods= [dataManager queryAlex];
+//    [InitData initData:self.view];
     if (alexwods.count==0) {//毫无数据
         [InitData initData:self.view];
     }else{
@@ -73,9 +78,9 @@
         }
         
     }
-}
-- (void)viewDidLoad {
-    [super viewDidLoad];
+    
+    
+  
 
     UIView *statusBarView=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 600, 20)];
     
@@ -86,12 +91,12 @@
    
    
     
-    self.lastestWODScoreList.delegate=self;
-    self.lastestWODScoreList.dataSource=self;
-    lastestWODScoreData=[[NSMutableArray alloc] init];
-    NSString *path= [[NSBundle mainBundle] pathForResource:@"LastestWODScore" ofType:@"json"];
-    NSData *fileData = [NSData dataWithContentsOfFile:path];
-    lastestWODScoreData = [NSJSONSerialization JSONObjectWithData:fileData options:NSJSONReadingMutableLeaves error:nil];
+//    self.lastestWODScoreList.delegate=self;
+//    self.lastestWODScoreList.dataSource=self;
+//    lastestWODScoreData=[[NSMutableArray alloc] init];
+//    NSString *path= [[NSBundle mainBundle] pathForResource:@"LastestWODScore" ofType:@"json"];
+//    NSData *fileData = [NSData dataWithContentsOfFile:path];
+//    lastestWODScoreData = [NSJSONSerialization JSONObjectWithData:fileData options:NSJSONReadingMutableLeaves error:nil];
 }
 
 /**
@@ -177,15 +182,6 @@
 }
 
 
-
-- (IBAction)shareWOD:(id)sender {
-    if ([_wodDesc.text isEqualToString:@"正在读取......" ]) {
-        
-    }else
-        [Tool sendWXImageContent:self.view];
-   
-}
-
 //-(void)sendWBMessage{
 //    if ([AuthTool isAuthorized]) {
 //        WBAuthorizeRequest *authRequest = [WBAuthorizeRequest request];
@@ -231,6 +227,6 @@
     if ([_wodDesc.text isEqualToString:@"疯狂手抄中......" ]) {
         
     }else
-        [Tool sendWXImageContent:self.view];
+        [Tool sendWXImageContent:self.wodDesc];
 }
 @end

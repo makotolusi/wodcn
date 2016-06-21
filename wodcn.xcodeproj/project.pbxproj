@@ -16,6 +16,7 @@
 		C52A2A0D1CFC18F20050EB12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C52A2A0B1CFC18F20050EB12 /* Main.storyboard */; };
 		C52A2A101CFC26C40050EB12 /* WODDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C52A2A0F1CFC26C40050EB12 /* WODDataManager.m */; };
 		C52A2A161CFC3EB00050EB12 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C52A2A151CFC3EB00050EB12 /* NSString+Extension.m */; };
+		C52D24991D1926C000CF6BEC /* WODGirlAndHeros.xml in Resources */ = {isa = PBXBuildFile; fileRef = C52D24981D1926C000CF6BEC /* WODGirlAndHeros.xml */; };
 		C541F4021D09783300B49E67 /* SkillCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C541F4011D09783300B49E67 /* SkillCell.m */; };
 		C552DA9F1D0BA64B00A05CEE /* libPNChart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C552DA9E1D0BA64B00A05CEE /* libPNChart.a */; };
 		C552DAA11D0BA67A00A05CEE /* libUICountingLabel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C552DAA01D0BA67A00A05CEE /* libUICountingLabel.a */; };
@@ -152,6 +153,7 @@
 		C52A2A0F1CFC26C40050EB12 /* WODDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WODDataManager.m; sourceTree = "<group>"; };
 		C52A2A141CFC3EB00050EB12 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
 		C52A2A151CFC3EB00050EB12 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		C52D24981D1926C000CF6BEC /* WODGirlAndHeros.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = WODGirlAndHeros.xml; sourceTree = "<group>"; };
 		C541F4001D09783300B49E67 /* SkillCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillCell.h; sourceTree = "<group>"; };
 		C541F4011D09783300B49E67 /* SkillCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillCell.m; sourceTree = "<group>"; };
 		C552DA9E1D0BA64B00A05CEE /* libPNChart.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPNChart.a; path = "../../Library/Developer/Xcode/DerivedData/wodcn-gcjuuezqiomaphbubaxiqvzjygfq/Build/Products/Debug-iphoneos/libPNChart.a"; sourceTree = "<group>"; };
@@ -468,6 +470,7 @@
 				C569B6211CEEB3B900E177FF /* Skill.json */,
 				C5DEF7DB1CF309D400BCC091 /* WODTop.json */,
 				C569F6101CF3FE080098822B /* LastestWODScore.json */,
+				C52D24981D1926C000CF6BEC /* WODGirlAndHeros.xml */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -849,6 +852,7 @@
 				C569B6241CEEFA3600E177FF /* head.jpg in Resources */,
 				C5D74F1D1CF7108100262EED /* userselected@3x.png in Resources */,
 				C5856A931D0EAE7100158FEA /* 体重.png in Resources */,
+				C52D24991D1926C000CF6BEC /* WODGirlAndHeros.xml in Resources */,
 				C5D99A961CC7335100A450C2 /* LaunchScreen.storyboard in Resources */,
 				C5D99A931CC7335100A450C2 /* Assets.xcassets in Resources */,
 				C559EA511D068CC9003FA7C9 /* schedule4.png in Resources */,
