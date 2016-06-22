@@ -10,4 +10,5 @@
 
 @interface InitData : NSObject
 +(void)initData:(UIView*)view;
++(void)initFromLocalFile;
 @end

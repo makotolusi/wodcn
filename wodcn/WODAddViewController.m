@@ -16,6 +16,7 @@
 #import "LGAlertView.h"
 #import "NSDate+Extension.h"
 #import "NSString+Extension.h"
+#import "Tool.h"
 @interface WODAddViewController ()<WODKeyBoardToolBarDelegate,UITextViewDelegate,WODTagsViewDelegate>
 
 {
@@ -287,36 +288,8 @@
                                                   }
                                                   cancelHandler:nil
                                              destructiveHandler:nil];
+    [Tool configLGAlertView:alertView];
     
-    alertView.coverColor = [UIColor colorWithWhite:1.f alpha:0.9];
-    alertView.layerShadowColor = [UIColor colorWithWhite:0.f alpha:0.3];
-    alertView.layerShadowRadius = 4.f;
-    alertView.layerCornerRadius = 0.f;
-    alertView.layerBorderWidth = 1.f;
-    alertView.layerBorderColor = [UIColor grayColor];//[UIColor colorWithRed:0.f green:0.5 blue:1.f alpha:1.f];
-    alertView.backgroundColor = [UIColor colorWithWhite:1.f alpha:0.7];
-    alertView.buttonsHeight = 44.f;
-    alertView.titleFont = [UIFont boldSystemFontOfSize:18.f];
-    alertView.titleTextColor = [UIColor blackColor];
-    alertView.messageTextColor = [UIColor blackColor];
-    alertView.width = MIN(self.view.bounds.size.width, self.view.bounds.size.height);
-    alertView.offsetVertical = 0.f;
-    alertView.cancelButtonOffsetY = 0.f;
-    alertView.titleTextAlignment = NSTextAlignmentLeft;
-    alertView.messageTextAlignment = NSTextAlignmentLeft;
-    alertView.destructiveButtonTextAlignment = NSTextAlignmentRight;
-    alertView.buttonsTextAlignment = NSTextAlignmentRight;
-    alertView.cancelButtonTextAlignment = NSTextAlignmentRight;
-    alertView.separatorsColor = [UIColor grayColor];
-    alertView.destructiveButtonTitleColor = [UIColor whiteColor];
-    alertView.buttonsTitleColor = [UIColor whiteColor];
-    alertView.cancelButtonTitleColor = [UIColor whiteColor];
-    alertView.destructiveButtonBackgroundColor = [UIColor colorWithRed:1.f green:0.f blue:0.f alpha:0.5];
-    alertView.buttonsBackgroundColor = [UIColor colorWithRed:0.f green:0.5 blue:1.f alpha:0.5];
-    alertView.cancelButtonBackgroundColor = [UIColor colorWithWhite:0.5 alpha:0.5];
-    alertView.destructiveButtonBackgroundColorHighlighted = [UIColor colorWithRed:1.f green:0.f blue:0.f alpha:1.f];
-    alertView.buttonsBackgroundColorHighlighted = [UIColor colorWithRed:0.f green:0.5 blue:1.f alpha:1.f];
-    alertView.cancelButtonBackgroundColorHighlighted = [UIColor colorWithWhite:0.5 alpha:1.f];
     [alertView showAnimated:YES completionHandler:nil];
 
 }

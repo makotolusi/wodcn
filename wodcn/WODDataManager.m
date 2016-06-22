@@ -60,6 +60,48 @@
 }
 
 //查询
+- (NSMutableArray*)queryExceptMyWOD
+{
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    self.context = delegate.managedObjectContext;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"WOD" inManagedObjectContext:context];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"type <> '%@' ", MYWOD]];
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    NSMutableArray *resultArray = [NSMutableArray array];
+    
+    for (WOD *info in fetchedObjects) {
+        [resultArray addObject:info];
+    }
+    return resultArray;
+}
+
+//查询
+- (NSMutableArray*)queryLocalFileData
+{
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    self.context = delegate.managedObjectContext;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"WOD" inManagedObjectContext:context];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"type in ('%@','%@') ", TheBenchmarkGirls,Heros]];
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    NSMutableArray *resultArray = [NSMutableArray array];
+    
+    for (WOD *info in fetchedObjects) {
+        [resultArray addObject:info];
+    }
+    return resultArray;
+}
+
+//查询
 - (WOD*)queryOneByName:(NSString*)name
 {
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
@@ -124,6 +166,17 @@
     }
   
 }
+
+- (void)deleteExceptMyWOD{
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    self.context = delegate.managedObjectContext;
+    NSMutableArray* wods= [self queryExceptMyWOD];
+    for (WOD* wod in wods) {
+        [context deleteObject:wod];
+    }
+    
+}
+
 - (void)deleteAll{
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     self.context = delegate.managedObjectContext;

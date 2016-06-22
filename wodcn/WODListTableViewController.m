@@ -14,8 +14,9 @@
 #import "XMLDictionary.h"
 #import "WODCell.h"
 #import "NSString+Extension.h"
-
+#import "LGAlertView.h"
 #import "TableHeaderView.h"
+#import "Tool.h"
 @interface WODListTableViewController ()<NSXMLParserDelegate>
 
 @end
@@ -24,35 +25,38 @@
 {
     NSMutableDictionary *wods;
     NSMutableArray *wodGroup;
+    NSMutableDictionary *wodsBase;
+    NSMutableArray *wodGroupBase;
+    NSMutableArray *category;
     WODDataManager *manager;
     int lastIndex;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    self.tableView.sectionFooterHeight = 0;
-    self.navigationController.navigationBar.barTintColor=[UIColor blackColor];
-    self.navigationController.navigationBar.titleTextAttributes=[NSDictionary dictionaryWithObjectsAndKeys:
-                        [UIFont fontWithName:@"American Typewriter" size:23.0],NSFontAttributeName,
-                                                               [UIColor whiteColor]  ,NSForegroundColorAttributeName,
-                                                                 nil];
-    wodGroup=[[NSMutableArray alloc] init];
-    NSString *path= [[NSBundle mainBundle] pathForResource:@"WODGirlAndHeros" ofType:@"xml"];
+    [self mywod];
+    [self.tableView reloadData];
     
-   NSDictionary *xmlDoc = [NSDictionary dictionaryWithXMLFile:path];
-    NSArray* channel = [xmlDoc valueForKeyPath:@"channel"];
+}
+
+-(void)emptyData{
+    wodGroup=[[NSMutableArray alloc] init];
     wods=[[NSMutableDictionary alloc] init];
- 
+    
+}
+-(void)initData{
+    [self emptyData];
+  
+    //local
+    NSString *path= [[NSBundle mainBundle] pathForResource:@"WODGirlAndHeros" ofType:@"xml"];
+    NSDictionary *xmlDoc = [NSDictionary dictionaryWithXMLFile:path];
+    NSArray* channel = [xmlDoc valueForKeyPath:@"channel"];
     for (NSDictionary *c in channel) {
         [wods setObject:[c valueForKeyPath:@"item"] forKey:c[@"title"]];
         [wodGroup addObject:c[@"title"]];
     }
     manager=[[WODDataManager alloc] init];
-    NSMutableArray* mywod=[manager queryMyWOD];
-    if (mywod.count!=0) {
-        [wodGroup insertObject:MYWOD atIndex:0];
-        [wods setValue:mywod forKey:MYWOD];
-    }
-    //----------data-------
+    NSMutableArray* mywod=[self mywod];
+    //----------alex-------
     WODDataManager *dataManager=[[WODDataManager alloc] init];
     NSMutableArray* alexwods= [dataManager queryAlex];
     if (mywod.count==0) {
@@ -60,15 +64,47 @@
     }else
         [wodGroup insertObject:ALEX atIndex:1];
     [wods setValue:alexwods forKey:ALEX];
+category=[[NSMutableArray alloc] init];
+    category=[[NSMutableArray alloc] initWithArray:wodGroup];
+    [category insertObject:ALL atIndex:0];
+
     
-    [self.tableView reloadData];
-    
+}
+
+-(NSMutableArray*)mywod{
+    [wodGroup removeObject:MYWOD];
+    [wods removeObjectForKey:MYWOD];
+    // mywod
+    NSMutableArray* mywod=[manager queryMyWOD];
+    if (mywod.count!=0) {
+        [wodGroup insertObject:MYWOD atIndex:0];
+        [wods setValue:mywod forKey:MYWOD];
+        [wodGroupBase insertObject:MYWOD atIndex:0];
+        [wodsBase setValue:mywod forKey:MYWOD];
+    }
+    return mywod;
+}
+
+-(void)alex{
+    NSString* key= ALEX;
+    NSArray* data= wods[ALEX];
+    [self emptyData];
+    [wodGroup addObject:key];
+    [wods setValue:data forKey:ALEX];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
+    self.tableView.sectionFooterHeight = 0;
+    self.navigationController.navigationBar.barTintColor=[UIColor blackColor];
+    self.navigationController.navigationBar.titleTextAttributes=[NSDictionary dictionaryWithObjectsAndKeys:
+                                                                 [UIFont fontWithName:@"American Typewriter" size:23.0],NSFontAttributeName,
+                                                                 [UIColor whiteColor]  ,NSForegroundColorAttributeName,
+                                                                 nil];
+      [self initData];
+    wodsBase=[[NSMutableDictionary alloc] initWithDictionary:wods];
+    wodGroupBase=[[NSMutableArray alloc] initWithArray:wodGroup];
+  
 }
 
 - (void)didReceiveMemoryWarning {
@@ -192,5 +228,42 @@
 //    detailViewController.desc=self.wodDesc.text;
 //    detailViewController.type=self.wodType.text;
     [self.navigationController pushViewController:detailViewController animated:YES];
+}
+- (IBAction)categoryAction:(id)sender {
+  
+    LGAlertView *alertView = [[LGAlertView alloc] initWithTitle:@"WOD分类来源"
+                                                        message:nil
+                                                          style:LGAlertViewStyleActionSheet
+                                                   buttonTitles:category
+                                              cancelButtonTitle:@"取消"
+                                         destructiveButtonTitle:nil
+                                                  actionHandler:^(LGAlertView *alertView, NSString *title, NSUInteger index) {
+                                                      NSLog(@"actionHandler, %@, %lu", title, (long unsigned)index);
+                                                      
+                                                      if ([title isEqualToString:ALL]) {
+                                                          [self initData];
+                                                      }
+                                                      NSString* key= title;
+                                                      NSArray* data= wodsBase[title];
+                                                      [self emptyData];
+                                                      [wodGroup addObject:key];
+                                                      [wods setValue:data forKey:title];
+//                                                      if ([title isEqualToString:MYWOD]) {
+//                                                          [self mywod];
+//                                                      }
+//                                                      if ([title isEqualToString:ALEX]) {
+//                                                         
+//                                                      }
+//                                                      if ([title isEqualToString:MYWOD]) {
+//                                                          [self mywod];
+//                                                      }
+                                                       [self.tableView reloadData];
+                                                  }
+                              
+                                                  cancelHandler:nil
+                                             destructiveHandler:nil];
+    [Tool configLGAlertView:alertView];
+    
+    [alertView showAnimated:YES completionHandler:nil];
 }
 @end

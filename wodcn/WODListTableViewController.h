@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface WODListTableViewController : UITableViewController<UITableViewDataSource,UITableViewDelegate>
+- (IBAction)categoryAction:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *category;
 @end

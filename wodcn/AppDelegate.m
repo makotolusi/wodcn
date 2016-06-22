@@ -11,6 +11,7 @@
 #import "WXApi.h"
 #import "AuthTool.h"
 #import "SkillDataManager.h"
+#import "InitData.h"
 #import "ProfileViewController.h"
 @interface AppDelegate ()
 
@@ -27,13 +28,7 @@
     [WXApi registerApp:@"wx7ba51e60e59b4bd8"];
     
     if ([AuthTool isFirstLoad]) {
-        NSMutableArray *skillData=[[NSMutableArray alloc] init];
-        NSString *path= [[NSBundle mainBundle] pathForResource:@"Skill" ofType:@"json"];
-        NSData *fileData = [NSData dataWithContentsOfFile:path];
-        NSDictionary *wods = [NSJSONSerialization JSONObjectWithData:fileData options:NSJSONReadingMutableLeaves error:nil];
-        skillData=wods[@"skill"];
-        SkillDataManager *manager=[[SkillDataManager alloc] init];
-        [manager insertBatch:skillData];
+        [InitData initFromLocalFile];
     }
     return YES;
 }

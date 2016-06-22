@@ -14,6 +14,7 @@
 #import "NSDate+Extension.h"
 #import "NSString+Extension.h"
 #import "LBProgressHUD.h"
+#import "SkillDataManager.h"
 @implementation InitData
 
 
@@ -63,5 +64,33 @@
         NSLog(@"error = %@",error);
         
     }];
+}
+
++(void)initFromLocalFile{
+    [self initSkill];
+//    //wod
+//    WODDataManager *dataManager=[[WODDataManager alloc] init];
+//    [dataManager deleteExceptMyWOD];
+//    NSString *path= [[NSBundle mainBundle] pathForResource:@"WODGirlAndHeros" ofType:@"xml"];
+//    NSDictionary *xmlDoc = [NSDictionary dictionaryWithXMLFile:path];
+//    NSArray* channel = [xmlDoc valueForKeyPath:@"channel"];
+//    for (NSDictionary *c in channel) {
+//        NSArray* wods=[c valueForKeyPath:@"item"];
+//        NSString* wodType=c[@"title"];
+//        for (NSDictionary* w in wods) {
+//            NSDictionary *wod=@{@"title":w[@"title"],@"type":wodType,@"desc":w[@"desc"],@"date":@""};
+//            [dataManager insert:wod];
+//        }
+//    }
+}
++(void)initSkill{
+    //skill
+    NSMutableArray *skillData=[[NSMutableArray alloc] init];
+    NSString *path= [[NSBundle mainBundle] pathForResource:@"Skill" ofType:@"json"];
+    NSData *fileData = [NSData dataWithContentsOfFile:path];
+    NSDictionary *wods = [NSJSONSerialization JSONObjectWithData:fileData options:NSJSONReadingMutableLeaves error:nil];
+    skillData=wods[@"skill"];
+    SkillDataManager *manager=[[SkillDataManager alloc] init];
+    [manager insertBatch:skillData];
 }
 @end

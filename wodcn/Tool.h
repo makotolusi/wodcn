@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
+#import "LGAlertView.h"
 @interface Tool : NSObject
 
 + (void) sendWXImageContent:(UIView*)view;
 
 + (void) sendWXTextContent:(NSString*)text;
+
++(LGAlertView*)configLGAlertView:(LGAlertView*) alertView;
 @end
