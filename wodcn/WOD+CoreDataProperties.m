@@ -17,4 +17,5 @@
 @dynamic desc;
 @dynamic type;
 @dynamic date;
+@dynamic method;
 @end

@@ -23,22 +23,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.wodType setHidden:YES];
+//    [self.wodType setHidden:YES];
     self.wodName.text=_wodDic[@"title"];
     NSDate* date= _wodDic[@"date"];
-    if ([ _woddate.text isEqualToString:@"Label"]) {
-        [_woddate setHidden:YES];
-    }
-    if (StringIsNullOrEmpty(_wodDic[@"type"])) {
-        self.wodType.text=@"For Time";
-    }else
-    if([_wodDic[@"type"] isEqualToString:@"alex"]){
+//    if ([ _woddate.text isEqualToString:@"Label"]) {
+//        [_woddate setHidden:YES];
+//    }
+    
+    if([_wodDic[@"type"] isEqualToString:ALEX]){
         //alex
         self.wodType.text=[@"By " stringByAppendingString:ALEX  ];
         self.wodDesc.attributedText=[_wodDic[@"desc"] alexWODHtmlFormat];
-        _woddate.text=[date stringFromDate:ALEX_DATE_FORMAT];
+        [  _woddate setHidden:YES];
+//        _woddate.text=[date stringFromDate:ALEX_DATE_FORMAT];
+    }else if([_wodDic[@"type"] isEqualToString:MYWOD]){
+         _woddate.text=[date stringFromDate:@"yyyy/MM/dd"];
+         self.wodType.text=_wodDic[@"method"];
+        self.wodDesc.text=_wodDic[@"desc"];
     }else{
-//        self.wodType.text=_wodDic[@"type"];
+        self.wodType.text=_wodDic[@"type"];
         self.wodDesc.attributedText=[_wodDic[@"desc"] alexWODHtmlFormat];
     }
    
@@ -50,16 +53,16 @@
         [_scrollView setContentSize:CGSizeMake(0, _woddate.frame.size.height+_wodType.frame.size.height+_wodDesc.frame.size.height)];
     
     
-    if([_wodDic[@"type"] isEqualToString:@"alex"]){
-        
-        UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"分享2.png"] style:UIBarButtonItemStylePlain target:self action:@selector(edit)];
+    if([_wodDic[@"type"] isEqualToString:MYWOD]){
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"add.png"] style:UIBarButtonItemStylePlain target:self action:@selector(edit)];
+    
+    }else{
+        UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"分享2.png"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
         [rightButton setTitleTextAttributes :[ NSDictionary dictionaryWithObjectsAndKeys :  [ UIFont fontWithName : @"Helvetica-Bold" size : 17.0 ], NSFontAttributeName ,  [ UIColor whiteColor ], NSForegroundColorAttributeName ,    nil ]
-
-                                  forState : UIControlStateNormal ];
+         
+                                   forState : UIControlStateNormal ];
         self.navigationItem.rightBarButtonItem.tintColor=[UIColor whiteColor];
         self.navigationItem.rightBarButtonItem=rightButton;
-    }else{
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"add.png"] style:UIBarButtonItemStylePlain target:self action:@selector(edit)];
     }
 }
 
@@ -74,18 +77,19 @@
 
 -(void)edit{
   
-    
-    if([_wodDic[@"type"] isEqualToString:@"alex"]){
-        [Tool sendWXImageContent:self.scrollView];
-    }else{
         UIStoryboard *board=[UIStoryboard storyboardWithName:@"Main"bundle:nil];
         WODAddViewController *detailViewController=[board instantiateViewControllerWithIdentifier:@"WODAdd"];
         detailViewController.name= self.wodName.text;
         detailViewController.desc=self.wodDesc.text;
         detailViewController.type=self.wodType.text;
+//    detailViewController.method=
         [self.navigationController pushViewController:detailViewController animated:YES];
-    }
+    
 }
 
-
+-(void)share{
+// [Tool sendWXImageContent:self.view];
+     NSString* text=[NSString stringWithFormat:@"%@ \n %@\n %@",_wodName.text,_wodType.text, _wodDesc.text];
+    [Tool sendWXTextContent:text];
+}
 @end

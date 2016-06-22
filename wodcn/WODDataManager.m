@@ -29,6 +29,7 @@
     record.desc=data[@"desc"];
     record.type=data[@"type"];
     record.date=data[@"date"];
+     record.method=data[@"method"];
     NSError *error;
     if(![context save:&error])
     {
@@ -44,7 +45,7 @@
     self.context = delegate.managedObjectContext;
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"WOD" inManagedObjectContext:context];
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"type = '%@' ", @"mywod"]];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"type = '%@' ", MYWOD]];
     NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
     [fetchRequest setEntity:entity];
@@ -82,7 +83,7 @@
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     self.context = delegate.managedObjectContext;
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"type = '%@' ", @"alex"]];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"type = '%@' ", ALEX]];
     NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"WOD" inManagedObjectContext:context];

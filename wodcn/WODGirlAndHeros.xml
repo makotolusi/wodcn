@@ -138,45 +138,134 @@
     ]]></desc>
 </item>
 
+<item>
+    <title>Linda</title>
+    <desc><![CDATA[
+        <span style="color: #000000;"> (aka “3 bars of death”)</span>
+        <span style="color: #000000;">10/9/8/7/6/5/4/3/2/1 rep</span><br>
+        <span style="color: #000000;"> rounds for time</span>
+        <ul>
+        <li><span style="color: #000000;">Deadlift 1 1/2 BW</span></li>
+        <li><span style="color: #000000;">Bench BW</span></li>
+        <li><span style="color: #000000;">Clean 3/4 BW</span></li>
+        </ul>
+    ]]></desc>
+</item>
+<item>
+    <title>Mary</title>
+    <desc><![CDATA[
+        <span style="color: #000000;">As many rounds as possible in 20 min</span>
+        <ul>
+        <li><span style="color: #000000;">5 Handstand push-ups</span></li>
+        <li><span style="color: #000000;">10 1-legged squats</span></li>
+        <li><span style="color: #000000;">15 Pull-ups</span></li>
+        </ul>
+    ]]></desc>
+</item>
+<item>
+    <title>Nancy</title>
+    <desc><![CDATA[
+        <span style="color: #000000;">5 rounds for time</span>
+        <ul>
+        <li><span style="color: #000000;">400 meter run</span></li>
+        <li><span style="color: #000000;">Overhead squat 95 lbs x 15</span></li>
+        </ul>
+    ]]></desc>
+</item>
     </channel>
 
 <channel>
-    <title>Heros</title>
+    <title>The New Girls</title>
     <item>
-        <title>Angie</title>
+        <title>Annie</title>
         <desc><![CDATA[
-            <table><tr>
-            <td width="40%"><span style="color: #000000;">Angie</span></td>
-            <td width="35%">
+            <span style="color: #000000;">50-40-30-20 and 10 rep rounds; for time</span>
             <ul>
-            <li><span style="color: #000000;">100 Pull-ups</span></li>
-            <li><span style="color: #000000;">100 Push-ups</span></li>
-            <li><span style="color: #000000;">100 Sit-ups</span></li>
-            <li><span style="color: #000000;">100 Squats</span></li>
+            <li><span style="color: #000000;">Double-unders</span></li>
+            <li><span style="color: #000000;">Sit-ups</span></li>
             </ul>
-            </td>
-            <td width="25%"><span style="color: #000000;">For Time</span><br>
-            <span style="color: #000000;"> Complete all reps of each exercise before moving to the next.</span></td>
-            </tr></table>
         ]]></desc>
     </item>
     
     <item>
-        <title>Angie2</title>
+        <title>Eva</title>
         <desc><![CDATA[
-            <table><tr>
-            <td width="40%"><span style="color: #000000;">Angie</span></td>
-            <td width="35%">
+            <span style="color: #000000;">5 rounds for time.</span>
             <ul>
-            <li><span style="color: #000000;">100 Pull-ups</span></li>
-            <li><span style="color: #000000;">100 Push-ups</span></li>
-            <li><span style="color: #000000;">100 Sit-ups</span></li>
-            <li><span style="color: #000000;">100 Squats</span></li>
+            <li><span style="color: #000000;">Run 800 meters</span></li>
+            <li><span style="color: #000000;">2 pood KB swing, 30 reps</span></li>
+            <li><span style="color: #000000;">30 pullups</span></li>
             </ul>
-            </td>
-            <td width="25%"><span style="color: #000000;">For Time</span><br>
-            <span style="color: #000000;"> Complete all reps of each exercise before moving to the next.</span></td>
-            </tr></table>
+        ]]></desc>
+    </item>
+    
+    <item>
+        <title>Kelly</title>
+        <desc><![CDATA[
+            <span style="color: #000000;">Five rounds for time</span>
+            <ul>
+            <li><span style="color: #000000;">Run 400 meters</span></li>
+            <li><span style="color: #000000;">30 box jump, 24 inch box</span></li>
+            <li><span style="color: #000000;">30 Wall ball shots, 20 pound ball</span></li>
+            </ul>
+        ]]></desc>
+    </item>
+    
+    <item>
+        <title>Lynne</title>
+        <desc><![CDATA[
+            <span style="color: #000000;">5 rounds for max reps. There is&nbsp;<strong>NO</strong>&nbsp;time component to this WOD.</span>
+            <ul>
+            <li><span style="color: #000000;">Bodyweight bench press (e.g., same amount on bar as you weigh)</span></li>
+            <li><span style="color: #000000;">pullups</span></li>
+            </ul>
+        ]]></desc>
+    </item>
+    
+    <item>
+        <title>Nicole</title>
+        <desc><![CDATA[
+            <span style="color: #000000;">As many rounds as possible in 20 minutes.</span><br>
+            <span style="color: #000000;"> Note number of pull-ups completed for each round.</span>
+            <ul>
+            <li><span style="color: #000000;">Run 400 meters</span></li>
+            <li><span style="color: #000000;">Max rep Pull-ups</span></li>
+            </ul>
+        ]]></desc>
+    </item>
+</channel>
+
+<channel>
+    <title>Heros</title>
+    <item>
+        <title>JT</title>
+        <desc><![CDATA[
+            </span><img src="http://www.crossfit.com/cf-assets/180x180/jt.jpg" alt="Jeff Taylor" width="180" height="180" align="middle" border="0"></span><br>
+            <span style="color: #000000;"> In honor of Petty Officer 1st Class Jeff Taylor, 30, of Little Creek, VA, who was killed in Afghanistan June 2005</span><span style="color: #000000;"><em>First posted 6 July 2005&nbsp;</em></span>
+            
+            <ul>
+            <li><span style="color: #000000;">Handstand push-ups</span></li>
+            <li><span style="color: #000000;">Ring dips</span></li>
+            <li><span style="color: #000000;">Push-ups</span></li>
+            </ul>
+            
+            <span style="color: #000000;">21-15-9 reps, for time</span>
+        ]]></desc>
+    </item>
+    
+    <item>
+        <title>MICHAEL</title>
+        <desc><![CDATA[
+            </span><img src="http://www.crossfit.com/cf-assets/180x180/michael.jpg" alt="Michael McGreevey" width="180" height="180" align="middle" border="0"></span><br>
+            <span style="color: #000000;"> In honor of Navy Lieutenant Michael McGreevy, 30, of Portville, NY, who was killed in Afghanistan June 28 2005.</span><span style="color: #000000;"><em>First posted 15 July 2005&nbsp;</em></span>
+            
+            <ul>
+            <li><span style="color: #000000;">Run 800 meters</span></li>
+            <li><span style="color: #000000;">50 Back Extensions</span></li>
+            <li><span style="color: #000000;">50 Sit-ups</span></li>
+            </ul>
+            
+            <span style="color: #000000;">3 rounds for time</span>
         ]]></desc>
     </item>
 </channel>

@@ -41,7 +41,7 @@
             [manager GET:link parameters:nil success:^(AFHTTPRequestOperation *operation,id responseObject){
                 NSString* searchText=[[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
                 NSDate * date=[wodDate dateFromString:ALEX_DATE_FORMAT];
-                NSDictionary *wod=@{@"title":wodTitle,@"type":@"alex",@"desc":[searchText fetchWODText],@"date":date};
+                NSDictionary *wod=@{@"title":wodTitle,@"type":ALEX,@"desc":[searchText fetchWODText],@"date":date};
                 [dataManager insert:wod];
                 [LBProgressHUD hideAllHUDsForView:view animated:YES];
                 //创建一个消息对象

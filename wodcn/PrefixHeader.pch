@@ -15,9 +15,9 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 #endif /* PrefixHeader_pch */
-
+#define MYWOD @"我的WOD"
 #define ALEX @"CrossFit Alexandria"
-#define HEROS_GIRLS @"HEROSGIRLS"
+#define TheBenchmarkGirls @"The Benchmark Girls"
 #define ALEX_DATE_FORMAT @"EEE, dd MMM yyyy HH:mm:ss '+0000'"
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)

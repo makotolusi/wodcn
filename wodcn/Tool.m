@@ -50,4 +50,14 @@
 }
 
 
++ (void) sendWXTextContent:(NSString*)text{
+    enum WXScene  *_scene = WXSceneSession;
+    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+    req.bText = YES;
+//    NSString* text=[NSString stringWithFormat:@"%@ \n\n %@",_wodDate.text,_wodDesc.text];
+    req.text=text;
+    req.scene=_scene;
+    [WXApi sendReq:req];
+}
+
 @end

@@ -15,6 +15,7 @@
 #import "AFViewShaker.h"
 #import "LGAlertView.h"
 #import "NSDate+Extension.h"
+#import "NSString+Extension.h"
 @interface WODAddViewController ()<WODKeyBoardToolBarDelegate,UITextViewDelegate,WODTagsViewDelegate>
 
 {
@@ -79,8 +80,10 @@
     }else{
         isUpdate=YES;
         _wodName.text=_name;
-//        _wodTypeLabel.text=_type;
-//        _wodTypeLabel.textColor=[UIColor blackColor];
+        _wodtypeb.text=_method;
+        _wodtypeb.textColor=[UIColor blackColor];
+        _dateb.text=_date;
+        _dateb.textColor=[UIColor blackColor];
         _wodTextArea.text=_desc;
          self.wodTextArea.textColor=[UIColor blackColor];
     }
@@ -203,12 +206,13 @@
         WOD* wod=[manager queryOneByName:_name];
         wod.title=_wodName.text;
         wod.desc=_wodTextArea.text;
-        wod.date=_dateb.text;
-        wod.type=_wodtypeb.text;
+        wod.date= [_dateb.text dateFromString:@"yyyy/MM/dd"];
+        wod.method=_wodtypeb.text;
+        wod.type=MYWOD;
         [manager update:wod];
         [self.navigationController popToRootViewControllerAnimated :YES];
     }else{
-        NSDictionary *wod=@{@"title":self.wodName.text,@"type":self.wodtypeb.text,@"desc":self.wodTextArea.text,@"date":self.dateb.text};
+        NSDictionary *wod=@{@"title":self.wodName.text,@"type":MYWOD,@"desc":self.wodTextArea.text,@"date":[_dateb.text dateFromString:@"yyyy/MM/dd"],@"method":_wodtypeb.text};
         [manager insert:wod];
         [self.navigationController popToRootViewControllerAnimated:YES];
     }

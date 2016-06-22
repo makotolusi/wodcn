@@ -27,6 +27,8 @@
 
 @property (nonatomic, strong) NSString * name;
 @property (nonatomic, strong) NSString * desc;
+@property (nonatomic, strong) NSString * method;
+@property (nonatomic, strong) NSString * date;
 @property (nonatomic, strong) NSString * type;
 
 - (IBAction)outEdit:(id)sender;

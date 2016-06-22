@@ -13,5 +13,5 @@
 
 + (void) sendWXImageContent:(UIView*)view;
 
-
++ (void) sendWXTextContent:(NSString*)text;
 @end

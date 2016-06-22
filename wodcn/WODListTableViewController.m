@@ -14,7 +14,7 @@
 #import "XMLDictionary.h"
 #import "WODCell.h"
 #import "NSString+Extension.h"
-#define MYWOD @"我的WOD"
+
 #import "TableHeaderView.h"
 @interface WODListTableViewController ()<NSXMLParserDelegate>
 
@@ -47,16 +47,18 @@
         [wodGroup addObject:c[@"title"]];
     }
     manager=[[WODDataManager alloc] init];
-    NSMutableArray* datas=[manager queryMyWOD];
-    if (datas.count!=0) {
+    NSMutableArray* mywod=[manager queryMyWOD];
+    if (mywod.count!=0) {
         [wodGroup insertObject:MYWOD atIndex:0];
-        [wods setValue:datas forKey:MYWOD];
+        [wods setValue:mywod forKey:MYWOD];
     }
     //----------data-------
     WODDataManager *dataManager=[[WODDataManager alloc] init];
     NSMutableArray* alexwods= [dataManager queryAlex];
-    
-    [wodGroup insertObject:ALEX atIndex:0];
+    if (mywod.count==0) {
+        [wodGroup insertObject:ALEX atIndex:0];
+    }else
+        [wodGroup insertObject:ALEX atIndex:1];
     [wods setValue:alexwods forKey:ALEX];
     
     [self.tableView reloadData];
@@ -114,7 +116,7 @@
     }else{
         NSDictionary* dic=[wods[key] objectAtIndex:indexPath.row];
         cell.titleLabel.text = dic[@"title"];
-        [dic setValue:HEROS_GIRLS forKey:@"type"];
+       
          cell.descLabel.text=[[dic[@"desc"] alexWODHtmlFormat].string filterNR];
 //        cell.descLabel.text=[dic[@"desc"] filterHTML];
     }
@@ -143,15 +145,16 @@
     
     
     NSString *key=wodGroup[indexPath.section];
-    if([key isEqualToString:MYWOD]||[key isEqualToString:ALEX]){
+//    if([key isEqualToString:MYWOD]||[key isEqualToString:ALEX]){
         WOD *wod=[wods[key] objectAtIndex:indexPath.row];
-        NSDictionary* dic=@{@"name":wod.title,@"desc":wod.desc,@"type":wod.type,@"date":wod.date};
+        NSDictionary* dic=@{@"title":wod.title,@"desc":wod.desc,@"type":wod.type,@"date":wod.date,@"method":wod.method==nil?@"":wod.method};
          detailViewController.wodDic=dic;
-    }else
-    {
-        NSDictionary* dic=[wods[key] objectAtIndex:indexPath.row];
-        detailViewController.wodDic=dic;
-    }
+//    }else
+//    {
+//        NSDictionary* dic=[wods[key] objectAtIndex:indexPath.row];
+//         [dic setValue:key forKey:@"type"];
+//        detailViewController.wodDic=dic;
+//    }
 
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
