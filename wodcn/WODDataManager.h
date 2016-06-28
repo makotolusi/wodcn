@@ -26,4 +26,5 @@
 - (NSMutableArray*)queryAlex;
 - (void)deleteAlex;
 - (void)deleteExceptMyWOD;
+- (NSMutableArray*)queryLikeName:(NSString*)name;
 @end

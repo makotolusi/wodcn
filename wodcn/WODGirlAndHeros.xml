@@ -3,6 +3,7 @@
         <title>The Benchmark Girls</title>
         <item>
             <title>Angie</title>
+            <type>The Benchmark Girls</type>
             <desc><![CDATA[
 <span style="color: #000000;"> Complete all reps of each exercise before moving to the next.</span>
 <ul>
@@ -18,6 +19,7 @@
         
         <item>
             <title>Barbara</title>
+             <type>The Benchmark Girls</type>
             <desc><![CDATA[
                 <span style="color: #000000;">5 rounds for time</span>
                 <ul>
@@ -31,6 +33,7 @@
         
         <item>
             <title>Chelsea</title>
+             <type>The Benchmark Girls</type>
             <desc><![CDATA[
                 <span style="color: #000000;">Each min on the min for 30 min</span>
                 <ul>
@@ -43,6 +46,7 @@
         
         <item>
             <title>Cindy</title>
+             <type>The Benchmark Girls</type>
             <desc><![CDATA[
                 <span style="color: #000000;">As many rounds as possible in 20 min</span>
                 <ul>
@@ -55,6 +59,7 @@
         
         <item>
             <title>Diane</title>
+             <type>The Benchmark Girls</type>
             <desc><![CDATA[
                 <span style="color: #000000;">21-15-9 reps, for time</span>
                 <ul>
@@ -66,6 +71,7 @@
         
         <item>
             <title>Elizabeth</title>
+             <type>The Benchmark Girls</type>
             <desc><![CDATA[
                 <span style="color: #000000;">21-15-9 reps, for time</span>
                 <ul>
@@ -77,6 +83,7 @@
         
         <item>
             <title>Fran</title>
+             <type>The Benchmark Girls</type>
             <desc><![CDATA[
                 <span style="color: #000000;">21-15-9 reps, for time</span>
                 <ul>
@@ -88,6 +95,7 @@
         
         <item>
             <title>Grace</title>
+             <type>The Benchmark Girls</type>
             <desc><![CDATA[
                 <span style="color: #000000;">30 reps for time</span>
                 <ul>
@@ -98,6 +106,7 @@
 
 <item>
     <title>Helen</title>
+     <type>The Benchmark Girls</type>
     <desc><![CDATA[
         <span style="color: #000000;">3 rounds for time</span>
         <ul>
@@ -109,6 +118,7 @@
 </item>
 <item>
     <title>Isabel</title>
+     <type>The Benchmark Girls</type>
     <desc><![CDATA[
         <span style="color: #000000;">30 reps for time</span>
         <ul>
@@ -118,6 +128,7 @@
 </item>
 <item>
     <title>Jackie</title>
+     <type>The Benchmark Girls</type>
     <desc><![CDATA[
         <span style="color: #000000;">For time</span>
         <ul>
@@ -130,6 +141,7 @@
 </item>
 <item>
     <title>Karen</title>
+     <type>The Benchmark Girls</type>
     <desc><![CDATA[
         <span style="color: #000000;">For time</span>
         <ul>
@@ -140,6 +152,7 @@
 
 <item>
     <title>Linda</title>
+     <type>The Benchmark Girls</type>
     <desc><![CDATA[
         <span style="color: #000000;"> (aka “3 bars of death”)</span>
         <span style="color: #000000;">10/9/8/7/6/5/4/3/2/1 rep</span><br>
@@ -153,6 +166,7 @@
 </item>
 <item>
     <title>Mary</title>
+     <type>The Benchmark Girls</type>
     <desc><![CDATA[
         <span style="color: #000000;">As many rounds as possible in 20 min</span>
         <ul>
@@ -164,6 +178,7 @@
 </item>
 <item>
     <title>Nancy</title>
+     <type>The Benchmark Girls</type>
     <desc><![CDATA[
         <span style="color: #000000;">5 rounds for time</span>
         <ul>
@@ -178,6 +193,7 @@
     <title>The New Girls</title>
     <item>
         <title>Annie</title>
+         <type>The New Girls</type>
         <desc><![CDATA[
             <span style="color: #000000;">50-40-30-20 and 10 rep rounds; for time</span>
             <ul>
@@ -189,6 +205,7 @@
     
     <item>
         <title>Eva</title>
+        <type>The New Girls</type>
         <desc><![CDATA[
             <span style="color: #000000;">5 rounds for time.</span>
             <ul>
@@ -201,6 +218,7 @@
     
     <item>
         <title>Kelly</title>
+        <type>The New Girls</type>
         <desc><![CDATA[
             <span style="color: #000000;">Five rounds for time</span>
             <ul>
@@ -213,6 +231,7 @@
     
     <item>
         <title>Lynne</title>
+        <type>The New Girls</type>
         <desc><![CDATA[
             <span style="color: #000000;">5 rounds for max reps. There is&nbsp;<strong>NO</strong>&nbsp;time component to this WOD.</span>
             <ul>
@@ -224,6 +243,7 @@
     
     <item>
         <title>Nicole</title>
+        <type>The New Girls</type>
         <desc><![CDATA[
             <span style="color: #000000;">As many rounds as possible in 20 minutes.</span><br>
             <span style="color: #000000;"> Note number of pull-ups completed for each round.</span>
@@ -239,8 +259,9 @@
     <title>Heros</title>
     <item>
         <title>JT</title>
+        <type>Heros</type>
         <desc><![CDATA[
-            </span><img src="http://www.crossfit.com/cf-assets/180x180/jt.jpg" alt="Jeff Taylor" width="180" height="180" align="middle" border="0"></span><br>
+         
             <span style="color: #000000;"> In honor of Petty Officer 1st Class Jeff Taylor, 30, of Little Creek, VA, who was killed in Afghanistan June 2005</span><span style="color: #000000;"><em>First posted 6 July 2005&nbsp;</em></span>
             
             <ul>
@@ -255,8 +276,9 @@
     
     <item>
         <title>MICHAEL</title>
+         <type>Heros</type>
         <desc><![CDATA[
-            </span><img src="http://www.crossfit.com/cf-assets/180x180/michael.jpg" alt="Michael McGreevey" width="180" height="180" align="middle" border="0"></span><br>
+          
             <span style="color: #000000;"> In honor of Navy Lieutenant Michael McGreevy, 30, of Portville, NY, who was killed in Afghanistan June 28 2005.</span><span style="color: #000000;"><em>First posted 15 July 2005&nbsp;</em></span>
             
             <ul>

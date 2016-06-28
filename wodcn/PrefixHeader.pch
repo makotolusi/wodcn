@@ -16,6 +16,7 @@
 
 #endif /* PrefixHeader_pch */
 #define MYWOD @"我的WOD"
+#define Search @"搜索结果"
 #define ALL @"全部"
 #define ALEX @"CrossFit Alexandria"
 #define TheBenchmarkGirls @"The Benchmark Girls"

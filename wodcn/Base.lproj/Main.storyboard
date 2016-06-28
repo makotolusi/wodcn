@@ -44,6 +44,9 @@
                                             <state key="normal" title="随机WOD">
                                                 <color key="titleColor" red="0.17928685899999999" green="0.17928685899999999" blue="0.17928685899999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="randomAction:" destination="I8S-zU-V6c" eventType="touchUpInside" id="CDW-Ov-7bw"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
@@ -117,6 +120,8 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <connections>
                         <outlet property="category" destination="tFq-O2-8HP" id="vKk-iS-tgR"/>
+                        <outlet property="random" destination="g8K-NB-eqO" id="3tF-bC-95V"/>
+                        <outlet property="search" destination="X8e-tQ-g2g" id="n42-wo-TCS"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Hf-t0-NBd" userLabel="First Responder" sceneMemberID="firstResponder"/>

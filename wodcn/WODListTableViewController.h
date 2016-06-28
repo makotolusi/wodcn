@@ -10,6 +10,9 @@
 
 @interface WODListTableViewController : UITableViewController<UITableViewDataSource,UITableViewDelegate>
 - (IBAction)categoryAction:(id)sender;
+- (IBAction)randomAction:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *random;
+@property (weak, nonatomic) IBOutlet UISearchBar *search;
 @property (weak, nonatomic) IBOutlet UIButton *category;
 @end

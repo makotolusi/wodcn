@@ -120,6 +120,26 @@
 }
 
 //查询
+- (NSMutableArray*)queryLikeName:(NSString*)name
+{
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    self.context = delegate.managedObjectContext;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"title CONTAINS[cd] '%@' ", name]];
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"WOD" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    NSMutableArray *resultArray = [NSMutableArray array];
+    
+    for (WOD *info in fetchedObjects) {
+        [resultArray addObject:info];
+    }
+    return resultArray;
+}
+
+//查询
 - (NSMutableArray*)queryAlex
 {
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];

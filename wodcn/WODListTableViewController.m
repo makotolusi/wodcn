@@ -17,7 +17,7 @@
 #import "LGAlertView.h"
 #import "TableHeaderView.h"
 #import "Tool.h"
-@interface WODListTableViewController ()<NSXMLParserDelegate>
+@interface WODListTableViewController ()<NSXMLParserDelegate,UISearchBarDelegate>
 
 @end
 
@@ -26,6 +26,7 @@
     NSMutableDictionary *wods;
     NSMutableArray *wodGroup;
     NSMutableDictionary *wodsBase;
+    NSMutableArray *wodsTotal;
     NSMutableArray *wodGroupBase;
     NSMutableArray *category;
     WODDataManager *manager;
@@ -41,7 +42,8 @@
 -(void)emptyData{
     wodGroup=[[NSMutableArray alloc] init];
     wods=[[NSMutableDictionary alloc] init];
-    
+    wodsBase=[NSMutableDictionary new];
+    wodGroupBase=[NSMutableArray new];
 }
 -(void)initData{
     [self emptyData];
@@ -51,18 +53,21 @@
     NSDictionary *xmlDoc = [NSDictionary dictionaryWithXMLFile:path];
     NSArray* channel = [xmlDoc valueForKeyPath:@"channel"];
     for (NSDictionary *c in channel) {
-        [wods setObject:[c valueForKeyPath:@"item"] forKey:c[@"title"]];
+        NSArray* wod=[c valueForKeyPath:@"item"];
+        [wods setObject:wod forKey:c[@"title"]];
         [wodGroup addObject:c[@"title"]];
     }
-    manager=[[WODDataManager alloc] init];
+    
     NSMutableArray* mywod=[self mywod];
+    
     //----------alex-------
-    WODDataManager *dataManager=[[WODDataManager alloc] init];
-    NSMutableArray* alexwods= [dataManager queryAlex];
+//    WODDataManager *dataManager=[[WODDataManager alloc] init];
+    NSMutableArray* alexwods= [manager queryAlex];
     if (mywod.count==0) {
         [wodGroup insertObject:ALEX atIndex:0];
     }else
         [wodGroup insertObject:ALEX atIndex:1];
+    
     [wods setValue:alexwods forKey:ALEX];
 category=[[NSMutableArray alloc] init];
     category=[[NSMutableArray alloc] initWithArray:wodGroup];
@@ -79,8 +84,6 @@ category=[[NSMutableArray alloc] init];
     if (mywod.count!=0) {
         [wodGroup insertObject:MYWOD atIndex:0];
         [wods setValue:mywod forKey:MYWOD];
-        [wodGroupBase insertObject:MYWOD atIndex:0];
-        [wodsBase setValue:mywod forKey:MYWOD];
     }
     return mywod;
 }
@@ -95,16 +98,23 @@ category=[[NSMutableArray alloc] init];
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+      manager=[[WODDataManager alloc] init];
     self.tableView.sectionFooterHeight = 0;
     self.navigationController.navigationBar.barTintColor=[UIColor blackColor];
     self.navigationController.navigationBar.titleTextAttributes=[NSDictionary dictionaryWithObjectsAndKeys:
                                                                  [UIFont fontWithName:@"American Typewriter" size:23.0],NSFontAttributeName,
                                                                  [UIColor whiteColor]  ,NSForegroundColorAttributeName,
                                                                  nil];
+    _search.delegate=self;
+//    _search.showsCancelButton = YES;
       [self initData];
     wodsBase=[[NSMutableDictionary alloc] initWithDictionary:wods];
     wodGroupBase=[[NSMutableArray alloc] initWithArray:wodGroup];
-  
+    wodsTotal=[NSMutableArray new];
+    for (NSString* key in wodGroupBase) {
+       
+        [wodsTotal addObjectsFromArray:wodsBase[key]];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -139,6 +149,11 @@ category=[[NSMutableArray alloc] init];
         cell.backgroundColor=[UIColor whiteColor];
     }
     NSString *key=wodGroup[indexPath.section];
+    if([key isEqualToString:Search]){
+        WOD* dic=[wods[key] objectAtIndex:indexPath.row];
+        cell.titleLabel.text = dic.title;
+         cell.descLabel.text=[dic.desc alexWODHtmlFormat].string;
+    }else
     if([key isEqualToString:MYWOD]){
         WOD *wod=[wods[key] objectAtIndex:indexPath.row];
         cell.titleLabel.text=wod.title;
@@ -176,22 +191,44 @@ category=[[NSMutableArray alloc] init];
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
+    [self openWod:indexPath];
+}
+
+-(void)openWod:(NSIndexPath*)indexPath{
+    NSDictionary* dic=[[NSDictionary alloc] init];
+    NSString *key=wodGroup[indexPath.section];
+   id obj= [wods[key] objectAtIndex:indexPath.row];
+    if ([obj isKindOfClass:[WOD class]]) {
+        WOD *wod=obj;
+        dic=@{@"title":wod.title,@"desc":wod.desc,@"type":wod.type,@"date":wod.date,@"method":wod.method==nil?@"":wod.method};
+    }else
+    {
+        dic=obj;
+//        [dic setValue:key forKey:@"type"];
+    }
+    
     UIStoryboard *board=[UIStoryboard storyboardWithName:@"Main"bundle:nil];
     WODDetailViewController *detailViewController=[board instantiateViewControllerWithIdentifier:@"WODDetail"];
     
-    
-    NSString *key=wodGroup[indexPath.section];
-//    if([key isEqualToString:MYWOD]||[key isEqualToString:ALEX]){
-        WOD *wod=[wods[key] objectAtIndex:indexPath.row];
-        NSDictionary* dic=@{@"title":wod.title,@"desc":wod.desc,@"type":wod.type,@"date":wod.date,@"method":wod.method==nil?@"":wod.method};
-         detailViewController.wodDic=dic;
-//    }else
-//    {
-//        NSDictionary* dic=[wods[key] objectAtIndex:indexPath.row];
-//         [dic setValue:key forKey:@"type"];
-//        detailViewController.wodDic=dic;
-//    }
+    detailViewController.wodDic=dic;
+    [self.navigationController pushViewController:detailViewController animated:YES];
+}
 
+-(void)openWodByObj:(id)obj{
+     NSDictionary* dic=[[NSDictionary alloc] init];
+    if ([obj isKindOfClass:[WOD class]]) {
+        WOD *wod=obj;
+        dic=@{@"title":wod.title,@"desc":wod.desc,@"type":wod.type,@"date":wod.date,@"method":wod.method==nil?@"":wod.method};
+    }else
+    {
+        dic=obj;
+//        [dic setValue:key forKey:@"type"];
+    }
+    
+    UIStoryboard *board=[UIStoryboard storyboardWithName:@"Main"bundle:nil];
+    WODDetailViewController *detailViewController=[board instantiateViewControllerWithIdentifier:@"WODDetail"];
+    
+    detailViewController.wodDic=dic;
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
@@ -242,12 +279,13 @@ category=[[NSMutableArray alloc] init];
                                                       
                                                       if ([title isEqualToString:ALL]) {
                                                           [self initData];
-                                                      }
+                                                      }else{
                                                       NSString* key= title;
                                                       NSArray* data= wodsBase[title];
                                                       [self emptyData];
                                                       [wodGroup addObject:key];
                                                       [wods setValue:data forKey:title];
+                                                      }
 //                                                      if ([title isEqualToString:MYWOD]) {
 //                                                          [self mywod];
 //                                                      }
@@ -265,5 +303,33 @@ category=[[NSMutableArray alloc] init];
     [Tool configLGAlertView:alertView];
     
     [alertView showAnimated:YES completionHandler:nil];
+}
+
+- (IBAction)randomAction:(id)sender {
+    int x = arc4random() % wodsTotal.count;
+    id wods= wodsTotal[x];
+    [self openWodByObj:wods];
+}
+
+-(void)searchBarCancelButtonClicked:(UISearchBar *) searchBar{           // called when cancel button pressed
+    [searchBar setShowsCancelButton:NO animated:NO];    // 取消按钮回收
+    [searchBar resignFirstResponder];                                // 取消第一响应值,键盘回收,搜索结束
+    
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    NSLog(@"%@",searchText);
+  NSMutableArray* array=  [manager queryLikeName:searchText];
+//    int a=array.count;
+    [self emptyData];
+    [wodGroup addObject:Search];
+    [wods setValue:array forKey:Search];
+    [self.tableView reloadData];
+}
+
+
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
+    [searchBar setShowsCancelButton:YES animated:YES];    // 取消按钮回收
+    return YES;
 }
 @end

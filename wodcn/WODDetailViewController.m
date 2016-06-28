@@ -41,6 +41,7 @@
          self.wodType.text=_wodDic[@"method"];
         self.wodDesc.text=_wodDic[@"desc"];
     }else{
+        [  _woddate setHidden:YES];
         self.wodType.text=_wodDic[@"type"];
         self.wodDesc.attributedText=[_wodDic[@"desc"] alexWODHtmlFormat];
     }

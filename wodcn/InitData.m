@@ -25,6 +25,10 @@
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFXMLParserResponseSerializer serializer];
+    [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
+    manager.requestSerializer.timeoutInterval = 10.f;
+    [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
+    
     manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/rss+xml",nil];//application/rss+xml
     [manager GET:@"http://www.alexandriacrossfit.com/feed/" parameters:nil success:^(AFHTTPRequestOperation *operation,id responseObject){
         
@@ -69,19 +73,19 @@
 +(void)initFromLocalFile{
     [self initSkill];
 //    //wod
-//    WODDataManager *dataManager=[[WODDataManager alloc] init];
-//    [dataManager deleteExceptMyWOD];
-//    NSString *path= [[NSBundle mainBundle] pathForResource:@"WODGirlAndHeros" ofType:@"xml"];
-//    NSDictionary *xmlDoc = [NSDictionary dictionaryWithXMLFile:path];
-//    NSArray* channel = [xmlDoc valueForKeyPath:@"channel"];
-//    for (NSDictionary *c in channel) {
-//        NSArray* wods=[c valueForKeyPath:@"item"];
-//        NSString* wodType=c[@"title"];
-//        for (NSDictionary* w in wods) {
-//            NSDictionary *wod=@{@"title":w[@"title"],@"type":wodType,@"desc":w[@"desc"],@"date":@""};
-//            [dataManager insert:wod];
-//        }
-//    }
+    WODDataManager *dataManager=[[WODDataManager alloc] init];
+    [dataManager deleteExceptMyWOD];
+    NSString *path= [[NSBundle mainBundle] pathForResource:@"WODGirlAndHeros" ofType:@"xml"];
+    NSDictionary *xmlDoc = [NSDictionary dictionaryWithXMLFile:path];
+    NSArray* channel = [xmlDoc valueForKeyPath:@"channel"];
+    for (NSDictionary *c in channel) {
+        NSArray* wods=[c valueForKeyPath:@"item"];
+        NSString* wodType=c[@"title"];
+        for (NSDictionary* w in wods) {
+            NSDictionary *wod=@{@"title":w[@"title"],@"type":wodType,@"desc":w[@"desc"],@"date":[NSDate date]};
+            [dataManager insert:wod];
+        }
+    }
 }
 +(void)initSkill{
     //skill
