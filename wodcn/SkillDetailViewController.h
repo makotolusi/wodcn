@@ -16,4 +16,6 @@
 
 @property (strong, nonatomic) NSString *skillName;
 
+@property (strong, nonatomic) NSString *skillType;
+
 @end

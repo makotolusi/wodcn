@@ -18,7 +18,12 @@
 @property (weak, nonatomic) IBOutlet UITextView *desc;
 
 @property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UITextField *repsL;
 
 @property (strong, nonatomic) NSString *skillName;
+@property (strong, nonatomic) NSString *skillType;
+@property (weak, nonatomic) IBOutlet UIStackView *wsv;
+@property (weak, nonatomic) IBOutlet UIStackView *rsv;
+@property (weak, nonatomic) IBOutlet UILabel *dateL;
 
 @end

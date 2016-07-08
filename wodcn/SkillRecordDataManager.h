@@ -22,4 +22,5 @@
 
 - (NSMutableArray*)queryByName:(NSString*)name;
 
+- (void)deleteOne:(SkillRecord*)data;
 @end

@@ -13,7 +13,10 @@
 #import "TableHeaderView.h"
 #import "PNChart.h"
 #import "Tool.h"
-@interface ProfileViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "FSMediaPicker.h"
+#import "ProfileDataManager.h"
+#import "Profile.h"
+@interface ProfileViewController ()<UITableViewDelegate,UITableViewDataSource, FSMediaPickerDelegate>
 {
     NSMutableArray* wodTopSection;
     NSDictionary* wodTopData;
@@ -41,8 +44,13 @@
  Strength 强度
  **/
 - (void)viewDidLoad {
+    
+    
     self.navigationItem.leftBarButtonItem= [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"分享2.png"] style:UIBarButtonItemStylePlain target:self action:@selector(share:)];
     self.navigationItem.leftBarButtonItem.tintColor=[UIColor whiteColor];
+    
+    self.navigationItem.rightBarButtonItem= [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"编辑.png"] style:UIBarButtonItemStylePlain target:self action:@selector(toupdate:)];
+    self.navigationItem.rightBarButtonItem.tintColor=[UIColor whiteColor];
     
     [self.view bringSubviewToFront:_totalScore];
     NSArray *items = @[[PNRadarChartDataItem dataItemWithValue:3 description:@"力量"],
@@ -91,7 +99,10 @@
     [super viewDidLoad];
     self.headView.layer.masksToBounds=YES;
     self.headView.layer.cornerRadius=50;
-  
+    _headView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *labelTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showClicked:)];
+    [self.headView addGestureRecognizer:labelTapGestureRecognizer];
+    
     self.wodTopList.delegate=self;
     self.wodTopList.dataSource=self;
     wodTopSection=[[NSMutableArray alloc] init];
@@ -207,5 +218,40 @@
 - (void)share:(id)sender {
         [Tool sendWXImageContent:self.view];
     
+}
+
+- (void)toupdate:(id)sender {
+    UIStoryboard *board=[UIStoryboard storyboardWithName:@"Main"bundle:nil];
+    UIViewController *detailViewController=[board instantiateViewControllerWithIdentifier:@"updateProfile"];
+    [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
+- (void)showClicked:(id)sender
+{
+    FSMediaPicker *mediaPicker = [[FSMediaPicker alloc] init];
+    mediaPicker.mediaType = 0;
+    mediaPicker.editMode = 0;
+    mediaPicker.delegate = self;
+    [mediaPicker showFromView:self.view];
+}
+
+- (void)mediaPicker:(FSMediaPicker *)mediaPicker didFinishWithMediaInfo:(NSDictionary *)mediaInfo
+{
+//    if (mediaInfo.mediaType == FSMediaTypeVideo) {
+//        self.player.contentURL = mediaInfo.mediaURL;
+//        [self.player play];
+//    } else {
+//        [self.headView setTitle:nil ];
+        if (mediaPicker.editMode == FSEditModeNone) {
+            [self.headView setImage:mediaInfo.originalImage ];
+        } else {
+            [self.headView setImage:mediaPicker.editMode == FSEditModeCircular? mediaInfo.circularEditedImage:mediaInfo.editedImage];
+        }
+//    }
+}
+
+- (void)mediaPickerDidCancel:(FSMediaPicker *)mediaPicker
+{
+    NSLog(@"%s",__FUNCTION__);
 }
 @end

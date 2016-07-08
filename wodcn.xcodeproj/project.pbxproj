@@ -37,6 +37,12 @@
 		C569F6131CF400130098822B /* head2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C569F6121CF400130098822B /* head2.jpg */; };
 		C569F6171CF442D30098822B /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C569F6161CF442D30098822B /* TimerViewController.m */; };
 		C569F61A1CF461EE0098822B /* TimerOptionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C569F6191CF461EE0098822B /* TimerOptionTableViewController.m */; };
+		C5776EE31D2E43FE00B126A3 /* 编辑@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5776EE21D2E43FE00B126A3 /* 编辑@2x.png */; };
+		C5776EE91D2E4D2000B126A3 /* ProfileUpdateController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5776EE81D2E4D2000B126A3 /* ProfileUpdateController.m */; };
+		C5776EEE1D2E52DA00B126A3 /* Profile+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C5776EEB1D2E52DA00B126A3 /* Profile+CoreDataProperties.m */; };
+		C5776EEF1D2E52DA00B126A3 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = C5776EED1D2E52DA00B126A3 /* Profile.m */; };
+		C5776EF21D2E534F00B126A3 /* ProfileDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5776EF11D2E534F00B126A3 /* ProfileDataManager.m */; };
+		C5776EF61D2E5BDC00B126A3 /* InputHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C5776EF41D2E5BDC00B126A3 /* InputHelper.m */; };
 		C57844531CFD77A0006BAAA0 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C57844461CFD77A0006BAAA0 /* libWeiboSDK.a */; };
 		C57844541CFD77A0006BAAA0 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C57844501CFD77A0006BAAA0 /* WeiboSDK.bundle */; };
 		C57844561CFD7830006BAAA0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57844551CFD7830006BAAA0 /* QuartzCore.framework */; };
@@ -85,6 +91,8 @@
 		C5856ABC1D124E8A00158FEA /* InitData.m in Sources */ = {isa = PBXBuildFile; fileRef = C5856ABB1D124E8A00158FEA /* InitData.m */; };
 		C5893BB01CF58C6E00218738 /* Pods.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C5893BAF1CF58C6E00218738 /* Pods.debug.xcconfig */; };
 		C5893BB21CF58C8000218738 /* Pods.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C5893BB11CF58C8000218738 /* Pods.release.xcconfig */; };
+		C58B3D8D1D2CE67D00574259 /* FSMediaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = C58B3D8C1D2CE67D00574259 /* FSMediaPicker.m */; };
+		C58B3D911D2CEA1400574259 /* FSMediaPicker.strings in Resources */ = {isa = PBXBuildFile; fileRef = C58B3D8F1D2CEA1400574259 /* FSMediaPicker.strings */; };
 		C592B88F1CFE807000010BA1 /* Logout@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C592B88E1CFE807000010BA1 /* Logout@3x.png */; };
 		C592B8911CFEC18C00010BA1 /* defaulthead.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C592B8901CFEC18C00010BA1 /* defaulthead.jpg */; };
 		C592B8981CFEE5B200010BA1 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C592B8951CFEE5B200010BA1 /* libWeChatSDK.a */; };
@@ -181,6 +189,17 @@
 		C569F6161CF442D30098822B /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
 		C569F6181CF461EE0098822B /* TimerOptionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerOptionTableViewController.h; sourceTree = "<group>"; };
 		C569F6191CF461EE0098822B /* TimerOptionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerOptionTableViewController.m; sourceTree = "<group>"; };
+		C5776EE21D2E43FE00B126A3 /* 编辑@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "编辑@2x.png"; sourceTree = "<group>"; };
+		C5776EE71D2E4D2000B126A3 /* ProfileUpdateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileUpdateController.h; sourceTree = "<group>"; };
+		C5776EE81D2E4D2000B126A3 /* ProfileUpdateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileUpdateController.m; sourceTree = "<group>"; };
+		C5776EEA1D2E52DA00B126A3 /* Profile+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Profile+CoreDataProperties.h"; sourceTree = "<group>"; };
+		C5776EEB1D2E52DA00B126A3 /* Profile+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Profile+CoreDataProperties.m"; sourceTree = "<group>"; };
+		C5776EEC1D2E52DA00B126A3 /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
+		C5776EED1D2E52DA00B126A3 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
+		C5776EF01D2E534F00B126A3 /* ProfileDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileDataManager.h; sourceTree = "<group>"; };
+		C5776EF11D2E534F00B126A3 /* ProfileDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileDataManager.m; sourceTree = "<group>"; };
+		C5776EF31D2E5BDC00B126A3 /* InputHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputHelper.h; sourceTree = "<group>"; };
+		C5776EF41D2E5BDC00B126A3 /* InputHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputHelper.m; sourceTree = "<group>"; };
 		C57844461CFD77A0006BAAA0 /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
 		C57844471CFD77A0006BAAA0 /* WBHttpRequest+WeiboGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboGame.h"; sourceTree = "<group>"; };
 		C57844481CFD77A0006BAAA0 /* WBHttpRequest+WeiboShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboShare.h"; sourceTree = "<group>"; };
@@ -263,6 +282,9 @@
 		C5856ABB1D124E8A00158FEA /* InitData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitData.m; sourceTree = "<group>"; };
 		C5893BAF1CF58C6E00218738 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C5893BB11CF58C8000218738 /* Pods.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C58B3D8B1D2CE67D00574259 /* FSMediaPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSMediaPicker.h; sourceTree = "<group>"; };
+		C58B3D8C1D2CE67D00574259 /* FSMediaPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSMediaPicker.m; sourceTree = "<group>"; };
+		C58B3D901D2CEA1400574259 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = FSMediaPicker.strings; sourceTree = "<group>"; };
 		C592B88E1CFE807000010BA1 /* Logout@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logout@3x.png"; sourceTree = "<group>"; };
 		C592B8901CFEC18C00010BA1 /* defaulthead.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = defaulthead.jpg; sourceTree = "<group>"; };
 		C592B8951CFEE5B200010BA1 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
@@ -416,6 +438,7 @@
 				C5856A961D0EAEFD00158FEA /* 姓名.png */,
 				C559EA501D068CC9003FA7C9 /* schedule2.png */,
 				C592B88E1CFE807000010BA1 /* Logout@3x.png */,
+				C5776EE21D2E43FE00B126A3 /* 编辑@2x.png */,
 				C5856A8E1D0EAA2500158FEA /* 身高.png */,
 				C592B8901CFEC18C00010BA1 /* defaulthead.jpg */,
 				C578446E1CFD9661006BAAA0 /* weixin@3x.png */,
@@ -482,6 +505,8 @@
 				C569B6261CEEFFDB00E177FF /* ProfileViewController.m */,
 				C57844691CFD93F7006BAAA0 /* LoginViewController.h */,
 				C578446A1CFD93F7006BAAA0 /* LoginViewController.m */,
+				C5776EE71D2E4D2000B126A3 /* ProfileUpdateController.h */,
+				C5776EE81D2E4D2000B126A3 /* ProfileUpdateController.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -504,6 +529,16 @@
 				C569F6191CF461EE0098822B /* TimerOptionTableViewController.m */,
 			);
 			name = Timer;
+			sourceTree = "<group>";
+		};
+		C5776EF51D2E5BDC00B126A3 /* InputHelper */ = {
+			isa = PBXGroup;
+			children = (
+				C5776EF31D2E5BDC00B126A3 /* InputHelper.h */,
+				C5776EF41D2E5BDC00B126A3 /* InputHelper.m */,
+			);
+			name = InputHelper;
+			path = "../../../Downloads/InputHelper-master/InputHelper/InputHelper";
 			sourceTree = "<group>";
 		};
 		C57844451CFD77A0006BAAA0 /* libWeiboSDK */ = {
@@ -529,6 +564,8 @@
 		C57C8C2D1CE57F110033666D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C5776EF51D2E5BDC00B126A3 /* InputHelper */,
+				C58B3D8A1D2CE65800574259 /* Header */,
 				C5856AB81D124C9C00158FEA /* LBProgressHUD */,
 				C5856A9F1D11030A00158FEA /* LGAlertView */,
 				C584569A1D0164C900FAA357 /* AFViewShaker */,
@@ -558,6 +595,10 @@
 		C583935B1CEC6435008A9BAC /* model */ = {
 			isa = PBXGroup;
 			children = (
+				C5776EEA1D2E52DA00B126A3 /* Profile+CoreDataProperties.h */,
+				C5776EEB1D2E52DA00B126A3 /* Profile+CoreDataProperties.m */,
+				C5776EEC1D2E52DA00B126A3 /* Profile.h */,
+				C5776EED1D2E52DA00B126A3 /* Profile.m */,
 				C58456911D00136C00FAA357 /* Skill+CoreDataProperties.h */,
 				C58456921D00136C00FAA357 /* Skill+CoreDataProperties.m */,
 				C58456931D00136C00FAA357 /* Skill.h */,
@@ -576,6 +617,8 @@
 				C52A2A0F1CFC26C40050EB12 /* WODDataManager.m */,
 				C58456971D00186000FAA357 /* SkillDataManager.h */,
 				C58456981D00186000FAA357 /* SkillDataManager.m */,
+				C5776EF01D2E534F00B126A3 /* ProfileDataManager.h */,
+				C5776EF11D2E534F00B126A3 /* ProfileDataManager.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -619,6 +662,23 @@
 			);
 			name = LBProgressHUD;
 			path = "../../../Downloads/LBProgressHUD-master/LBProgressHUDDemo/LBProgressHUDDemo/LBProgressHUD";
+			sourceTree = "<group>";
+		};
+		C58B3D8A1D2CE65800574259 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				C58B3D8B1D2CE67D00574259 /* FSMediaPicker.h */,
+				C58B3D8C1D2CE67D00574259 /* FSMediaPicker.m */,
+			);
+			name = Header;
+			sourceTree = "<group>";
+		};
+		C58B3D8E1D2CEA1400574259 /* zh-Hans.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				C58B3D8F1D2CEA1400574259 /* FSMediaPicker.strings */,
+			);
+			path = "zh-Hans.lproj";
 			sourceTree = "<group>";
 		};
 		C592B8941CFEE49300010BA1 /* Wechat */ = {
@@ -683,6 +743,7 @@
 		C5D99A861CC7335100A450C2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C58B3D8E1D2CEA1400574259 /* zh-Hans.lproj */,
 				C569B6201CEEB37700E177FF /* Data */,
 				C517FD4E1CDB323E006768D1 /* image */,
 				C5D99A871CC7335100A450C2 /* main.m */,
@@ -807,6 +868,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = C5D99A7A1CC7335100A450C2;
 			productRefGroup = C5D99A841CC7335100A450C2 /* Products */;
@@ -848,6 +910,7 @@
 				C5856A951D0EAEA400158FEA /* 性别.png in Resources */,
 				C52A2A0D1CFC18F20050EB12 /* Main.storyboard in Resources */,
 				C5856A8F1D0EAA2500158FEA /* 身高.png in Resources */,
+				C5776EE31D2E43FE00B126A3 /* 编辑@2x.png in Resources */,
 				C5D74F141CF70D6200262EED /* schedule@3x.png in Resources */,
 				C569B6241CEEFA3600E177FF /* head.jpg in Resources */,
 				C5D74F1D1CF7108100262EED /* userselected@3x.png in Resources */,
@@ -855,6 +918,7 @@
 				C52D24991D1926C000CF6BEC /* WODGirlAndHeros.xml in Resources */,
 				C5D99A961CC7335100A450C2 /* LaunchScreen.storyboard in Resources */,
 				C5D99A931CC7335100A450C2 /* Assets.xcassets in Resources */,
+				C58B3D911D2CEA1400574259 /* FSMediaPicker.strings in Resources */,
 				C559EA511D068CC9003FA7C9 /* schedule4.png in Resources */,
 				C5E371A41D08F62F00DDBF87 /* cfpic2.jpg in Resources */,
 				C559EA521D068CC9003FA7C9 /* schedule3.png in Resources */,
@@ -953,13 +1017,16 @@
 				C583930B1CEC1156008A9BAC /* WODTagsView.m in Sources */,
 				C57844721CFD9BAA006BAAA0 /* AuthTool.m in Sources */,
 				C52A2A101CFC26C40050EB12 /* WODDataManager.m in Sources */,
+				C5776EEF1D2E52DA00B126A3 /* Profile.m in Sources */,
 				C58393601CEC6476008A9BAC /* WOD+CoreDataProperties.m in Sources */,
 				C541F4021D09783300B49E67 /* SkillCell.m in Sources */,
 				C584569D1D0164C900FAA357 /* AFViewShaker.m in Sources */,
 				C593CFF81D0AAE4A0090E62D /* TableHeaderView.m in Sources */,
+				C58B3D8D1D2CE67D00574259 /* FSMediaPicker.m in Sources */,
 				C5856ABC1D124E8A00158FEA /* InitData.m in Sources */,
 				C55EAB131CF5A672002C9958 /* XMLDictionary.m in Sources */,
 				C5856AB11D11030A00158FEA /* LGAlertViewCell.m in Sources */,
+				C5776EF61D2E5BDC00B126A3 /* InputHelper.m in Sources */,
 				C5856AAF1D11030A00158FEA /* LGAlertView.m in Sources */,
 				C58393611CEC6476008A9BAC /* WOD.m in Sources */,
 				C58456951D00136C00FAA357 /* Skill+CoreDataProperties.m in Sources */,
@@ -969,14 +1036,17 @@
 				C5D99A8B1CC7335100A450C2 /* AppDelegate.m in Sources */,
 				C58393641CEC6929008A9BAC /* CoreDataManager.m in Sources */,
 				C5D2C3F41CF82C6400F1BD5C /* SkillRecord+CoreDataProperties.m in Sources */,
+				C5776EE91D2E4D2000B126A3 /* ProfileUpdateController.m in Sources */,
 				C5D99A881CC7335100A450C2 /* main.m in Sources */,
 				C5D2C3F51CF82C6400F1BD5C /* SkillRecord.m in Sources */,
 				C569F6171CF442D30098822B /* TimerViewController.m in Sources */,
 				C57C8C301CE580980033666D /* WODKeyBoardToolBar.m in Sources */,
+				C5776EEE1D2E52DA00B126A3 /* Profile+CoreDataProperties.m in Sources */,
 				C5856A9A1D0EBA6F00158FEA /* Tool.m in Sources */,
 				C5856AB51D11030A00158FEA /* UIWindow+LGAlertView.m in Sources */,
 				C5BF27E31CE46FF50023C178 /* WODAddViewController.m in Sources */,
 				C5D2C3FB1CF8348C00F1BD5C /* SkillEditeViewController.m in Sources */,
+				C5776EF21D2E534F00B126A3 /* ProfileDataManager.m in Sources */,
 				C58179721CF7E7F000BE6BC5 /* SkillDetailViewController.m in Sources */,
 				C569F60F1CF3FD490098822B /* LastestWODViewController.m in Sources */,
 				C5856AB01D11030A00158FEA /* LGAlertViewButtonProperties.m in Sources */,
@@ -1029,6 +1099,14 @@
 				C52A2A0C1CFC18F20050EB12 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C58B3D8F1D2CEA1400574259 /* FSMediaPicker.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C58B3D901D2CEA1400574259 /* zh-Hans */,
+			);
+			name = FSMediaPicker.strings;
 			sourceTree = "<group>";
 		};
 		C5D99A941CC7335100A450C2 /* LaunchScreen.storyboard */ = {

@@ -1,44 +1,33 @@
 {
-    "举重": [
+    "举重 WeightLifting": [
               {
               "name": "Front Squat",
                "cn": "前蹲",
               "type": "weight"
               },
               {
-              "name": "Clean",
-               "cn": "前蹲翻",
+              "name": "Full Clean",
+               "cn": "蹲翻",
               "type": "weight"
               },
               {
-              "name": "Over Squart",
-               "cn": "过头顿",
+              "name": "Over Head Squart",
+               "cn": "过顶蹲",
               "type": "weight"
               },
               {
-              "name": "Snatch",
-               "cn": "抓举",
+              "name": "Full Snatch",
+               "cn": "蹲抓举",
               "type": "weight"
               },
               {
-              "name": "Thruster",
-               "cn": "火箭推",
-              "type": "weight"
-              },
-              {
-              "name": "Sumo Deadlift High Pull",
-               "cn": "相扑硬拉",
-              "type": "weight"
-              },
-           
-              {
-              "name": "Jerk",
+              "name": "Clean&Jerk",
                "cn": "挺举",
               "type": "weight"
               }
              
               ],
-    "力量举": [
+    "力量举 PowerLifting": [
            {
            "name": "Bench Press",
            "cn": "卧推",
@@ -54,22 +43,32 @@
             "type": "weight"
             }
            ],
-    "体操": [
+    "体操 Gymnastic": [
            {
-           "name": "Muscle Up",
-           "cn": "双力臂",
-           "type": "weight"
+           "name": "Bar Muscle Up",
+           "cn": "单杠双力臂",
+           "type": "reps"
            },
+                     {
+                     "name": "Ring Muscle Up",
+                     "cn": "吊环双力臂",
+                     "type": "reps"
+                     },
            {
            "name": "Push up",
            "cn": "引体",
-           "type": "weight"
+           "type": "reps"
            } ,
            {
            "name": "Chest To Bar",
            "cn": "引体胸触杠",
-           "type": "weight"
+           "type": "reps"
            }
-           
+                     ,
+                     {
+                     "name": "Toes To Bar",
+                     "cn": "脚触杠",
+                     "type": "reps"
+                     }
            ]
 }

@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
+    <entity name="Profile" representedClassName="Profile" syncable="YES">
+        <attribute name="box" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="height" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sex" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
     <entity name="Skill" representedClassName="Skill" syncable="YES">
         <attribute name="cn" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -22,5 +29,6 @@
         <element name="Skill" positionX="-297" positionY="-90" width="128" height="73"/>
         <element name="SkillRecord" positionX="-128" positionY="-81" width="128" height="118"/>
         <element name="WOD" positionX="-135" positionY="-189" width="128" height="120"/>
+        <element name="Profile" positionX="-315" positionY="-189" width="128" height="118"/>
     </elements>
 </model>

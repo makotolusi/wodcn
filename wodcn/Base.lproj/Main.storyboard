@@ -852,7 +852,15 @@ Each partner completes a full round before switching.</string>
             <objects>
                 <navigationController id="Zss-hK-PMj" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Gso-BK-eqj"/>
-                    <navigationItem key="navigationItem" id="79E-2l-4v4"/>
+                    <navigationItem key="navigationItem" id="79E-2l-4v4">
+                        <nil key="title"/>
+                        <barButtonItem key="rightBarButtonItem" image="编辑.png" id="qbe-u3-5Tk">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="GGI-Aj-5GL" kind="push" id="GKn-Rd-Ojv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="f2H-gN-Sao">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1055,7 +1063,7 @@ Each partner completes a full round before switching.</string>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Crossfiter" image="user.png" id="WUu-Pk-QAU"/>
-                    <navigationItem key="navigationItem" title="个人信息" id="GWc-n8-JzB"/>
+                    <navigationItem key="navigationItem" title="个人信息" id="GWc-n8-JzB" userLabel="Crossfiter"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <connections>
                         <outlet property="headView" destination="Egt-ah-bxW" id="hzp-mT-DLf"/>
@@ -1065,7 +1073,113 @@ Each partner completes a full round before switching.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ID-Ip-2Rg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1559" y="-1035"/>
+            <point key="canvasLocation" x="1517" y="-1334"/>
+        </scene>
+        <!--编辑-->
+        <scene sceneID="2lo-Ia-oP3">
+            <objects>
+                <viewController storyboardIdentifier="updateProfile" title="编辑" id="GGI-Aj-5GL" customClass="ProfileUpdateController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FlS-Pu-CcQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="VeS-gP-5e1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MPH-Qb-cch">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EfL-8O-ChR">
+                                <rect key="frame" x="106" y="52" width="445" height="411"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bDU-49-eb7">
+                                        <rect key="frame" x="44" y="41" width="300" height="350"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="姓名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iXY-H9-Cdv">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="bh0-hD-jsb"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="身高cm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N9h-9m-PVt">
+                                                <rect key="frame" x="0.0" y="60" width="300" height="50"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="LHY-2w-jvd"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="体重kg" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qRB-Id-UQD">
+                                                <rect key="frame" x="0.0" y="120" width="300" height="50"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="liB-q7-BxI"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="BOX与健身场所" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V6H-Hb-fdl">
+                                                <rect key="frame" x="0.0" y="180" width="300" height="50"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="e3k-S4-qZN"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" tag="900" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="性别" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E7z-8B-Brh">
+                                                <rect key="frame" x="0.0" y="240" width="300" height="50"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="QQM-YY-eMf"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSV-g2-UpO">
+                                                <rect key="frame" x="0.0" y="300" width="300" height="50"/>
+                                                <color key="backgroundColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                <state key="normal" title="提交">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="submit:" destination="GGI-Aj-5GL" eventType="touchDown" id="lqO-Io-L0i"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="Xav-DW-TUb"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EfL-8O-ChR" firstAttribute="leading" secondItem="MPH-Qb-cch" secondAttribute="leadingMargin" constant="-20" id="TDt-iX-xd9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EfL-8O-ChR" secondAttribute="trailing" constant="-20" id="WTs-T5-636"/>
+                            <constraint firstItem="EfL-8O-ChR" firstAttribute="top" secondItem="FlS-Pu-CcQ" secondAttribute="bottom" id="qxO-oW-IGR"/>
+                            <constraint firstItem="VeS-gP-5e1" firstAttribute="top" secondItem="EfL-8O-ChR" secondAttribute="bottom" id="yXa-gW-uzI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9iO-Ga-kax">
+                        <barButtonItem key="backBarButtonItem" title="返回" id="G4i-Zg-bNV"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="box" destination="V6H-Hb-fdl" id="pxl-cI-vK6"/>
+                        <outlet property="height" destination="N9h-9m-PVt" id="Wpw-Ks-jt5"/>
+                        <outlet property="name" destination="iXY-H9-Cdv" id="Z0Y-98-ePj"/>
+                        <outlet property="scrollView" destination="EfL-8O-ChR" id="ztK-8m-vGO"/>
+                        <outlet property="sex" destination="E7z-8B-Brh" id="Xl0-SI-IWA"/>
+                        <outlet property="stackView" destination="bDU-49-eb7" id="DaX-mE-L7D"/>
+                        <outlet property="weight" destination="qRB-Id-UQD" id="9qg-f7-4WJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rGG-mL-Qog" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1636" y="-641"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="TZW-Xg-AG3">
@@ -1191,7 +1305,7 @@ Each partner completes a full round before switching.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRo-cU-FHa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2258.5" y="-1007.5"/>
+            <point key="canvasLocation" x="2248" y="-1300"/>
         </scene>
         <!--技能-->
         <scene sceneID="5lb-Cj-WJW">
@@ -1304,24 +1418,24 @@ Each partner completes a full round before switching.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="skillDetailCellIdentifier" textLabel="IaF-Fu-pLn" detailTextLabel="Qrr-vi-rQz" rowHeight="80" style="IBUITableViewCellStyleValue1" id="lVR-Dg-v5e">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="skillDetailCellIdentifier" textLabel="j9e-bI-wr8" detailTextLabel="LDB-De-Acb" rowHeight="80" style="IBUITableViewCellStyleValue1" id="lVR-Dg-v5e">
                                 <rect key="frame" x="0.0" y="113.5" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lVR-Dg-v5e" id="gjT-aQ-1gz">
-                                    <rect key="frame" x="0.0" y="0.0" width="533" height="79.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IaF-Fu-pLn">
-                                            <rect key="frame" x="15" y="33" width="31.5" height="19.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j9e-bI-wr8">
+                                            <rect key="frame" x="15" y="30" width="31.5" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qrr-vi-rQz">
-                                            <rect key="frame" x="462" y="26" width="71" height="29"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LDB-De-Acb">
+                                            <rect key="frame" x="543.5" y="30" width="41.5" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="25"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -1378,7 +1492,7 @@ Each partner completes a full round before switching.</string>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日期 2016年5月24日" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jN5-gt-IC0">
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日期 2016年5月24日" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jN5-gt-IC0">
                                         <rect key="frame" x="0.0" y="62" width="590" height="60"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -1425,13 +1539,65 @@ Each partner completes a full round before switching.</string>
                                             <constraint firstAttribute="height" constant="40" id="97I-1Q-mMf"/>
                                         </constraints>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="uoi-IS-R91">
+                                        <rect key="frame" x="0.0" y="166" width="590" height="40"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRl-4O-e3x">
+                                                <rect key="frame" x="0.0" y="0.0" width="196" height="40"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="Hmg-BN-MBQ"/>
+                                                </constraints>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="最大次数">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="20" name="PingFangSC-Regular"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content=" ">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="20" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="Reps">
+                                                        <attributes>
+                                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="NSColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="最大次数" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Oe-Io-qAK">
+                                                <rect key="frame" x="197" y="0.0" width="393" height="40"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="4Hk-6X-Egg"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="inq-Wb-P3w"/>
+                                        </constraints>
+                                    </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="描述下你今天的表现" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="o9r-F0-Jcs">
-                                        <rect key="frame" x="0.0" y="166" width="590" height="412"/>
+                                        <rect key="frame" x="0.0" y="208" width="590" height="370"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="BRl-4O-e3x" firstAttribute="width" secondItem="88O-PX-K3i" secondAttribute="width" id="esD-PV-jWt"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -1454,15 +1620,19 @@ Each partner completes a full round before switching.</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="date" destination="jN5-gt-IC0" id="5Ms-uF-cS6"/>
+                        <outlet property="date" destination="jN5-gt-IC0" id="CaS-5B-4JO"/>
+                        <outlet property="dateL" destination="jN5-gt-IC0" id="6MB-cl-TXO"/>
                         <outlet property="desc" destination="o9r-F0-Jcs" id="gnz-LV-K99"/>
                         <outlet property="name" destination="mef-dz-Wcz" id="EyN-a2-6Tp"/>
+                        <outlet property="repsL" destination="0Oe-Io-qAK" id="Opp-cA-sAp"/>
+                        <outlet property="rsv" destination="uoi-IS-R91" id="dsw-99-hXG"/>
                         <outlet property="score" destination="Q3X-XH-tfu" id="IWP-oU-Kau"/>
+                        <outlet property="wsv" destination="sjw-ft-cok" id="NVW-vW-eEn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TV1-Ni-maU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1612" y="1065"/>
+            <point key="canvasLocation" x="1596" y="1065"/>
         </scene>
         <!--技能-->
         <scene sceneID="V9k-d1-uDq">
@@ -1503,6 +1673,7 @@ Each partner completes a full round before switching.</string>
         <image name="完成.png" width="64" height="64"/>
         <image name="性别.png" width="32" height="32"/>
         <image name="添加白色.png" width="64" height="64"/>
+        <image name="编辑.png" width="32" height="32"/>
         <image name="身高.png" width="32" height="32"/>
         <image name="随机训练" width="64" height="64"/>
     </resources>

@@ -79,10 +79,15 @@
     SkillRecordDataManager *manager=[[SkillRecordDataManager alloc] init];
     SkillRecord* data=[manager queryByNameMaxScore:skill[@"name"]];
     if (data==nil) {
-    
+      cell.unlockLabel.hidden=NO;
+        cell.scoreLabel.hidden=YES;
     }else{
         cell.unlockLabel.hidden=YES;
-        cell.scoreLabel.text=[NSString stringWithFormat:@"%@ kg",data.score.stringValue];
+        if ([data.type isEqualToString:@"weight"]) {
+            cell.scoreLabel.text=[NSString stringWithFormat:@"%@ kg",data.score.stringValue];
+        }else
+        cell.scoreLabel.text=[NSString stringWithFormat:@"%@ reps",data.score.stringValue];
+        
         cell.scoreLabel.hidden=NO;
     }
     
@@ -96,6 +101,7 @@
     NSString *key=group[indexPath.section];
     NSDictionary* skill=[dic[key] objectAtIndex:indexPath.row];
     detailViewController.skillName=skill[@"name"];
+       detailViewController.skillType=skill[@"type"];
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 

@@ -98,4 +98,14 @@
     return resultArray;
 }
 
+- (void)deleteOne:(SkillRecord*)data{
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    self.context = delegate.managedObjectContext;
+    [context deleteObject:data];
+    NSError *error;
+    if(![context save:&error])
+    {
+        NSLog(@"不能保存：%@",[error localizedDescription]);
+    }
+}
 @end

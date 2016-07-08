@@ -14,14 +14,14 @@
 @interface SkillDetailViewController ()
 {
     NSMutableArray* datas;
-    
+    SkillRecordDataManager *manager;
 }
 @end
 
 @implementation SkillDetailViewController
 
 -(void)viewWillAppear:(BOOL)animated{
-    SkillRecordDataManager *manager=[[SkillRecordDataManager alloc] init];
+ manager=[[SkillRecordDataManager alloc] init];
     datas=[manager queryByName:self.skillName];
     [self.tableView reloadData];
 }
@@ -50,7 +50,7 @@
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 200, 30)];
     titleLabel.textColor=[UIColor whiteColor];
     titleLabel.backgroundColor = [UIColor clearColor];
-    titleLabel.font=[UIFont fontWithName:@"American Typewriter" size:30];
+    titleLabel.font=[UIFont fontWithName:@"American Typewriter" size:25];
     if(datas.count!=0){
 //    SkillRecord* data= datas[section];
     titleLabel.text=self.skillName;
@@ -82,7 +82,12 @@
     if(datas.count!=0){
     SkillRecord* data= datas[indexPath.row];
     cell.textLabel.text = [data.date stringFromDate];
-    cell.detailTextLabel.text =[NSString stringWithFormat:@"%@ kg",data.score];
+        if ([data.type isEqualToString:@"weight"]) {
+             cell.detailTextLabel.text =[NSString stringWithFormat:@"%@ kg",data.score];
+        }else{
+             cell.detailTextLabel.text =[NSString stringWithFormat:@"%@ reps",data.score];
+        }
+   
     }else{
     
     }
@@ -90,12 +95,29 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+      
+        SkillRecord *data=[datas objectAtIndex:indexPath.row];
+        [manager deleteOne:data];
+        [datas removeObject:data];
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+    }
+}
 
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"删除";
+}
 
 - (IBAction)toEdite:(id)sender {
     UIStoryboard *board=[UIStoryboard storyboardWithName:@"Main"bundle:nil];
     SkillEditeViewController *detailViewController=[board instantiateViewControllerWithIdentifier:@"SkillEdite"];
     detailViewController.skillName=self.skillName;
+    detailViewController.skillType=self.skillType;
  [self.navigationController pushViewController:detailViewController animated:YES];
 
 }
