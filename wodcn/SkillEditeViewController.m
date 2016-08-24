@@ -13,6 +13,9 @@
 #import "LGAlertView.h"
 #import "NSDate+Extension.h"
 #import "NSString+Extension.h"
+#import "LGAlertView.h"
+#import "InputHelper.h"
+#import "AFViewShaker.h"
 @interface SkillEditeViewController ()
 {
     NSDate* date;
@@ -37,6 +40,7 @@
     UITapGestureRecognizer *labelTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dateAction:)];
     
     [self.dateL addGestureRecognizer:labelTapGestureRecognizer];
+     [inputHelper setupInputHelperForView:self.view withDismissType:InputHelperDismissTypeTapGusture];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,11 +56,39 @@
     data.date=date;
     data.desc=self.desc.text;
     data.type=_skillType;
+  
+    float b=500;
     NSDecimalNumber* score;
     if ([_skillType isEqualToString:@"weight"]) {
+        if(StringIsNullOrEmpty(self.score.text)){
+            [[[AFViewShaker alloc] initWithView:self.score] shake];
+            return;
+        }
         score=[NSDecimalNumber decimalNumberWithString:self.score.text];
-    }else
+        b=500;
+    }else{
+        if(StringIsNullOrEmpty(self.repsL.text)){
+            [[[AFViewShaker alloc] initWithView:self.repsL] shake];
+            return;
+        }
+        b=200;
         score=[NSDecimalNumber decimalNumberWithString:self.repsL.text];
+    }
+    if (score.floatValue>=b) {
+        LGAlertView *alertView = [[LGAlertView alloc] initWithTitle:@"哥们悠着点～～"
+                                                            message:nil
+                                                              style:LGAlertViewStyleActionSheet
+                                                       buttonTitles:@[@"你真的是地球人吗～～"]
+                                                  cancelButtonTitle:@"取消"
+                                             destructiveButtonTitle:nil
+                                                      actionHandler:^(LGAlertView *alertView, NSString *title, NSUInteger index) {
+                                                          NSLog(@"actionHandler, %@, %lu", title, (long unsigned)index);
+
+                                                      }
+                                                      cancelHandler:nil
+                                                 destructiveHandler:nil];
+         [alertView showAnimated:YES completionHandler:nil];
+    }else{
     data.score=score;
     NSError *error;
     if(![delegate.managedObjectContext save:&error])
@@ -65,6 +97,7 @@
     }
 
     [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)dateAction:(UITapGestureRecognizer *)recognizer{

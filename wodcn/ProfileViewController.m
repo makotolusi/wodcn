@@ -16,6 +16,7 @@
 #import "FSMediaPicker.h"
 #import "ProfileDataManager.h"
 #import "Profile.h"
+#import "SkillRecordDataManager.h"
 @interface ProfileViewController ()<UITableViewDelegate,UITableViewDataSource, FSMediaPickerDelegate>
 {
     NSMutableArray* wodTopSection;
@@ -27,9 +28,56 @@
 
 
 -(void)viewDidAppear:(BOOL)animated{
+    ProfileDataManager *manager=[[ProfileDataManager alloc] init];
+    Profile *p=[manager queryOne];
+    if (p) {
+//        Profile *p=n.lastObject;
+        NSLog(@"%@",p.name);
+        _name.text=p.name;
+        _sex.text=p.sex;
+        _location.text=p.box;
+        _weight.text=[NSString stringWithFormat:@"%@KG",p.weight];
+        _height.text=[NSString stringWithFormat:@"%@CM",p.height];
+    }
+    SkillRecordDataManager *skill=[[SkillRecordDataManager alloc] init];
+    SkillRecord *bp=[skill queryByNameMaxScore:@"Bench Press"];
+     SkillRecord *bs=[skill queryByNameMaxScore:@"Back Squart"];
+     SkillRecord *dl=[skill queryByNameMaxScore:@"Dead Lift"];
+     SkillRecord *cj=[skill queryByNameMaxScore:@"Clean&Jerk"];
+     SkillRecord *fs=[skill queryByNameMaxScore:@"Full Snatch"];
+    //bar
+    static NSNumberFormatter *barChartFormatter;
+    if (!barChartFormatter){
+        barChartFormatter = [[NSNumberFormatter alloc] init];
+        barChartFormatter.numberStyle = NSNumberFormatterNoStyle;
+        barChartFormatter.allowsFloats = NO;
+        barChartFormatter.maximumFractionDigits = 0;
+    }
+//        self.barChart.labe= @"＊完善你的技能";
     
-//
-   
+    self.barChart = [[PNBarChart alloc] initWithFrame:CGRectMake(20, _headView.frame.origin.y+20, SCREEN_WIDTH-20, 200.0)];
+            self.barChart.showLabel = YES;
+    self.barChart.backgroundColor = [UIColor clearColor];
+    self.barChart.yLabelFormatter = ^(CGFloat yValue){
+        return [barChartFormatter stringFromNumber:[NSNumber numberWithFloat:yValue]];
+    };
+    
+    //    self.barChart.labelMarginTop = 5.0;
+    self.barChart.showChartBorder = YES;
+    [self.barChart setXLabels:@[@"卧推",@"深蹲",@"硬拉",@"挺举",@"抓举"]];
+    [self.barChart setYValues:@[bp.score==nil?@"10":bp.score,bs.score==nil?@"10":bs.score,dl.score==nil?@"10":dl.score,cj.score==nil?@"10":cj.score,fs.score==nil?@"10":fs.score]];
+    [self.barChart setStrokeColors:@[PNGreen,PNGreen,PNGreen,PNGreen,PNGreen]];
+    self.barChart.isGradientShow = NO;
+    self.barChart.isShowNumbers = NO;
+    
+    [self.barChart strokeChart];
+    
+    self.barChart.delegate = self;
+    
+    [self.scrollview addSubview:self.barChart];
+    [self.scrollview setContentSize:CGSizeMake(SCREEN_WIDTH, self.barChart.frame.origin.y+ self.barChart.frame.size.height+20)];
+    
+
 }
 /**
  Endurance 心血管和呼吸系统耐力
@@ -45,6 +93,7 @@
  **/
 - (void)viewDidLoad {
     
+ 
     
     self.navigationItem.leftBarButtonItem= [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"分享2.png"] style:UIBarButtonItemStylePlain target:self action:@selector(share:)];
     self.navigationItem.leftBarButtonItem.tintColor=[UIColor whiteColor];
@@ -53,50 +102,17 @@
     self.navigationItem.rightBarButtonItem.tintColor=[UIColor whiteColor];
     
     [self.view bringSubviewToFront:_totalScore];
-    NSArray *items = @[[PNRadarChartDataItem dataItemWithValue:3 description:@"力量"],
-                       [PNRadarChartDataItem dataItemWithValue:2 description:@"柔韧"],
-                       [PNRadarChartDataItem dataItemWithValue:8 description:@"敏捷"],
-                       [PNRadarChartDataItem dataItemWithValue:5 description:@"速度"],
-                       [PNRadarChartDataItem dataItemWithValue:4 description:@"耐力"],
-                       ];
-    PNRadarChart *radarChart = [[PNRadarChart alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 230) items:items valueDivider:1];
-    [radarChart strokeChart];
-    [self.scrollview addSubview:radarChart];
-    
-    //bar
-    static NSNumberFormatter *barChartFormatter;
-    if (!barChartFormatter){
-        barChartFormatter = [[NSNumberFormatter alloc] init];
-        barChartFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
-        barChartFormatter.allowsFloats = NO;
-        barChartFormatter.maximumFractionDigits = 0;
-    }
-//    self.barChart. = @"Bar Chart";
-    
-    self.barChart = [[PNBarChart alloc] initWithFrame:CGRectMake(20, 210, SCREEN_WIDTH-20, 200.0)];
-    //        self.barChart.showLabel = NO;
-    self.barChart.backgroundColor = [UIColor clearColor];
-    self.barChart.yLabelFormatter = ^(CGFloat yValue){
-        return [barChartFormatter stringFromNumber:[NSNumber numberWithFloat:yValue]];
-    };
-    
-    
-//    self.barChart.labelMarginTop = 5.0;
-    self.barChart.showChartBorder = YES;
-    [self.barChart setXLabels:@[@"卧推",@"深蹲",@"硬拉",@"挺举",@"抓举"]];
-    [self.barChart setYValues:@[@100.82,@10.88,@60.96,@130.93,@50.93]];
-    [self.barChart setStrokeColors:@[PNGreen,PNGreen,PNRed,PNGreen,PNGreen]];
-    self.barChart.isGradientShow = NO;
-    self.barChart.isShowNumbers = NO;
-    
-    [self.barChart strokeChart];
-    
-    self.barChart.delegate = self;
-    
-    [self.scrollview addSubview:self.barChart];
-    [self.scrollview setContentSize:CGSizeMake(SCREEN_WIDTH, self.barChart.frame.origin.y+ self.barChart.frame.size.height+20)];
-    
-    [super viewDidLoad];
+//    NSArray *items = @[[PNRadarChartDataItem dataItemWithValue:3 description:@"力量"],
+//                       [PNRadarChartDataItem dataItemWithValue:2 description:@"柔韧"],
+//                       [PNRadarChartDataItem dataItemWithValue:8 description:@"敏捷"],
+//                       [PNRadarChartDataItem dataItemWithValue:5 description:@"速度"],
+//                       [PNRadarChartDataItem dataItemWithValue:4 description:@"耐力"],
+//                       ];
+//    PNRadarChart *radarChart = [[PNRadarChart alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 230) items:items valueDivider:1];
+//    [radarChart strokeChart];
+//    [self.scrollview addSubview:radarChart];
+//    
+       [super viewDidLoad];
     self.headView.layer.masksToBounds=YES;
     self.headView.layer.cornerRadius=50;
     _headView.userInteractionEnabled = YES;

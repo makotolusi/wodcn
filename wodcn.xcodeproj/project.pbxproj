@@ -18,6 +18,8 @@
 		C52A2A161CFC3EB00050EB12 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C52A2A151CFC3EB00050EB12 /* NSString+Extension.m */; };
 		C52D24991D1926C000CF6BEC /* WODGirlAndHeros.xml in Resources */ = {isa = PBXBuildFile; fileRef = C52D24981D1926C000CF6BEC /* WODGirlAndHeros.xml */; };
 		C541F4021D09783300B49E67 /* SkillCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C541F4011D09783300B49E67 /* SkillCell.m */; };
+		C550B5D21D586E4E003FD45E /* LBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C550B5D11D586E4E003FD45E /* LBProgressHUD.m */; };
+		C550B5D51D586ECB003FD45E /* InputHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C550B5D41D586ECB003FD45E /* InputHelper.m */; };
 		C552DA9F1D0BA64B00A05CEE /* libPNChart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C552DA9E1D0BA64B00A05CEE /* libPNChart.a */; };
 		C552DAA11D0BA67A00A05CEE /* libUICountingLabel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C552DAA01D0BA67A00A05CEE /* libUICountingLabel.a */; };
 		C559EA511D068CC9003FA7C9 /* schedule4.png in Resources */ = {isa = PBXBuildFile; fileRef = C559EA4A1D068CC9003FA7C9 /* schedule4.png */; };
@@ -42,7 +44,6 @@
 		C5776EEE1D2E52DA00B126A3 /* Profile+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C5776EEB1D2E52DA00B126A3 /* Profile+CoreDataProperties.m */; };
 		C5776EEF1D2E52DA00B126A3 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = C5776EED1D2E52DA00B126A3 /* Profile.m */; };
 		C5776EF21D2E534F00B126A3 /* ProfileDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5776EF11D2E534F00B126A3 /* ProfileDataManager.m */; };
-		C5776EF61D2E5BDC00B126A3 /* InputHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C5776EF41D2E5BDC00B126A3 /* InputHelper.m */; };
 		C57844531CFD77A0006BAAA0 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C57844461CFD77A0006BAAA0 /* libWeiboSDK.a */; };
 		C57844541CFD77A0006BAAA0 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C57844501CFD77A0006BAAA0 /* WeiboSDK.bundle */; };
 		C57844561CFD7830006BAAA0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57844551CFD7830006BAAA0 /* QuartzCore.framework */; };
@@ -87,7 +88,6 @@
 		C5856AB31D11030A00158FEA /* LGAlertViewTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C5856AAA1D11030A00158FEA /* LGAlertViewTextField.m */; };
 		C5856AB41D11030A00158FEA /* LGAlertViewWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = C5856AAC1D11030A00158FEA /* LGAlertViewWindow.m */; };
 		C5856AB51D11030A00158FEA /* UIWindow+LGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5856AAE1D11030A00158FEA /* UIWindow+LGAlertView.m */; };
-		C5856AB91D124C9C00158FEA /* LBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C5856AB71D124C9C00158FEA /* LBProgressHUD.m */; };
 		C5856ABC1D124E8A00158FEA /* InitData.m in Sources */ = {isa = PBXBuildFile; fileRef = C5856ABB1D124E8A00158FEA /* InitData.m */; };
 		C5893BB01CF58C6E00218738 /* Pods.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C5893BAF1CF58C6E00218738 /* Pods.debug.xcconfig */; };
 		C5893BB21CF58C8000218738 /* Pods.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C5893BB11CF58C8000218738 /* Pods.release.xcconfig */; };
@@ -164,6 +164,10 @@
 		C52D24981D1926C000CF6BEC /* WODGirlAndHeros.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = WODGirlAndHeros.xml; sourceTree = "<group>"; };
 		C541F4001D09783300B49E67 /* SkillCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillCell.h; sourceTree = "<group>"; };
 		C541F4011D09783300B49E67 /* SkillCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillCell.m; sourceTree = "<group>"; };
+		C550B5D01D586E4E003FD45E /* LBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBProgressHUD.h; sourceTree = "<group>"; };
+		C550B5D11D586E4E003FD45E /* LBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBProgressHUD.m; sourceTree = "<group>"; };
+		C550B5D31D586ECB003FD45E /* InputHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputHelper.h; sourceTree = "<group>"; };
+		C550B5D41D586ECB003FD45E /* InputHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputHelper.m; sourceTree = "<group>"; };
 		C552DA9E1D0BA64B00A05CEE /* libPNChart.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPNChart.a; path = "../../Library/Developer/Xcode/DerivedData/wodcn-gcjuuezqiomaphbubaxiqvzjygfq/Build/Products/Debug-iphoneos/libPNChart.a"; sourceTree = "<group>"; };
 		C552DAA01D0BA67A00A05CEE /* libUICountingLabel.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUICountingLabel.a; path = "../../Library/Developer/Xcode/DerivedData/wodcn-gcjuuezqiomaphbubaxiqvzjygfq/Build/Products/Debug-iphoneos/libUICountingLabel.a"; sourceTree = "<group>"; };
 		C559EA4A1D068CC9003FA7C9 /* schedule4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule4.png; sourceTree = "<group>"; };
@@ -198,8 +202,6 @@
 		C5776EED1D2E52DA00B126A3 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
 		C5776EF01D2E534F00B126A3 /* ProfileDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileDataManager.h; sourceTree = "<group>"; };
 		C5776EF11D2E534F00B126A3 /* ProfileDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileDataManager.m; sourceTree = "<group>"; };
-		C5776EF31D2E5BDC00B126A3 /* InputHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputHelper.h; sourceTree = "<group>"; };
-		C5776EF41D2E5BDC00B126A3 /* InputHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputHelper.m; sourceTree = "<group>"; };
 		C57844461CFD77A0006BAAA0 /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
 		C57844471CFD77A0006BAAA0 /* WBHttpRequest+WeiboGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboGame.h"; sourceTree = "<group>"; };
 		C57844481CFD77A0006BAAA0 /* WBHttpRequest+WeiboShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboShare.h"; sourceTree = "<group>"; };
@@ -276,8 +278,6 @@
 		C5856AAC1D11030A00158FEA /* LGAlertViewWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGAlertViewWindow.m; sourceTree = "<group>"; };
 		C5856AAD1D11030A00158FEA /* UIWindow+LGAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+LGAlertView.h"; sourceTree = "<group>"; };
 		C5856AAE1D11030A00158FEA /* UIWindow+LGAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+LGAlertView.m"; sourceTree = "<group>"; };
-		C5856AB61D124C9C00158FEA /* LBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBProgressHUD.h; sourceTree = "<group>"; };
-		C5856AB71D124C9C00158FEA /* LBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBProgressHUD.m; sourceTree = "<group>"; };
 		C5856ABA1D124E8A00158FEA /* InitData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitData.h; sourceTree = "<group>"; };
 		C5856ABB1D124E8A00158FEA /* InitData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitData.m; sourceTree = "<group>"; };
 		C5893BAF1CF58C6E00218738 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -534,8 +534,8 @@
 		C5776EF51D2E5BDC00B126A3 /* InputHelper */ = {
 			isa = PBXGroup;
 			children = (
-				C5776EF31D2E5BDC00B126A3 /* InputHelper.h */,
-				C5776EF41D2E5BDC00B126A3 /* InputHelper.m */,
+				C550B5D31D586ECB003FD45E /* InputHelper.h */,
+				C550B5D41D586ECB003FD45E /* InputHelper.m */,
 			);
 			name = InputHelper;
 			path = "../../../Downloads/InputHelper-master/InputHelper/InputHelper";
@@ -657,8 +657,8 @@
 		C5856AB81D124C9C00158FEA /* LBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				C5856AB61D124C9C00158FEA /* LBProgressHUD.h */,
-				C5856AB71D124C9C00158FEA /* LBProgressHUD.m */,
+				C550B5D01D586E4E003FD45E /* LBProgressHUD.h */,
+				C550B5D11D586E4E003FD45E /* LBProgressHUD.m */,
 			);
 			name = LBProgressHUD;
 			path = "../../../Downloads/LBProgressHUD-master/LBProgressHUDDemo/LBProgressHUDDemo/LBProgressHUD";
@@ -1010,6 +1010,7 @@
 				C5856AB21D11030A00158FEA /* LGAlertViewController.m in Sources */,
 				C578446B1CFD93F7006BAAA0 /* LoginViewController.m in Sources */,
 				C5856AB31D11030A00158FEA /* LGAlertViewTextField.m in Sources */,
+				C550B5D21D586E4E003FD45E /* LBProgressHUD.m in Sources */,
 				C58456961D00136C00FAA357 /* Skill.m in Sources */,
 				C510F5611CD99F0600C060AF /* WODDetailViewController.m in Sources */,
 				C510F5561CD83ABB00C060AF /* WODListTableViewController.m in Sources */,
@@ -1025,13 +1026,12 @@
 				C58B3D8D1D2CE67D00574259 /* FSMediaPicker.m in Sources */,
 				C5856ABC1D124E8A00158FEA /* InitData.m in Sources */,
 				C55EAB131CF5A672002C9958 /* XMLDictionary.m in Sources */,
+				C550B5D51D586ECB003FD45E /* InputHelper.m in Sources */,
 				C5856AB11D11030A00158FEA /* LGAlertViewCell.m in Sources */,
-				C5776EF61D2E5BDC00B126A3 /* InputHelper.m in Sources */,
 				C5856AAF1D11030A00158FEA /* LGAlertView.m in Sources */,
 				C58393611CEC6476008A9BAC /* WOD.m in Sources */,
 				C58456951D00136C00FAA357 /* Skill+CoreDataProperties.m in Sources */,
 				C58393121CEC5C9D008A9BAC /* WodCN.xcdatamodeld in Sources */,
-				C5856AB91D124C9C00158FEA /* LBProgressHUD.m in Sources */,
 				C569B61F1CEEB09200E177FF /* SkillListController.m in Sources */,
 				C5D99A8B1CC7335100A450C2 /* AppDelegate.m in Sources */,
 				C58393641CEC6929008A9BAC /* CoreDataManager.m in Sources */,

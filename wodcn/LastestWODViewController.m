@@ -219,6 +219,6 @@
     if ([_wodDesc.text isEqualToString:@"疯狂手抄中......" ]) {
         
     }else
-        [Tool sendWXImageContent:self.wodDesc];
+        [Tool sendWXImageContent:self.scrollView];
 }
 @end

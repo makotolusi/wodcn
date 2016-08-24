@@ -41,4 +41,22 @@
     return fetchedObjects;
 }
 
+//查询
+- (Profile*)queryOne
+{
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    self.context = delegate.managedObjectContext;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+//    fetchRequest.predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"title = '%@' ", name]];
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Profile" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    if (fetchedObjects.count!=0) {
+        return fetchedObjects[0];
+    }
+    return nil;
+}
+
 @end

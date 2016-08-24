@@ -17,7 +17,7 @@
     if (self) {
         NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithData:[self dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
         [attributedString  addAttribute:NSFontAttributeName
-                                  value:[UIFont fontWithName:@"American Typewriter"  size:18]
+                                  value:[UIFont fontWithName:@"Apple SD Gothic Neo"  size:18]
                                   range:NSMakeRange(0, attributedString.length)];
         return  attributedString;
     }else

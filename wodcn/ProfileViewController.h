@@ -16,7 +16,11 @@
 - (IBAction)logout:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *logoutbtn;
 @property (weak, nonatomic) IBOutlet UIButton *loginbtn;
+@property (weak, nonatomic) IBOutlet UILabel *height;
+@property (weak, nonatomic) IBOutlet UILabel *sex;
+@property (weak, nonatomic) IBOutlet UILabel *location;
 
+@property (weak, nonatomic) IBOutlet UILabel *weight;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollview;
 @property (weak, nonatomic) IBOutlet UINavigationBar *logoutBar;
 @property (weak, nonatomic) IBOutlet UILabel *totalScore;

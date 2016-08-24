@@ -31,7 +31,7 @@
     [message setThumbImage:[UIImage imageNamed:@"movement.png"]];
     
     WXImageObject *ext = [WXImageObject object];
-    ext.imageData = UIImagePNGRepresentation(wordImage);
+    ext.imageData = UIImageJPEGRepresentation(wordImage,50);
     
     //    //UIImage* image = [UIImage imageWithContentsOfFile:filePath];
     //    UIImage* image = [UIImage imageWithData:ext.imageData];

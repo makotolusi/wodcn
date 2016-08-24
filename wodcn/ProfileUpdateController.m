@@ -11,6 +11,7 @@
 #import "Profile.h"
 #import "ProfileDataManager.h"
 #import "InputHelper.h"
+#import "AFViewShaker.h"
 @interface ProfileUpdateController ()<UITextFieldDelegate>
 
 @end
@@ -27,6 +28,17 @@
 //    [self.sex addGestureRecognizer:labelTapGestureRecognizer];
     // Do any additional setup after loading the view.
     _sex.delegate=self;
+    
+    ProfileDataManager *manager=[[ProfileDataManager alloc] init];
+    NSArray *n=[manager query];
+    if (n.count>0) {
+        Profile *p=n.lastObject;
+        _name.text=p.name;
+        _sex.text=p.sex;
+        _box.text=p.box;
+        _height.text=[NSString stringWithFormat:@"%@",p.height];
+        _weight.text=[NSString stringWithFormat:@"%@",p.weight];
+    }
     
     [inputHelper setupInputHelperForView:self.scrollView withDismissType:InputHelperDismissTypeTapGusture];
     
@@ -67,17 +79,50 @@
 }
 
 - (IBAction)submit:(id)sender {
+    if(StringIsNullOrEmpty(self.name.text)){
+        [[[AFViewShaker alloc] initWithView:self.name] shake];
+        return;
+    }
+    if(StringIsNullOrEmpty(self.sex.text)){
+        [[[AFViewShaker alloc] initWithView:self.sex] shake];
+        return;
+    }
+    if(StringIsNullOrEmpty(self.box.text)){
+        [[[AFViewShaker alloc] initWithView:self.box] shake];
+        return;
+    }
+    if(StringIsNullOrEmpty(self.height.text)){
+        [[[AFViewShaker alloc] initWithView:self.height] shake];
+        return;
+    }
+    if(StringIsNullOrEmpty(self.weight.text)){
+        [[[AFViewShaker alloc] initWithView:self.weight] shake];
+        return;
+    }
     ProfileDataManager *manager=[[ProfileDataManager alloc] init];
-    id obj= manager.getWillInsert;
-    if ([obj isKindOfClass:[Profile class]]) {
-        Profile *profile=(Profile*)obj;
+    Profile *profile=[manager queryOne];
+    if (profile) {
+//        Profile *profile=n.firstObject;
+//        id obj= manager.getWillInsert;
+//        if ([obj isKindOfClass:[Profile class]]) {
+//            Profile *profile=(Profile*)obj;
+            
+            profile.name=_name.text;
+            profile.sex=_sex.text;
+            profile.box=_box.text;
+            profile.height=[NSNumber numberWithBool:_height.text.integerValue] ;
+            profile.weight=[NSNumber numberWithInteger:_weight.text.integerValue];
+        [self.navigationController popViewControllerAnimated:YES];
+    }else{
+        profile=[manager getWillInsert];
         profile.name=_name.text;
         profile.sex=_sex.text;
         profile.box=_box.text;
         profile.height=[NSNumber numberWithBool:_height.text.integerValue] ;
         profile.weight=[NSNumber numberWithInteger:_weight.text.integerValue];
+        [manager save];
+        [self.navigationController popViewControllerAnimated:YES];
     }
-    [manager save];
-    [self.navigationController popViewControllerAnimated:YES];
+    
 }
 @end

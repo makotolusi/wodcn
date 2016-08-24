@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Profile.h"
 @interface ProfileDataManager : NSObject
 
 @property (strong,nonatomic)NSManagedObjectContext *context;
@@ -17,5 +17,5 @@
 - (void)save;
 
 - (NSArray*)query;
-
+- (Profile*)queryOne;
 @end
